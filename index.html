@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wickpedia — Learn Trading, Prove It in Ranked</title>
+<title>Wickpedia — The Free Trading Encyclopedia</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230a0d12'/><line x1='10' y1='6' x2='10' y2='26' stroke='%2334d399' stroke-width='2'/><rect x='7' y='11' width='6' height='10' rx='1' fill='%2334d399'/><line x1='22' y1='5' x2='22' y2='24' stroke='%23f87171' stroke-width='2'/><rect x='19' y='8' width='6' height='9' rx='1' fill='%23f87171'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
-/* Never allow a silent blank screen again: show any fatal error on screen */
 window.addEventListener("error",function(e){
  if(document.getElementById("wperr"))return;
  var d=document.createElement("div");d.id="wperr";
@@ -71,38 +70,32 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .sec-label::after{content:"";flex:1;height:1px;background:var(--bd)}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin-top:4px}
-.hero h1{font-family:"Space Grotesk";font-weight:700;font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:-.02em;line-height:1.12;margin:10px 0 12px}
-.hero h1 em{font-style:normal;color:var(--grn)}
-.hero p{color:var(--mut);max-width:56ch}
-.bigsearch{position:relative;margin-top:20px;max-width:520px}
-.bigsearch input{width:100%;background:var(--s1);border:1px solid var(--bd2);color:var(--tx);font-family:"IBM Plex Mono";font-size:14px;padding:14px 16px 14px 42px;border-radius:12px;transition:.2s}
-.bigsearch input:focus{outline:none;border-color:var(--grn);box-shadow:0 0 0 4px rgba(52,211,153,.12)}
-.bigsearch .ic{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--dim)}
-.stats{display:flex;gap:30px;margin-top:24px;flex-wrap:wrap}
-.stat b{display:block;font-family:"Space Grotesk";font-size:1.7rem;font-weight:700;font-variant-numeric:tabular-nums}
-.stat span{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
-.stat.g b{color:var(--grn)}.stat.y b{color:var(--gold)}.stat.b b{color:var(--blue)}
-.side-cards{display:flex;flex-direction:column;gap:12px}
-.hcard{display:flex;flex-direction:column;gap:8px;background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:18px;color:var(--tx);transition:.25s;flex:1}
-.hcard:hover{transform:translateY(-3px);border-color:var(--bd2);box-shadow:var(--shadow)}
-.hcard .hk{font-family:"IBM Plex Mono";font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-.hcard h3{font-family:"Space Grotesk";font-size:1.15rem;font-weight:600}
-.hcard p{font-size:.83rem;color:var(--mut);flex:1}
-.progress{height:7px;background:var(--s3);border-radius:99px;overflow:hidden;margin-top:4px}
-.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--grn),var(--blue));border-radius:99px;transition:width .6s var(--ease)}
-.hcard .go{font-family:"IBM Plex Mono";font-size:11px;color:var(--grn)}
-.tierbadge{display:inline-flex;align-items:center;gap:7px;font-family:"Space Grotesk";font-weight:700;font-size:1.05rem;padding:5px 14px;border-radius:9px;letter-spacing:.04em}
-.t-lt{color:#c9925e;background:rgba(201,146,94,.12);border:1px solid rgba(201,146,94,.35)}
-.t-mt{color:#9db4d8;background:rgba(157,180,216,.12);border:1px solid rgba(157,180,216,.35)}
-.t-ht{color:#f0c25c;background:rgba(240,194,92,.13);border:1px solid rgba(240,194,92,.4)}
-.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:10px}
-.cat-tile{display:flex;align-items:center;gap:12px;background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:13px 14px;color:var(--tx);transition:.22s}
-.cat-tile:hover{transform:translateY(-3px);border-color:var(--bd2);background:var(--s2)}
-.cat-tile .ck{width:34px;height:34px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--s3);border:1px solid var(--bd2)}
-.cat-tile .cn{font-family:"Space Grotesk";font-weight:600;font-size:.88rem;line-height:1.25}
-.cat-tile .cc{font-family:"IBM Plex Mono";font-size:10px;color:var(--dim)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:12px}
+/* wiki home */
+.masthead{text-align:center;padding:22px 0 8px}
+.masthead .wordmark{font-family:"Space Grotesk";font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-.03em}
+.masthead .wordmark span{color:var(--grn)}
+.masthead .tag{color:var(--mut);font-size:.92rem;margin-top:6px}
+.masthead .counts{font-family:"IBM Plex Mono";font-size:11px;color:var(--dim);margin-top:10px}
+.masthead .counts b{color:var(--grn);font-weight:500}
+.home-search{max-width:640px;margin:22px auto 0;position:relative}
+.home-search input{width:100%;background:var(--s1);border:1px solid var(--bd2);color:var(--tx);font-family:"IBM Plex Mono";font-size:14.5px;padding:15px 18px 15px 46px;border-radius:13px;transition:.2s}
+.home-search input:focus{outline:none;border-color:var(--grn);box-shadow:0 0 0 4px rgba(52,211,153,.12)}
+.home-search .ic{position:absolute;left:17px;top:50%;transform:translateY(-50%);color:var(--dim)}
+.wiki-main{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;margin-top:26px;align-items:start}
+.wbox{background:var(--s1);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+.wbox-h{padding:10px 16px;border-bottom:1px solid var(--bd);font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);background:var(--s2);display:flex;align-items:center;gap:8px}
+.wbox-h .k{color:var(--gold)}
+.wbox-b{padding:16px}
+.catrow{display:flex;align-items:center;gap:11px;padding:9px 8px;border-radius:8px;color:var(--tx);transition:.18s}
+.catrow:hover{background:var(--s2);transform:translateX(3px)}
+.catrow .ci{width:28px;height:28px;border-radius:7px;flex:none;display:flex;align-items:center;justify-content:center;font-size:13px;background:var(--s3);border:1px solid var(--bd2)}
+.catrow .cn{font-weight:600;font-size:.88rem;flex:1}
+.catrow .cc{font-family:"IBM Plex Mono";font-size:10px;color:var(--dim)}
+.dyk{list-style:none}
+.dyk li{padding:9px 4px;border-bottom:1px dashed var(--bd);font-size:.85rem;color:var(--mut)}
+.dyk li:last-child{border-bottom:none}
+.dyk li b{color:var(--tx)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
 .card{display:flex;flex-direction:column;background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:16px;color:var(--tx);transition:transform .22s var(--ease),border-color .22s,background .22s;content-visibility:auto;contain-intrinsic-size:160px}
 .card:hover{transform:translateY(-3px);border-color:var(--bd2);background:var(--s2)}
 .card .cc{font-family:"IBM Plex Mono";font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
@@ -157,14 +150,17 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .pc-wrap svg{display:block;width:100%}
 .pc-legend{position:absolute;top:8px;left:10px;font-family:"IBM Plex Mono";font-size:10.5px;color:var(--mut);background:color-mix(in srgb,var(--bg) 75%,transparent);padding:4px 9px;border-radius:6px;pointer-events:none;backdrop-filter:blur(4px)}
 .pc-legend b{color:var(--tx);font-weight:500}
+/* practice */
 .arena{max-width:900px;margin:0 auto}
 .arena-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
 .arena-head h2{font-family:"Space Grotesk";font-size:1.5rem;font-weight:700;margin-right:auto}
 .rankinfo{background:var(--s1);border:1px solid var(--bd);border-radius:13px;padding:18px;margin-bottom:16px}
 .xpbar{height:9px;background:var(--s3);border-radius:99px;overflow:hidden;margin:10px 0 6px}
 .xpbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--grn));transition:width .5s var(--ease)}
-.qbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.qbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
 .qnum{font-family:"Space Grotesk";font-weight:700;font-size:1.05rem}
+.ticks{display:flex;gap:4px;margin-bottom:12px}
+.ticks span{flex:1;height:7px;border-radius:3px;background:var(--s3);transition:background .3s}
 .diff{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.14em;padding:4px 11px;border-radius:99px;font-weight:600}
 .diff-e{color:var(--grn);background:var(--grnbg);border:1px solid color-mix(in srgb,var(--grn) 35%,transparent)}
 .diff-m{color:var(--gold);background:var(--goldbg);border:1px solid color-mix(in srgb,var(--gold) 35%,transparent)}
@@ -189,6 +185,11 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .bigbtn{background:var(--grn);color:#04120b;border:none;font-family:"Space Grotesk";font-weight:700;padding:13px 34px;border-radius:10px;font-size:1rem;transition:.2s;text-decoration:none;display:inline-block}
 .bigbtn:hover{filter:brightness(1.08);transform:translateY(-2px)}
 .bigbtn.gold{background:var(--gold);color:#241a02}
+.bigbtn.ghost{background:var(--s2);color:var(--mut);border:1px solid var(--bd)}
+.tierbadge{display:inline-flex;align-items:center;gap:7px;font-family:"Space Grotesk";font-weight:700;font-size:1.05rem;padding:5px 14px;border-radius:9px;letter-spacing:.04em}
+.t-lt{color:#c9925e;background:rgba(201,146,94,.12);border:1px solid rgba(201,146,94,.35)}
+.t-mt{color:#9db4d8;background:rgba(157,180,216,.12);border:1px solid rgba(157,180,216,.35)}
+.t-ht{color:#f0c25c;background:rgba(240,194,92,.13);border:1px solid rgba(240,194,92,.4)}
 .tierpromote{animation:promote .8s var(--ease)}
 @keyframes promote{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1)}}
 .ladder{display:flex;gap:5px;flex-wrap:wrap;margin-top:12px}
@@ -203,6 +204,8 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .mod .mt p{font-size:.8rem;color:var(--mut)}
 .mod .mst{font-family:"IBM Plex Mono";font-size:10px;flex:none}
 .mod.done .mst{color:var(--grn)}
+.progress{height:7px;background:var(--s3);border-radius:99px;overflow:hidden;margin-top:6px}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--grn),var(--blue));border-radius:99px;transition:width .6s var(--ease)}
 .setcard{background:var(--s1);border:1px solid var(--bd);border-radius:13px;padding:20px;margin-bottom:14px;max-width:640px}
 .setcard h3{font-family:"Space Grotesk";font-size:1.05rem;margin-bottom:12px}
 .setrow{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--bd);flex-wrap:wrap}
@@ -229,7 +232,7 @@ select.sel,input.inp{background:var(--s2);border:1px solid var(--bd);color:var(-
 .empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--mut);border:1px dashed var(--bd2);border-radius:12px;font-family:"IBM Plex Mono";font-size:13px}
 #toTop{position:fixed;bottom:26px;right:26px;width:46px;height:46px;border-radius:11px;background:var(--s1);border:1px solid var(--bd2);color:var(--grn);font-size:18px;z-index:60;opacity:0;pointer-events:none;transform:translateY(12px);transition:.3s var(--ease)}
 #toTop.show{opacity:1;pointer-events:auto;transform:none}
-@media(max-width:920px){.hero{grid-template-columns:1fr}.charts-row{grid-template-columns:1fr}nav.nl{display:none}}
+@media(max-width:920px){.wiki-main{grid-template-columns:1fr}.charts-row{grid-template-columns:1fr}nav.nl{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}}
 </style>
 </head>
@@ -238,11 +241,11 @@ select.sel,input.inp{background:var(--s2);border:1px solid var(--bd);color:var(-
  <div class="hwrap">
   <a class="logo" href="#"><svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="var(--s3)"/><line x1="10" y1="6" x2="10" y2="26" stroke="var(--grn)" stroke-width="2"/><rect x="7" y="11" width="6" height="10" rx="1" fill="var(--grn)"/><line x1="22" y1="5" x2="22" y2="24" stroke="var(--red)" stroke-width="2"/><rect x="19" y="8" width="6" height="9" rx="1" fill="var(--red)"/></svg><b>Wick<span>pedia</span></b></a>
   <nav class="nl">
-   <a href="#/" data-r="">Library</a><a href="#/academy" data-r="academy">Academy</a><a href="#/dictionary" data-r="dictionary">Patterns</a><a href="#/ranked" data-r="ranked">⚔ Ranked</a>
+   <a href="#/" data-r="">Main page</a><a href="#/academy" data-r="academy">Academy</a><a href="#/dictionary" data-r="dictionary">Patterns</a><a href="#/practice" data-r="practice">Practice</a>
   </nav>
   <div class="searchbox">
    <svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-   <input id="searchInput" type="text" autocomplete="off" spellcheck="false" placeholder="Search anything — liquidity, FVG, hammer…">
+   <input id="searchInput" type="text" autocomplete="off" spellcheck="false" placeholder="Search the encyclopedia…">
    <div class="sdrop" id="sdrop"></div>
   </div>
   <button class="ibtn" id="themeBtn" title="Toggle theme">◐</button>
@@ -250,7 +253,7 @@ select.sel,input.inp{background:var(--s2);border:1px solid var(--bd);color:var(-
  </div>
 </header>
 <main id="app"></main>
-<footer>Wickpedia — educational content only, not financial advice. Trading involves substantial risk of loss.</footer>
+<footer>Wickpedia — the free trading encyclopedia. Educational content only, not financial advice. Trading involves substantial risk of loss.</footer>
 <button id="toTop" aria-label="Back to top">↑</button>
 <div class="toast" id="toast"></div>
 
@@ -258,13 +261,13 @@ select.sel,input.inp{background:var(--s2);border:1px solid var(--bd);color:var(-
  <div class="ob-card" style="position:relative">
   <button class="ibtn ob-x" id="authClose">✕</button>
   <h2>Sign in to Wickpedia</h2>
-  <p class="sub">Sync your rank, XP, bookmarks, notes and course progress across devices.</p>
+  <p class="sub">Sync your bookmarks, notes, course progress and practice rank across devices.</p>
   <div class="ob-tabs"><button class="ob-tab on" id="tabIn">Sign in</button><button class="ob-tab" id="tabUp">Create account</button></div>
   <input id="aEmail" type="email" placeholder="Email address" autocomplete="email">
   <input id="aPass" type="password" placeholder="Password (min 6 characters)" autocomplete="current-password">
   <div class="ob-err" id="aErr"></div>
   <button class="ob-go" id="aGo">Sign in</button>
-  <div class="ob-note">Works without an account too — progress saves on this device.</div>
+  <div class="ob-note">Works without an account too — everything saves on this device.</div>
  </div>
 </div>
 
@@ -274,7 +277,6 @@ select.sel,input.inp{background:var(--s2);border:1px solid var(--bd);color:var(-
 var SUPABASE_URL="";
 var SUPABASE_ANON_KEY="";
 
-/* ============================ STATE ============================ */
 var TIERS=["LT5","MT5","HT5","LT4","MT4","HT4","LT3","MT3","HT3","LT2","MT2","HT2","LT1","MT1","HT1"];
 var TIER_XP=TIERS.map(function(_,i){return i*240;});
 var prof={xp:0,games:0,wins:0,bestStreak:0,theme:"dark",lvl:"new",bookmarks:[],notes:{},course:{}};
@@ -338,7 +340,7 @@ document.getElementById("tabIn").addEventListener("click",function(){authTab(1);
 document.getElementById("tabUp").addEventListener("click",function(){authTab(2);});
 document.getElementById("aGo").addEventListener("click",authSubmit);
 
-/* ============================ CHART ENGINE (mini TradingView) ============================ */
+/* ============================ CHART ENGINE ============================ */
 function pal(){var l=document.documentElement.dataset.theme==="light";
  return l?{grn:"#059669",red:"#dc2626",gold:"#b45309",blue:"#2563eb",grid:"rgba(30,45,70,.09)",ax:"#7c8aa0",cross:"#42566f",hid:"rgba(120,140,170,.15)"}
         :{grn:"#34d399",red:"#f87171",gold:"#e8b64c",blue:"#74a8ff",grid:"rgba(150,170,200,.09)",ax:"#8a97ab",cross:"#a7b4c8",hid:"rgba(150,170,200,.1)"};}
@@ -378,7 +380,6 @@ function ProChart(el,data,o){
    s+='<line x1="8" x2="'+(W-MR)+'" y1="'+gy+'" y2="'+gy+'" stroke="'+P.grid+'"/>';
    s+='<text x="'+(W-MR+8)+'" y="'+(gy+3.5)+'" font-family="IBM Plex Mono" font-size="10" fill="'+P.ax+'">'+fmtP(g)+'</text>';
   }
-  /* overlays: zones + focus */
   if(o.focus){
    for(i=Math.max(st.vs,data.length-o.focus);i<visEnd();i++){
     s+='<rect x="'+(X(i)-cw/2-2)+'" y="'+MT+'" width="'+(cw+4)+'" height="'+m.plotH+'" fill="'+P.gold+'" opacity=".07"/>';
@@ -398,7 +399,6 @@ function ProChart(el,data,o){
    s+='<line x1="8" x2="'+(W-MR)+'" y1="'+yy+'" y2="'+yy+'" stroke="'+col+'" stroke-dasharray="5 5" opacity=".85"/>';
    if(l[2])s+='<text x="'+(W-MR-4)+'" y="'+(yy-4)+'" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="'+col+'">'+l[2]+'</text>';
   });
-  /* candles */
   var k,x,yT,yB,bull,col;
   for(i=st.vs;i<visEnd();i++){
    k=data[i];bull=k[3]>=k[0];x=X(i);
@@ -409,7 +409,6 @@ function ProChart(el,data,o){
    if(Math.abs(k[3]-k[0])<=(yr.hi-yr.lo)*0.004){s+='<rect x="'+(x-cw/2)+'" y="'+(yT-1)+'" width="'+cw+'" height="2" fill="'+P.gold+'"/>';}
    else{s+='<rect x="'+(x-cw/2)+'" y="'+yT+'" width="'+cw+'" height="'+bh+'" rx="1" fill="'+col+'"/>';}
   }
-  /* hidden zone */
   var hidden=Math.min(st.vs+st.vc,data.length)-visEnd();
   if(hidden>0){
    var hx=X(visEnd()-1)+cw/2+3,hw=Math.min(W-MR-hx,hidden/st.vc*m.plotW);
@@ -418,7 +417,6 @@ function ProChart(el,data,o){
     s+='<text x="'+(hx+hw/2)+'" y="'+(MT+m.plotH/2)+'" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="'+P.ax+'">HIDDEN · '+hidden+'</text>';
    }
   }
-  /* drawings */
   if(o.arrows)o.arrows.forEach(function(a){
    s+='<line x1="'+X(a[0])+'" y1="'+Y(a[1])+'" x2="'+X(a[2])+'" y2="'+Y(a[3])+'" stroke="'+(P[a[4]]||a[4])+'" stroke-width="1.5"/>';
    s+='<circle cx="'+X(a[2])+'" cy="'+Y(a[3])+'" r="3" fill="'+(P[a[4]]||a[4])+'"/>';
@@ -573,71 +571,66 @@ var COURSE=[
 b:[["h","The simplest definition"],["p","Trading is buying something and selling it at a different price — or selling first and buying back cheaper. That is the entire mechanic. Stocks, forex, crypto, gold: all of it is just people agreeing on prices, moment by moment, based on what they think will happen next."],
 ["p","Here is the part nobody tells you up front: <b>you do not need to predict the future to make money.</b> You need a repeatable situation where one outcome is slightly more likely than the price suggests, a small loss when you are wrong, a bigger gain when you are right, and the discipline to repeat it hundreds of times. That combination is called an <b>edge</b>."],
 ["h","Why most people lose"],["p","Most beginners lose for three boring reasons, not because markets are rigged. One: they risk too much per trade, so a normal losing streak destroys the account. Two: they have no written rules, so every decision is made by whatever emotion is loudest. Three: they quit or switch strategies during every normal rough patch, which guarantees they never reach the part where the edge pays."],
-["p","Everything in this Academy attacks those three causes. Candles and patterns are the fun part; risk and routine are the part that decides if you survive."],
-["h","What this course will give you"],["ul",["A way to <b>read charts</b> — candles, structure, levels, liquidity.","A way to <b>build a trade</b> — entry, stop, target, every time.","A way to <b>survive</b> — risk math, sizing, psychology.","A way to <b>improve</b> — journaling, review, and ranked practice."]],
-["tip","Treat trading like a sport nobody warns you about: the first months are training, not earning. Anyone promising fast money is selling you something."]]},
+["h","What this course gives you"],["ul",["A way to <b>read charts</b> — candles, structure, levels, liquidity.","A way to <b>build a trade</b> — entry, stop, target, every time.","A way to <b>survive</b> — risk math, sizing, psychology.","A way to <b>improve</b> — journaling, review, and deliberate practice."]],
+["tip","Treat trading like a sport nobody warns you about: the first months are training, not earning."]]},
 {id:"l2",title:"Reading candles fluently",sum:"Body, wicks, size, and the four questions every candle answers.",
 b:[["h","One candle, four prices"],["p","Every candle compresses a whole period — a minute, an hour, a day — into four numbers: <b>Open</b> (first price), <b>High</b>, <b>Low</b>, and <b>Close</b> (last price). The rectangle is the <b>body</b>: the distance between open and close. Green means it closed higher than it opened; red means lower. The thin lines are <b>wicks</b>: places price visited but could not stay."],
 ["chart",{c:[[35,82,28,74],[74,78,26,30]],cap:"Green candle (buyers won) vs red candle (sellers won)"}],
 ["h","The four questions"],["ul",["<b>Who won?</b> Color and body direction.","<b>By how much?</b> Body size versus the recent candles.","<b>What got rejected?</b> Long wick below = dips were bought. Long wick above = rallies were sold.","<b>Where did it happen?</b> A candle at the top of a rally means something completely different from the same candle at the bottom of a drop."]],
 ["p","That last question is the secret. Candlestick patterns are not magic shapes — they are <b>shapes plus location</b>. A hammer after a downtrend is a buying hint. The same shape after a huge rally is a warning called a hanging man."],
-["h","Practice like this"],["p","Open any chart. Pick ten random candles and answer the four questions out loud for each. Two minutes a day for a week and candles stop being shapes and start being sentences. The full vocabulary of shapes lives in the <a href=\"#/dictionary\">Pattern Dictionary</a>."],
-["tip","Body = conviction. Wicks = rejection. Location = meaning. Memorize those three lines and half of candlestick theory is yours."]]},
+["tip","Body = conviction. Wicks = rejection. Location = meaning."]]},
 {id:"l3",title:"Market structure: the map of every chart",sum:"Higher highs, lower lows, and how trends actually break.",
 b:[["h","The staircase"],["p","Forget indicators for a moment. Every chart is just a staircase of turning points. If the steps go up — each high is above the last high, each low is above the last low — you are in an <b>uptrend</b>. If they go down, it is a <b>downtrend</b>. If they overlap, it is a <b>range</b>. That is the whole map."],
 ["chart",{c:[[20,34,18,32],[30,40,28,38],[34,48,32,46],[42,52,40,44],[46,60,44,58],[54,64,52,56],[58,74,56,72],[66,76,62,68]],cap:"Uptrend: a staircase of higher highs (HH) and higher lows (HL)"}],
-["h","How trends break"],["p","An uptrend is alive as long as each new low stays above the previous one. The moment price <b>closes below the last higher low</b>, the staircase is broken — traders call that a <b>Break of Structure (BOS)</b> when it continues the trend direction, and a <b>Change of Character (CHoCH)</b> when it goes against it. These are not opinions; they are the first objective signs a trend is dying."],
-["h","The only rule you need from this lesson"],["p","<b>Trade with the staircase, not against it.</b> In uptrends, look to buy pullbacks at higher lows. In downtrends, look to sell bounces at lower highs. Most losing trades are simply trades taken against the staircase while hoping it would be different."],
-["tip","Before every single trade, say the structure out loud: higher highs and higher lows, or lower highs and lower lows. If you cannot say it, you cannot trade it."]]},
+["h","How trends break"],["p","An uptrend is alive as long as each new low stays above the previous one. The moment price <b>closes below the last higher low</b>, the staircase is broken — traders call that a <b>Break of Structure (BOS)</b> when it continues the trend direction, and a <b>Change of Character (CHoCH)</b> when it goes against it."],
+["h","The only rule you need"],["p","<b>Trade with the staircase, not against it.</b> In uptrends, buy pullbacks at higher lows. In downtrends, sell bounces at lower highs. Most losing trades are trades taken against the staircase while hoping it would be different."],
+["tip","Before every trade, say the structure out loud. If you cannot say it, you cannot trade it."]]},
 {id:"l4",title:"Support, resistance, and why levels work",sum:"Floors, ceilings, and the trapped traders that defend them.",
 b:[["h","Levels are memory"],["p","<b>Support</b> is a price area where buying has repeatedly appeared — a floor. <b>Resistance</b> is where selling has repeatedly appeared — a ceiling. They are not magic lines; they are memory. Thousands of traders saw the same bounce, placed orders at the same place, and now their orders wait there."],
 ["chart",{c:[[50,56,42,46],[44,52,38,42],[40,50,38,48],[46,54,40,44],[42,52,38,50],[48,56,44,52],[50,60,46,58],[56,64,52,56],[54,64,50,62],[60,68,56,62]],zones:[[0,9,37,41,"grn","SUPPORT"],[0,9,60,65,"red","RESISTANCE"]],cap:"Price bouncing between a floor and a ceiling"}],
-["h","The three rules"],["ul",["Levels are <b>zones, not lines</b>. Price is messy; draw boxes, not laser lines.","Levels get stronger with <b>more touches</b> and on <b>bigger timeframes</b>. A daily level beats a 5-minute level every time.","Broken levels <b>flip</b>. Old resistance, once broken, tends to become new support — because everyone who missed the break wants in at that price."]],
-["h","How to use this tomorrow"],["p","Mark the two or three most obvious levels on the daily chart. Then simply watch how price behaves when it returns to them: strong rejection wicks, pauses, engulfing candles. That behavior is your trigger. Levels tell you <b>where</b> to look; candles tell you <b>when</b>."],
+["h","The three rules"],["ul",["Levels are <b>zones, not lines</b>. Draw boxes, not laser lines.","Levels get stronger with <b>more touches</b> and on <b>bigger timeframes</b>.","Broken levels <b>flip</b>: old resistance tends to become new support."]],
 ["warn","The middle of a range is no man's land. Only the edges pay. If price is floating between levels, there is no trade — waiting IS the position."]]},
 {id:"l5",title:"Liquidity: why price hunts your stop",sum:"Where stops hide, why price sweeps them, and how to stop being fuel.",
 b:[["h","The uncomfortable truth"],["p","Ask yourself where everyone puts their stop loss: just above the obvious high, just below the obvious low, behind the clean double top, under the trendline. Now realize that a cluster of stop losses is literally <b>a cluster of orders</b>. Big players who need to buy huge amounts need someone to sell to them — and those stops are the easiest source. So price runs there first. That run is called a <b>liquidity sweep</b> or stop hunt."],
 ["chart",{c:[[40,52,36,48],[46,58,42,54],[50,64,46,60],[56,66,52,58],[54,66,50,56],[58,66,54,57],[60,66,52,56],[62,67,40,44],[46,50,30,32],[34,40,26,28]],zones:[[1,6.7,66.5,71,"red","LIQUIDITY (stops)"]],arrows:[[7,44,7.4,36,"red"]],cap:"Stops above equal highs get swept by one wick — then price drops"}],
-["h","The fingerprint"],["p","A sweep is easy to spot after the fact: price breaks the level <b>with a wick, not a body</b>, and immediately reverses. The long wick beyond the obvious level is the fingerprint. Fake breakout, real orders collected, move begins."],
-["h","How to trade with it instead of dying to it"],["ul",["Stop putting your own stops at the most obvious pixel. Give them room behind the level, or wait for the sweep to happen first.","After a sweep plus a structure shift (<b>CHoCH</b>), the reversal has a natural, tight stop: beyond the sweep wick.","Targets are usually the liquidity on the <b>other side</b> of the range — that is where price wants to go next."]],
-["tip","Every time you get stopped out and price immediately goes your way, you were not unlucky — you were standing where everyone stands. Move with the sweep, not in front of it."]]},
+["h","The fingerprint"],["p","A sweep is easy to spot after the fact: price breaks the level <b>with a wick, not a body</b>, and immediately reverses. The long wick beyond the obvious level is the fingerprint."],
+["h","Trade with it, not into it"],["ul",["Stop putting your own stops at the most obvious pixel.","After a sweep plus a structure shift (CHoCH), the reversal has a natural, tight stop: beyond the sweep wick.","Targets are usually the liquidity on the <b>other side</b> of the range."]],
+["tip","If you keep getting stopped out right before the move goes your way, you were standing where everyone stands."]]},
 {id:"l6",title:"The setup: entry, stop, target",sum:"Turning ideas into complete trades — every trade, four parts.",
 b:[["h","A trade is a contract with yourself"],["p","Before you click anything, four things must exist on paper: the <b>trigger</b> that gets you in, the <b>stop</b> that proves you wrong, the <b>target</b> where you get paid, and the <b>size</b> that makes the loss acceptable. If any one of the four is missing, you do not have a trade — you have a gamble."],
-["h","A complete example"],["p","Context: uptrend on the daily chart. Price pulls back into a support zone that lines up with a 61.8% retracement. A hammer candle prints inside the zone. That is the <b>trigger</b>. The stop goes below the hammer wick — that is where the idea is proven wrong. The target is the previous high. If the distance to the target is at least twice the distance to the stop, the trade is worth taking; if not, skip it even if you love the setup."],
-["h","The quality filter: risk to reward"],["p","Risk/reward (R:R) is the quiet boss of your whole career. At 1:2 you can lose most of your trades and still make money. At 1:1 you need to be right more than half the time. At 1:0.5 — taking tiny wins with wide stops — you are donating money with a smile. Minimum acceptable R:R is a personal rule, but 1:2 is the standard for a reason."],
-["tip","Write the four parts before entry, every time: trigger, stop, target, size. A trade you cannot describe in one sentence is a trade you should not take."]]},
+["h","A complete example"],["p","Context: uptrend on the daily chart. Price pulls back into a support zone that lines up with a 61.8% retracement. A hammer prints inside the zone — that is the <b>trigger</b>. The stop goes below the hammer wick. The target is the previous high. If the distance to the target is at least twice the distance to the stop, the trade is worth taking; if not, skip it."],
+["h","The quality filter: risk to reward"],["p","At 1:2 you can lose most of your trades and still make money. At 1:1 you need to be right more than half the time. Minimum acceptable R:R is a personal rule, but 1:2 is the standard for a reason."],
+["tip","Write the four parts before entry, every time. A trade you cannot describe in one sentence is a trade you should not take."]]},
 {id:"l7",title:"Risk: the math that keeps you alive",sum:"The 1% rule, drawdown asymmetry, and why survival beats brilliance.",
-b:[["h","The only thing you fully control"],["p","You cannot control whether a trade wins. You control exactly four things: which trades you take, how much you risk, where you exit when wrong, and when you stop for the day. Professionals obsess over those four. Amateurs obsess over predictions."],
-["h","The 1% rule"],["p","Never risk more than <b>1% of your account on one trade</b> — and risk means what you lose if the stop is hit, not the position size. At 1%, a brutal streak of ten losses costs you about 10%: painful, survivable, fixable. At 10% per trade the same streak costs 65% — and now look at the recovery math."],
-["h","The recovery trap"],["ul",["Lose 10% → you need +11% to recover.","Lose 25% → you need +33%.","Lose 50% → you need <b>+100%</b>.","Lose 75% → you need <b>+300%</b>."]],
-["p","Deep holes take disproportionately long to climb out of. This single table is why capital protection beats profit maximization, always."],
-["warn","Every blown account has the same autopsy: oversized positions, moving stops, and revenge trading after the first hit. None of those is a knowledge problem. They are discipline problems — which is why they must be written rules, not good intentions."]]},
+b:[["h","The only thing you fully control"],["p","You cannot control whether a trade wins. You control exactly four things: which trades you take, how much you risk, where you exit when wrong, and when you stop for the day."],
+["h","The 1% rule"],["p","Never risk more than <b>1% of your account on one trade</b> — and risk means what you lose if the stop is hit, not the position size. At 1%, ten straight losses cost about 10%: survivable. At 10% per trade the same streak costs 65%."],
+["h","The recovery trap"],["ul",["Lose 10% → need +11% to recover.","Lose 25% → need +33%.","Lose 50% → need <b>+100%</b>.","Lose 75% → need <b>+300%</b>."]],
+["warn","Every blown account has the same autopsy: oversized positions, moving stops, and revenge trading. Discipline problems — which is why they must be written rules, not good intentions."]]},
 {id:"l8",title:"Position sizing in practice",sum:"One formula that turns risk % into real size — with examples.",
-b:[["h","The formula"],["p","<b>Size = (Account × Risk%) ÷ Stop distance.</b> That is the entire science. Your stop distance sets your size — never the other way around, never your excitement level."],
-["h","Worked example (stocks)"],["p","Account: €10,000. Risk per trade: 1% = €100. You want to buy at €50 and your stop belongs at €48, below the structure. Risk per share: €2. Shares = €100 ÷ €2 = <b>50 shares</b>. Tight stop? Bigger size. Wide stop? Smaller size. Same €100 at risk every time — that is the point."],
-["h","Worked example (forex/crypto style)"],["p","Same account, 1% = €100. Your stop is 40 pips away and one micro lot pays about €0.10 per pip. Cost of the stop per micro lot = 40 × €0.10 = €4. Size = €100 ÷ €4 = <b>25 micro lots</b>. Different instrument, identical logic."],
-["tip","If the calculated size feels too small to be exciting, that is exactly correct. Excitement is what size feels like right before it stops being survivable."]]},
+b:[["h","The formula"],["p","<b>Size = (Account × Risk%) ÷ Stop distance.</b> Your stop distance sets your size — never the other way around, never your excitement level."],
+["h","Worked example (stocks)"],["p","Account: €10,000. Risk per trade: 1% = €100. Buy at €50, stop at €48. Risk per share: €2. Shares = €100 ÷ €2 = <b>50 shares</b>. Tight stop? Bigger size. Wide stop? Smaller size. Same €100 at risk every time."],
+["h","Worked example (forex/crypto style)"],["p","Same account, 1% = €100. Stop is 40 pips away; one micro lot pays about €0.10 per pip. Cost of the stop per micro lot = €4. Size = €100 ÷ €4 = <b>25 micro lots</b>."],
+["tip","If the calculated size feels too small to be exciting, that is exactly correct."]]},
 {id:"l9",title:"Trading psychology: your real opponent",sum:"FOMO, revenge, and the defenses that actually work.",
-b:[["h","You are trading against your wiring"],["p","Markets are engineered to trigger you. Losses hurt roughly twice as much as equal gains feel good. Intermittent rewards — win, lose, lose, win — are the most addictive reinforcement pattern known to psychology, the same one behind slot machines. Trading psychology is not self-help; it is system design against predictable human hardware."],
-["h","The three account killers"],["ul",["<b>FOMO</b> — jumping into a move that already happened. You are not buying an opportunity; you are buying someone else's exit at the worst price.","<b>Revenge trading</b> — re-entering immediately after a loss to win it back, bigger and unplanned. Loss → bigger loss → tilt → blown day.","<b>Overtrading</b> — action addiction disguised as work. Most losing months are five good trades minus three forced ones."]],
-["h","Defenses that actually work"],["ul",["Rules decided <b>before</b> the trade — emotions do not get a vote mid-position.","Small size — feelings scale with money at risk.","A mandatory pause after every loss. Ten minutes, no exceptions.","A journal — you cannot fix leaks you do not measure.","Process goals, not money goals: grade your execution, let the math pay you."]],
-["tip","The market does not know you exist and owes you nothing. Any single trade can lose — that is the price of admission. Your job is to own the statistics of 200 trades, not the outcome of one."]]},
+b:[["h","You are trading against your wiring"],["p","Losses hurt roughly twice as much as equal gains feel good. Intermittent rewards are the most addictive reinforcement pattern known to psychology. Trading psychology is system design against predictable human hardware."],
+["h","The three account killers"],["ul",["<b>FOMO</b> — buying someone else's exit at the worst price.","<b>Revenge trading</b> — loss → bigger loss → tilt → blown day.","<b>Overtrading</b> — action addiction disguised as work."]],
+["h","Defenses that work"],["ul",["Rules decided <b>before</b> the trade.","Small size — feelings scale with money at risk.","A mandatory pause after every loss.","A journal — you cannot fix leaks you do not measure.","Process goals, not money goals."]],
+["tip","The market does not know you exist. Your job is to own the statistics of 200 trades, not the outcome of one."]]},
 {id:"l10",title:"Building your trading plan",sum:"Seven questions, answered in writing, before any trade exists.",
-b:[["h","A plan is a decision made in advance"],["p","A trading plan answers, in writing, seven questions: <b>What</b> do you trade and <b>when</b>? What is the exact <b>setup</b> you are allowed to take? What is the precise <b>trigger</b>? Where is the <b>stop</b>? Where is the <b>target</b> and your minimum R:R? What is your <b>risk per trade</b> and daily loss cap? What do you <b>record</b> after every trade? An unwritten plan is a wish."],
+b:[["h","A plan is a decision made in advance"],["p","A trading plan answers, in writing, seven questions: <b>What</b> do you trade and <b>when</b>? What is the exact <b>setup</b>? What is the precise <b>trigger</b>? Where is the <b>stop</b>? Where is the <b>target</b> and your minimum R:R? What is your <b>risk per trade</b> and daily loss cap? What do you <b>record</b> after every trade? An unwritten plan is a wish."],
 ["h","Example of a real (simple) plan"],["ul",["Market: EUR/USD, London session only.","Setup: sweep of an obvious high/low + CHoCH on the 15m, inside a 1h zone.","Trigger: close back beyond the swept level.","Stop: beyond the sweep wick. Target: next liquidity pool, minimum 1:2.","Risk: 0.5% per trade. Daily cap: −1.5%, then I stop.","Journal: screenshot + setup name + emotional state, every trade."]],
-["h","Then the meta-rules"],["p","No setup = no trade, even if the chart looks delicious. Maximum trades per day. After three consecutive losses, size halves. Once a week: review the journal like it belongs to someone else, because the person who wrote those trades was emotional and you are now calm."],
-["tip","The plan exists so that decisions are made by the calm version of you, in advance. Mid-trade you are only allowed to execute — not to think."]]},
+["tip","The plan exists so decisions are made by the calm version of you, in advance. Mid-trade you are only allowed to execute."]]},
 {id:"l11",title:"Journaling and review: the improvement engine",sum:"The one habit that converts experience into skill.",
-b:[["h","Why the journal is non-negotiable"],["p","Your memory lies. It remembers the winner you chased and forgets the ten times chasing lost. The journal is the only honest witness: date, instrument, direction, setup name, entry, stop, target, size, result in R, screenshot, one line of emotional state. Two minutes per trade."],
-["h","The weekly review"],["p","This is where improvement actually happens. Filter your journal by setup and you will discover a pattern that surprises you: usually 70–80% of your losses come from one or two behaviors — one setup that never works for you, one hour of the day, one emotional state. Fix that one leak and your whole curve moves. Keep everything else."],
-["h","What to track besides money"],["ul",["Plan adherence % — the only fair scoreboard.","Expectancy over the last 50 trades: (win rate × average win) − (loss rate × average loss).","Maximum losing streak — is your sizing surviving it?","Which setups print your best R — do more of exactly that."]],
-["tip","Grade every trade A–F on process, not outcome. A perfectly executed loser is an A. A lucky winning gamble is an F. Train yourself to feel proud of the A's and your account will follow."]]},
+b:[["h","Why the journal is non-negotiable"],["p","Your memory lies. The journal is the only honest witness: date, instrument, direction, setup name, entry, stop, target, size, result in R, screenshot, one line of emotional state. Two minutes per trade."],
+["h","The weekly review"],["p","Filter your journal by setup and you will discover that 70–80% of your losses come from one or two behaviors. Fix that one leak and your whole curve moves."],
+["h","Track besides money"],["ul",["Plan adherence % — the only fair scoreboard.","Expectancy over the last 50 trades.","Maximum losing streak — is your sizing surviving it?","Which setups print your best R — do more of exactly that."]],
+["tip","Grade every trade A–F on process, not outcome. A perfectly executed loser is an A."]]},
 {id:"l12",title:"Going live: your first 90 days",sum:"Demo, then small, then review — the graduation ladder.",
-b:[["h","Phase 1 — Demo like it is real (days 1–30)"],["p","Open a demo account. Realistic balance, realistic size, full journal, written plan. Goal: 30 sessions with at least 90% plan adherence. Not profit — adherence. If you cannot follow rules with fake money, real money will not make you disciplined; it will make you expensive."],
-["h","Phase 2 — Small live (days 31–90)"],["p","Fund a small account you can fully afford to lose. Cut your planned size in half again — live emotions change everything the first weeks. Goal: execute the plan perfectly under real fear and greed. Some green is nice; perfect process is the actual goal."],
-["h","Phase 3 — Earn the right to scale"],["p","Only increase size after evidence: 50+ logged live trades, positive expectancy, adherence above 90%, drawdown inside your plan. Scale slowly — 25–50% steps — and drop back down the moment process slips. Size is a reward for consistency, never a shortcut to it."],
-["h","The realistic timeline"],["ul",["Months 1–2: education + demo. Goal: fluency.","Months 3–6: demo → small live. Goal: consistency of process.","Months 6–12+: small live. Goal: positive expectancy over hundreds of trades.","Anyone selling you weeks instead of months is selling you."]],
-["tip","Then practice reading real charts under pressure in <a href=\"#/ranked\">Ranked</a> — the closest thing to live decision-making without risking money."]]}
+b:[["h","Phase 1 — Demo like it is real (days 1–30)"],["p","Realistic balance, realistic size, full journal, written plan. Goal: 30 sessions with at least 90% plan adherence. Not profit — adherence."],
+["h","Phase 2 — Small live (days 31–90)"],["p","Fund a small account you can fully afford to lose. Cut your planned size in half again — live emotions change everything the first weeks. Goal: execute the plan perfectly under real fear and greed."],
+["h","Phase 3 — Earn the right to scale"],["p","Only increase size after evidence: 50+ logged live trades, positive expectancy, adherence above 90%, drawdown inside your plan. Scale slowly — 25–50% steps."],
+["h","The realistic timeline"],["ul",["Months 1–2: education + demo. Goal: fluency.","Months 3–6: demo → small live. Goal: consistency of process.","Months 6–12+: small live. Goal: positive expectancy over hundreds of trades."]],
+["tip","Size is a reward for consistency, never a shortcut to it."]]}
 ];
 COURSE.forEach(function(L,i){
  A({id:"course-"+L.id,cat:"course",title:"Lesson "+(i+1)+": "+L.title,al:["lesson","academy","how to trade","course"],lvl:"b",def:L.sum,course:i,b:L.b});
@@ -650,102 +643,107 @@ C("liquidity","smc","Liquidity: where the stops live",["liquidity","stops","smar
 ["tip","If you keep getting stopped out right before the move goes your way, you are standing where everyone stands."]],"i");
 C("sweeps","smc","Liquidity sweeps (stop hunts)",["stop hunt","sweep","liquidity grab"],"A sweep is a quick raid beyond an obvious high or low that immediately reverses. It looks like a breakout for one candle — then the wick tells the truth.",
 [["p","Recipe: (1) mark the obvious level, (2) wait for price to break it with a <b>wick, not a body</b>, (3) look for a structure shift ([[choch|CHoCH]]), (4) enter on the pullback, stop beyond the sweep wick, (5) target the liquidity on the other side."],
-["warn","Sweeps matter most at higher-timeframe levels and busy sessions. A sweep of a random nobody-level means nothing."]],"i");
+["warn","Sweeps matter most at higher-timeframe levels and busy sessions."]],"i");
 C("fvg","smc","Fair Value Gaps (FVG)",["fvg","fair value gap","imbalance"],"A Fair Value Gap is a three-candle imbalance: candle 1's high and candle 3's low do not overlap, leaving an empty space inside the big middle candle. Price often returns to fill that space.",
 [["chart",{c:[[36,44,32,40],[42,66,40,64],[62,72,58,70]],zones:[[0,2,44,58,"grn","FVG"]],cap:"The gap between candle 1's high and candle 3's low"}],
-["p","Bullish FVG: the gap in an up-move — price often dips into it and bounces. Bearish FVG: the mirror on the way down. The midpoint of the gap is often the reaction point."],
+["p","Bullish FVG: the gap in an up-move — price often dips into it and bounces. Bearish FVG: the mirror on the way down."],
 ["ul",["Only mark FVGs created by strong impulsive candles ([[displacement|displacement]]).","FVG + order block + discount zone = high-quality area.","FVGs against the higher-timeframe trend tend to get filled and forgotten."]],
-["warn","An FVG is a zone where price MAY react, not a trampoline. Combine it with structure or it is just a rectangle."]],"i");
-C("order-blocks","smc","Order blocks",["order block","ob"],"An order block is the last opposite-colored candle before a strong move: the last red candle before a rally, or the last green before a drop. The idea: big players built positions there and defend the area on the return.",
+["warn","An FVG is a zone where price MAY react, not a trampoline."]],"i");
+C("order-blocks","smc","Order blocks",["order block","ob"],"An order block is the last opposite-colored candle before a strong move: the last red candle before a rally, or the last green before a drop.",
 [["chart",{c:[[62,66,54,58],[58,62,50,54],[54,58,46,50],[48,70,46,68],[64,78,62,76],[72,80,68,74]],zones:[[1,2.6,46,58,"grn","ORDER BLOCK"]],cap:"Last red candle before the rally — price returned and bounced"}],
 ["ul",["The move it launched broke structure with speed.","It left an [[fvg|FVG]] right after — urgency.","It sits in a discount zone (for buys) or premium (for sells).","It is fresh — untested blocks react better."]],
-["warn","Order blocks are subjective — ten traders mark ten blocks. Use them inside a bigger structure story, never alone."]],"i");
+["warn","Order blocks are subjective. Use them inside a bigger structure story, never alone."]],"i");
 C("premium-discount","smc","Premium & discount zones",["premium","discount","equilibrium"],"Split any swing in half. Above 50% is premium — expensive, look to sell. Below 50% is discount — cheap, look to buy.",
 [["chart",{c:[[46,54,42,50],[50,58,46,52],[48,56,40,42],[44,50,34,36],[38,46,30,32],[34,44,32,42],[40,52,38,50],[48,60,46,58],[56,68,54,66]],zones:[[0,8,55,70,"red","PREMIUM"],[0,8,28,43,"grn","DISCOUNT"]],lines:[[49,"gold","50%"]],cap:"Buy in the lower half, sell in the upper half"}],
-["p","This single filter deletes a huge number of bad trades: buying the top of a range and selling the bottom is donating your edge."]],"i");
+["p","This single filter deletes a huge number of bad trades."]],"i");
 C("bos","smc","Break of Structure (BOS)",["bos","break of structure"],"A BOS is when price breaks the last swing point in the direction of the current trend and closes beyond it — the trend announcing it continues.",
-[["p","Rules: require a <b>body close</b> beyond the level (wicks are sweeps, not breaks), respect the higher timeframe, and expect the pullback after a BOS into an FVG or order block — that is where entries live. When structure breaks against the trend, that is a [[choch|CHoCH]]."]],"i");
-C("choch","smc","Change of Character (CHoCH)",["choch","change of character"],"A CHoCH is the first break of structure against the trend — an uptrend failing to make a higher high, then breaking its last higher low. The earliest objective sign the trend may flip.",
-[["p","Classic reversal recipe: sweep at an extreme → CHoCH on the lower timeframe → pullback into the FVG or order block the CHoCH created → entry with stop beyond the sweep."],
-["warn","One CHoCH on the 1-minute chart does not kill a daily uptrend. Always ask which timeframe changed character."]],"i");
-C("displacement","smc","Displacement",["impulse","momentum candle"],"Displacement is a sudden, energetic move — big candles, small wicks, speed — that reveals real intent. It usually leaves FVGs behind and breaks structure.",
-[["p","Use it as a filter: only trust order blocks and breakouts that were launched by displacement. A slow grind through a level is suspicious; three full-bodied candles through it is a statement."]],"i");
+[["p","Rules: require a <b>body close</b> beyond the level (wicks are sweeps, not breaks), respect the higher timeframe, and expect the pullback after a BOS into an FVG or order block. When structure breaks against the trend, that is a [[choch|CHoCH]]."]],"i");
+C("choch","smc","Change of Character (CHoCH)",["choch","change of character"],"A CHoCH is the first break of structure against the trend — the earliest objective sign the trend may flip.",
+[["p","Classic recipe: sweep at an extreme → CHoCH on the lower timeframe → pullback into the FVG or order block the CHoCH created → entry with stop beyond the sweep."],
+["warn","One CHoCH on the 1-minute chart does not kill a daily uptrend."]],"i");
+C("displacement","smc","Displacement",["impulse","momentum candle"],"Displacement is a sudden, energetic move — big candles, small wicks, speed — that reveals real intent.",
+[["p","Only trust order blocks and breakouts launched by displacement. A slow grind through a level is suspicious; three full-bodied candles through it is a statement."]],"i");
 C("killzones","smc","Killzones & session liquidity",["killzone","london open","ny open"],"Killzones are the high-volume windows where the real moves of the day happen — roughly the London open and the New York open.",
-[["p","Typical script: the session open sweeps the liquidity around the earlier range highs/lows, then the true directional move begins. The same setup at dead hours fails, because volume is missing."]],"i");
+[["p","Typical script: the session open sweeps the liquidity around the earlier range highs/lows, then the true directional move begins."]],"i");
 C("market-structure","structure","Market structure: the complete guide",["structure","hh hl lh ll","trend"],"Market structure is the skeleton of the chart: higher highs + higher lows = uptrend, lower highs + lower lows = downtrend, neither = range.",
 [["chart",{c:[[20,34,18,32],[30,40,28,38],[34,48,32,46],[42,52,40,44],[46,60,44,58],[54,64,52,56],[58,74,56,72],[66,76,62,68]],cap:"An uptrend staircase"}],
 ["p","Use it like a filter: in uptrends buy pullbacks at higher lows; in downtrends sell bounces at lower highs; only flip bias after structure actually breaks. Full treatment in [[course-l3|Academy lesson 3]]."]],"b");
-C("support-resistance","structure","Support & resistance",["support","resistance","key level"],"Support is where buying repeatedly appears (a floor). Resistance is where selling repeatedly appears (a ceiling). They exist because orders cluster at memorable prices.",
+C("support-resistance","structure","Support & resistance",["support","resistance","key level"],"Support is where buying repeatedly appears (a floor). Resistance is where selling repeatedly appears (a ceiling).",
 [["chart",{c:[[50,56,42,46],[44,52,38,42],[40,50,38,48],[46,54,40,44],[42,52,38,50],[48,56,44,52],[50,60,46,58],[56,64,52,56]],zones:[[0,7,37,41,"grn","SUPPORT"],[0,7,53,57,"red","RESISTANCE"]],cap:"Floors hold, ceilings reject — until they break and flip"}],
 ["p","Rules: zones not lines; stronger with more touches and higher timeframes; broken levels flip roles."]],"b");
-C("retest","structure","The retest",["retest entry"],"A retest is when price breaks a level, then comes back to touch it from the other side. If it holds, you get a calmer entry with a tighter stop than chasing.",
+C("retest","structure","The retest",["retest entry"],"A retest is when price breaks a level, then comes back to touch it from the other side.",
 [["p","The retest trades patience for confirmation. Broken resistance becoming support works because everyone who missed the break is waiting to buy exactly there."]],"b");
 C("ranges","structure","Ranges & consolidation",["range","chop","sideways"],"A range is price oscillating between support and resistance without progress. Markets range about two-thirds of the time.",
-[["p","Two playbooks: buy support / sell resistance, or wait for the break. What kills accounts is trend-following entries in the middle of a range. Name the regime first, then choose the playbook."],
+[["p","Two playbooks: buy support / sell resistance, or wait for the break. What kills accounts is trend-following entries in the middle of a range."],
 ["warn","The middle of a range is the worst place to enter. Edges only."]],"b");
 C("breakouts","structure","Breakouts & fakeouts",["breakout","fakeout","false breakout"],"A breakout is price leaving a range or level with force. A fakeout is a false breakout that traps chasers and reverses. Most breakouts fail.",
-[["p","Good breakout filters: a strong candle closing clearly beyond the level (not just wicking), real volume, agreement with the higher timeframe. Or skip the entry entirely and wait for the [[retest|retest]]."]],"i");
-C("timeframes","basics","Timeframes, explained",["1m","5m","15m","1h","4h","daily","htf","ltf"],"A timeframe is how much time one candle represents. The same market can be rising on one timeframe and falling on another. Higher timeframes dominate.",
-[["p","The golden rule: decide direction on the higher timeframe, find the area on the middle one, enter on the lower one. A 5-minute signal against a daily level is a bet, not a trade."],
+[["p","Good filters: a strong candle closing clearly beyond the level, real volume, agreement with the higher timeframe. Or wait for the [[retest|retest]]."]],"i");
+C("timeframes","basics","Timeframes, explained",["1m","5m","15m","1h","4h","daily","htf","ltf"],"A timeframe is how much time one candle represents. Higher timeframes dominate lower ones.",
+[["p","The golden rule: decide direction on the higher timeframe, find the area on the middle one, enter on the lower one."],
 ["tip","Pick your execution timeframe and always check one or two above it before entering."]],"b");
 C("volume","basics","Volume: the candle's lie detector",["volume","rvol"],"Volume is how much actually traded during a candle. Big moves on big volume are real participation; big moves on tiny volume can be traps.",
-[["p","A big green candle on huge volume means commitment. A big green candle on tiny volume means price moved because nobody was there. Compare current volume to its recent average (RVOL): breakouts on 3× average volume deserve attention."],
+[["p","Compare current volume to its recent average (RVOL): breakouts on 3× average volume deserve attention."],
 ["tip","Price tells you WHAT happened. Volume tells you how many people agree."]],"i");
-C("candle-anatomy","basics","Candle anatomy: body & wicks",["body","wick","shadow"],"A candle has two parts: the body measures conviction (how far price moved and held), the wicks measure rejection (where price went but could not stay).",
+C("candle-anatomy","basics","Candle anatomy: body & wicks",["body","wick","shadow"],"A candle has two parts: the body measures conviction, the wicks measure rejection.",
 [["charts",[{c:[[35,80,30,74]],cap:"Bullish: close at the top"},{c:[[74,78,28,34]],cap:"Bearish: close at the bottom"}]],
-["p","Long upper wick = a rally got sold. Long lower wick = a dip got bought. Big body + tiny wicks = one side owned the session. Full lesson: [[course-l2|Academy lesson 2]]."]],"b");
-C("doji","basics","Doji candles, explained",["doji","dragonfly","gravestone"],"A doji is a candle whose open and close are almost identical — the body becomes a line. It means the session ended where it started.",
+["p","Long upper wick = a rally got sold. Long lower wick = a dip got bought. Full lesson: [[course-l2|Academy lesson 2]]."]],"b");
+C("doji","basics","Doji candles, explained",["doji","dragonfly","gravestone"],"A doji is a candle whose open and close are almost identical — the body becomes a line.",
 [["chart",{c:[[46,72,22,46.5],[48,90,10,48.4],[68,70,22,68.4],[30,78,28,30.4]],cap:"Standard · long-legged · dragonfly · gravestone"}],
 ["p","Dojis alone predict nothing — their power is location. After a long trend, a doji warns the trend is tired. The [[morning-star|morning star]] is built around a doji."]],"b");
-C("moving-averages","tools","Moving averages (SMA & EMA)",["moving average","sma","ema","ma"],"A moving average smooths price into a line showing the average of the last N candles — a trend filter and dynamic support/resistance.",
+C("moving-averages","tools","Moving averages (SMA & EMA)",["moving average","sma","ema","ma"],"A moving average smooths price into a line showing the average of the last N candles.",
 [["chart",{c:[[30,42,28,40],[38,50,36,48],[44,56,42,46],[48,60,46,58],[54,66,52,64],[60,72,58,62],[58,70,54,58],[54,64,50,54],[50,62,46,52],[52,66,50,64]],paths:[[[0,36],[2,46],[4,52],[6,60],[9,57]],"gold"],cap:"A moving average (gold line) smoothing the swings"}],
-["p","Uses: trend direction (price above = up), dynamic support in trends, and crosses. Honest caveat: they lag by construction and whipsaw in ranges. Price and structure first."]],"b");
-C("rsi","tools","RSI — Relative Strength Index",["rsi","overbought","oversold"],"RSI measures the speed of recent gains vs losses on a 0–100 scale. Folklore says above 70 is overbought. Reality: strong trends stay overbought for weeks.",
-[["p","Better uses: divergence (price makes a new high, RSI makes a lower high = momentum fading), and overbought/oversold only inside ranges. RSI cannot know anything price does not already show."]],"b");
-C("fibonacci","tools","Fibonacci retracements",["fib","golden pocket"],"Fibonacci retracement marks likely pullback depths of a move: 38.2%, 50%, 61.8% (the golden pocket). It works largely because enough traders watch these levels.",
-[["p","Alone, fib levels are vague. Confluent with structure — a 61.8% that lands on an old high, an FVG, or an order block — they become real zones. See [[confluence|confluence]]."]],"b");
-C("atr","tools","ATR — Average True Range",["atr"],"ATR measures how much an instrument moves on average per candle — pure volatility, no direction. Its killer use: stops sized to the market's own noise (1.5–2 × ATR).",
-[["p","ATR also sizes expectations: if your target is 4× the daily ATR away, you are asking for a multi-day move. Match targets to reality."]],"b");
-C("confluence","tools","Confluence: stacking signals",["confluence","stacking"],"Confluence = multiple independent reasons pointing at the same zone: an FVG + a 61.8% retrace + a retest + a higher-timeframe trend.",
-[["warn","Do not count the same information twice. Three indicators derived from price are not three reasons. Independent evidence = different data: structure, volume, time, levels."]],"i");
+["p","Uses: trend direction, dynamic support, crosses. They lag by construction and whipsaw in ranges. Price and structure first."]],"b");
+C("rsi","tools","RSI — Relative Strength Index",["rsi","overbought","oversold"],"RSI measures the speed of recent gains vs losses on a 0–100 scale. Strong trends stay overbought for weeks.",
+[["p","Better uses: divergence, and overbought/oversold only inside ranges. RSI cannot know anything price does not already show."]],"b");
+C("fibonacci","tools","Fibonacci retracements",["fib","golden pocket"],"Fibonacci retracement marks likely pullback depths of a move: 38.2%, 50%, 61.8% (the golden pocket).",
+[["p","Alone, fib levels are vague. Confluent with structure, they become real zones. See [[confluence|confluence]]."]],"b");
+C("atr","tools","ATR — Average True Range",["atr"],"ATR measures how much an instrument moves on average per candle — pure volatility, no direction.",
+[["p","Its killer use: stops sized to the market's own noise (1.5–2 × ATR). It also sizes expectations realistically."]],"b");
+C("confluence","tools","Confluence: stacking signals",["confluence","stacking"],"Confluence = multiple independent reasons pointing at the same zone.",
+[["warn","Do not count the same information twice. Independent evidence = different data: structure, volume, time, levels."]],"i");
 C("risk-reward","risk","Risk/reward ratio (R:R)",["r multiple","rr"],"Risk/reward compares what you risk to what you target, in R units. Risk €100 to make €200 = 1:2.",
-[["p","The pairing math: at 1:1 you need >50% win rate; at 1:2 you need >33%; at 1:3 you need >25%. Most systematic traders refuse entries below 1:2. See [[expectancy|expectancy]]."]],"b");
-C("expectancy","risk","Expectancy: the number that decides everything",["expected value","ev"],"Expectancy = (win rate × average win) − (loss rate × average loss), in R. A system can lose more often than it wins and still print money.",
+[["p","The pairing math: at 1:1 you need >50% win rate; at 1:2 you need >33%; at 1:3 you need >25%. See [[expectancy|expectancy]]."]],"b");
+C("expectancy","risk","Expectancy: the number that decides everything",["expected value","ev"],"Expectancy = (win rate × average win) − (loss rate × average loss), in R.",
 [["p","Example: 40% wins at +2R, 60% losses at −1R → 0.4×2 − 0.6×1 = +0.2R per trade. Most beginners optimize win rate, which is the wrong column."]],"i");
-C("one-percent","risk","The 1% rule",["1% rule","risk per trade"],"Never risk more than 1% of your account on a single trade — where risk means the money lost if the stop hits, not the position size.",
-[["p","At 1%, ten straight losses cost about 10%: survivable. At 10% per trade the same streak destroys the account. Full lesson: [[course-l7|Academy lesson 7]]."]],"b");
-C("position-sizing","risk","Position sizing: the formula",["position size","sizing"],"Size = (Account × Risk%) ÷ Stop distance. The stop distance sets the size — never the other way around.",
-[["p","Example: €10,000 account, 1% risk = €100. Entry €50, stop €48 → €2 risk per share → 50 shares. Tight stop, bigger size; wide stop, smaller size; same €100 at risk. Full walkthrough: [[course-l8|Academy lesson 8]]."]],"b");
-C("stop-losses","risk","Stop losses: types & placement",["stop loss","stop"],"A stop loss is your pre-decided exit when you are wrong. It must exist before entry, it must be a real order, and it belongs where your idea is invalidated.",
+C("one-percent","risk","The 1% rule",["1% rule","risk per trade"],"Never risk more than 1% of your account on a single trade — where risk means the money lost if the stop hits.",
+[["p","At 1%, ten straight losses cost about 10%: survivable. Full lesson: [[course-l7|Academy lesson 7]]."]],"b");
+C("position-sizing","risk","Position sizing: the formula",["position size","sizing"],"Size = (Account × Risk%) ÷ Stop distance. The stop distance sets the size.",
+[["p","Full walkthrough with examples: [[course-l8|Academy lesson 8]]."]],"b");
+C("stop-losses","risk","Stop losses: types & placement",["stop loss","stop"],"A stop loss is your pre-decided exit when you are wrong. It belongs where your idea is invalidated.",
 [["ul",["Structure stops — beyond the swing or block that anchors the trade.","ATR stops — distance scaled to volatility.","Time stops — exit if nothing happens in N candles.","Trailing stops — follow structure once in profit."]],
-["warn","Moving a stop further away to give it room is the most expensive sentence in trading. If the stop is too close, the answer is smaller size."]],"b");
-C("drawdown","risk","Drawdown: the math of recovery",["drawdown"],"A drawdown is how far your account falls from its peak. Recovery is asymmetric: lose 10% → need +11%; lose 50% → need +100%.",
-[["p","Deep holes take disproportionately long to climb out of, which is why capital protection beats profit maximization. Circuit breaker: at −10% drawdown, halve your risk per trade until a new equity high."]],"b");
-C("trading-psychology","psych","Trading psychology",["psychology","emotions"],"Markets are engineered to trigger you: losses hurt about twice as much as equal gains feel good, and intermittent rewards are the most addictive reinforcement pattern known.",
-[["p","The three killers: FOMO, revenge trading, overtrading. The defenses: pre-written rules, small size, mandatory pauses, a journal, and process goals instead of money goals. Full lesson: [[course-l9|Academy lesson 9]]."]],"b");
-C("fomo","psych","FOMO",["fear of missing out","chasing"],"FOMO is the urge to jump into a move that already happened. You are not buying an opportunity; you are buying someone else's exit at the worst price.",
-[["p","Antidotes: the market has endless setups — missing one costs nothing, chasing costs money. If you missed it, mark the level and wait for the pullback or retest."]],"b");
-C("revenge-trading","psych","Revenge trading",["revenge trade","tilt"],"Revenge trading is re-entering immediately after a loss to win it back — bigger size, no setup, pure payback motive. It compounds.",
-[["p","Circuit breakers: a forced break after every loss, a daily loss cap that ends the session, and the reframe — a correctly executed losing trade is a GOOD trade."]],"b");
-C("journal","psych","The trading journal",["journal","review"],"The journal is the only tool that converts experience into improvement: date, instrument, setup name, entry/stop/target, size, result, screenshot, emotional state.",
-[["p","The weekly review is where money is made: filter by setup and you will find that most losses come from one or two behaviors. Fix the leak, keep the rest. Full lesson: [[course-l11|Academy lesson 11]]."]],"b");
-C("order-types","fund","Market, limit & stop orders",["market order","limit order","stop order"],"Market order: execute NOW at whatever price. Limit order: execute only at your price or better. Stop order: activates when price reaches a trigger.",
-[["p","Practical default: limits to enter (you choose the price), stops to protect (urgency chosen for you when you are wrong)."]],"b");
-C("leverage","fund","Leverage & margin",["leverage","margin","liquidation"],"Leverage lets you control a big position with a small deposit. It multiplies gains AND losses identically — a risk amplifier, not a profit tool.",
+["warn","Moving a stop further away is the most expensive sentence in trading."]],"b");
+C("drawdown","risk","Drawdown: the math of recovery",["drawdown"],"A drawdown is how far your account falls from its peak. Recovery is asymmetric.",
+[["p","Lose 10% → need +11%. Lose 50% → need +100%. Circuit breaker: at −10% drawdown, halve your risk per trade."]],"b");
+C("trading-psychology","psych","Trading psychology",["psychology","emotions"],"Markets are engineered to trigger you. Psychology is system design against predictable human hardware.",
+[["p","The three killers: FOMO, revenge trading, overtrading. Full lesson: [[course-l9|Academy lesson 9]]."]],"b");
+C("fomo","psych","FOMO",["fear of missing out","chasing"],"FOMO is the urge to jump into a move that already happened — buying someone else's exit at the worst price.",
+[["p","Antidotes: the market has endless setups — missing one costs nothing, chasing costs money. Mark the level and wait for the pullback."]],"b");
+C("revenge-trading","psych","Revenge trading",["revenge trade","tilt"],"Revenge trading is re-entering immediately after a loss to win it back — bigger size, no setup, pure payback motive.",
+[["p","Circuit breakers: a forced break after every loss, a daily loss cap, and the reframe — a correctly executed losing trade is a GOOD trade."]],"b");
+C("journal","psych","The trading journal",["journal","review"],"The journal is the only tool that converts experience into improvement.",
+[["p","The weekly review is where money is made: most losses come from one or two behaviors. Fix the leak, keep the rest. Full lesson: [[course-l11|Academy lesson 11]]."]],"b");
+C("order-types","fund","Market, limit & stop orders",["market order","limit order","stop order"],"Market order: execute NOW. Limit order: execute only at your price or better. Stop order: activates at a trigger.",
+[["p","Practical default: limits to enter, stops to protect."]],"b");
+C("leverage","fund","Leverage & margin",["leverage","margin","liquidation"],"Leverage lets you control a big position with a small deposit. It multiplies gains AND losses identically.",
 [["p","At 50× leverage a routine 2% wiggle liquidates you. New traders: little or no leverage until consistently profitable."],
 ["warn","High leverage is the fastest way to convert good analysis into a loss."]],"b");
-C("sessions","fund","Market sessions: Asia, London, New York",["sessions","london","new york"],"The 24-hour market has personalities by hour: Asia is quiet, London brings volume and breaks, New York brings news and US flows.",
-[["p","Setups that work at the open fail in the dead hours. The day's extremes often form in the first hours of London or NY. See [[killzones|killzones]]."]],"b");
-C("markets","fund","Stocks vs forex vs crypto vs futures",["which market"],"Four arenas: stocks (regulated, overnight gaps), forex (24/5, liquid majors), crypto (24/7, most volatile), futures (centralized volume). Pick ONE to learn on.",
-[["p","Beginners usually do best on a liquid market with a slower style. Mastering one instrument's personality beats dabbling in five."]],"b");
-C("order-book","mech","The order book (DOM)",["dom","depth of market"],"The order book lists every resting limit order — bids below, asks above, at each price. Aggressive orders eating resting orders is literally what moves markets.",
+C("sessions","fund","Market sessions: Asia, London, New York",["sessions","london","new york"],"The 24-hour market has personalities by hour: Asia is quiet, London brings volume, New York brings news and US flows.",
+[["p","Setups that work at the open fail in the dead hours. See [[killzones|killzones]]."]],"b");
+C("markets","fund","Stocks vs forex vs crypto vs futures",["which market"],"Four arenas: stocks, forex, crypto, futures. Pick ONE to learn on — skill transfers, context does not.",
+[["p","Beginners do best on a liquid market with a slower style. Mastering one instrument beats dabbling in five."]],"b");
+C("order-book","mech","The order book (DOM)",["dom","depth of market"],"The order book lists every resting limit order. Aggressive orders eating resting orders is literally what moves markets.",
 [["p","Big resting walls can act as temporary support/resistance — or bait, since walls can be pulled."]],"i");
-C("slippage","mech","Slippage",["slippage"],"Slippage = the difference between the price you wanted and the price you got. Causes: thin liquidity, news spikes, market stops triggering in a crowd.",
-[["p","Mitigations: trade liquid instruments in liquid hours, use limits for entries, and assume slippage in your risk math."]],"b");
-C("what-moves-price","mech","What actually moves price",["price discovery","order flow"],"Strip away every indicator: price moves because aggressive orders consume resting orders. More urgent buying than selling → price rises.",
-[["p","This is why liquidity matters, why volume confirms moves, and why news causes spikes — it changes many people's urgency at once."]],"b");
+C("slippage","mech","Slippage",["slippage"],"Slippage = the difference between the price you wanted and the price you got.",
+[["p","Mitigations: trade liquid instruments in liquid hours, use limits for entries, assume slippage in your risk math."]],"b");
+C("what-moves-price","mech","What actually moves price",["price discovery","order flow"],"Strip away every indicator: price moves because aggressive orders consume resting orders.",
+[["p","This is why liquidity matters, why volume confirms moves, and why news causes spikes."]],"b");
 /* ---------- GLOSSARY ---------- */
-function G(term,def,al){A({id:"g-"+term.toLowerCase().replace(/[^a-z0-9]+/g,"-"),cat:"gloss",title:term,al:al||[],lvl:"b",def:def,b:[["p","Quick definition — search the library or start with the <a href=\"#/academy\">Academy</a> to go deeper on this topic."]]});}
+function G(term,def,al){
+ var aliases=[];
+ if(al){aliases=Array.isArray(al)?al:[al];}
+ A({id:"g-"+term.toLowerCase().replace(/[^a-z0-9]+/g,"-"),cat:"gloss",title:term,al:aliases,lvl:"b",def:def,
+ b:[["p","Quick definition — search the library or start with the <a href=\"#/academy\">Academy</a> to go deeper on this topic."]]});
+}
 G("Accumulation","Quietly buying an asset over time without pushing the price up — what big players do before a markup.","accumulating");
 G("Airdrop","A free distribution of tokens to wallets, usually for marketing or to reward early users.");
 G("Algo trading","Computers executing trading rules automatically, often faster than any human can click.","bots");
@@ -1162,15 +1160,13 @@ G("Emotional audit","Scoring your state before, during, after trades.");
 G("Confidence log","Recording conviction and checking if it predicted anything.");
 G("Stat sheet","Your personal dashboard: win rate, expectancy, streaks.");
 G("Personal best","Your longest streak, biggest R, calmest week.");
-G("Ranked practice","Testing your reads on hidden price — like Wickpedia Ranked.");
-G("Paper ranked","Practicing decisions without money at risk.");
 G("Feedback loop","Action → result → review → adjustment. The whole game.");
 G("Deliberate practice","Training the weak part, not replaying the strong part.");
 G("Skill stack","Candles + structure + risk + psychology, layered.");
 G("Edge discovery","Finding what statistically works for YOU.");
 G("One setup rule","Mastering a single setup before adding another.");
 G("Mastery","Boring execution of proven things. The final boss.");
-/* ---------- PATTERN DICTIONARY ---------- */
+/* ---------- PATTERNS ---------- */
 var PATTERNS=[
 {n:"Doji",type:"neu",nc:1,cat:"Indecision",trend:"Any trend",rel:45,chart:[[46,72,22,46.5]],d:"Open and close virtually identical — a standoff between buyers and sellers.",p:"The market pushed both directions and finished nowhere; conviction has evaporated.",t:"A caution flag after any extended run. Wait for the next candle to pick a side."},
 {n:"Long-Legged Doji",type:"neu",nc:1,cat:"Indecision",trend:"Any trend",rel:46,chart:[[48,90,10,48.4]],d:"Huge upper and lower shadows around a doji body — a tug-of-war ending in a draw.",p:"Violent two-way swings both rejected. The market is teetering at a hinge point.",t:"Louder than a plain doji; extra weight at support or resistance."},
@@ -1284,6 +1280,7 @@ var CATS=[["course","Academy"],["basics","Chart Basics"],["structure","Market St
 /* ============================ HELPERS ============================ */
 function byId(id){for(var i=0;i<ARTICLES.length;i++)if(ARTICLES[i].id===id)return ARTICLES[i];return null;}
 function catName(c){for(var i=0;i<CATS.length;i++)if(CATS[i][0]===c)return CATS[i][1];return c;}
+function alArr(a){if(Array.isArray(a.al))return a.al;if(typeof a.al==="string"&&a.al)return[a.al];return[];}
 function linkify(s){return s.replace(/\[\[(.+?)\|(.+?)\]\]/g,function(m,id,tx){return '<a href="#/a/'+id+'">'+tx+'</a>';});}
 function readMin(a){var w=(JSON.stringify(a.b).length+(a.def||"").length)/6;return Math.max(1,Math.round(w/200));}
 function relColor(r){return r>=80?"var(--grn)":r>=60?"var(--gold)":"var(--red)";}
@@ -1293,7 +1290,7 @@ function cardHTML(a,i){
  return '<a class="card rv" style="transition-delay:'+((i%9)*35)+'ms" href="#/a/'+a.id+'"><div class="cc">'+catName(a.cat)+'</div><h3>'+a.title+'</h3><p>'+a.def+'</p><div class="cm"><span class="lv lv-'+a.lvl+'">'+(a.lvl==="b"?"Basic":a.lvl==="i"?"Intermediate":"Advanced")+'</span><span>'+readMin(a)+' min read</span></div></a>';
 }
 function tierBadge(){var i=tierIdx(prof.xp);return '<span class="tierbadge '+tierClass(i)+'">'+(i>=12?"🔥":i>=6?"◆":"●")+' '+TIERS[i]+'</span>';}
-function courseDone(){var n=0;COURSE.forEach(function(L,i){if(prof.course[L.id])n++;});return n;}
+function courseDone(){var n=0;COURSE.forEach(function(L){if(prof.course[L.id])n++;});return n;}
 function blockHTML(bl){
  if(bl[0]==="h")return "<h2>"+linkify(bl[1])+"</h2>";
  if(bl[0]==="p")return "<p>"+linkify(bl[1])+"</p>";
@@ -1320,42 +1317,60 @@ function mountCharts(root){
 }
 
 /* ============================ VIEWS ============================ */
-function animateCounters(){
- document.querySelectorAll(".cv").forEach(function(el){
-  var target=+el.dataset.v,t0=null;
-  function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/900);el.textContent=Math.round(target*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step);}
-  requestAnimationFrame(step);
- });
-}
+var FEAT_IDS=["liquidity","fvg","order-blocks","market-structure","support-resistance","moving-averages","premium-discount","sweeps"];
+var DYK=[
+ ["…that a hammer printed after a rally is not a hammer — it is a warning called a","hanging-man","hanging man"],
+ ["…that most breakouts fail, and the difference is three filters?","breakouts","breakouts & fakeouts"],
+ ["…that dojis predict nothing on their own — location is everything?","doji","doji family"],
+ ["…that the 1% rule survives a ten-loss losing streak?","one-percent","the 1% rule"],
+ ["…that price visits your stop because that is where the orders are?","liquidity","liquidity"]
+];
 function renderHome(){
- var h='<div class="view"><div class="hero"><div class="rv in">';
- h+='<div class="eyebrow">WICKPEDIA — THE TRADING ENCYCLOPEDIA</div>';
- h+='<h1>Learn it simply.<br><em>Prove it</em> in Ranked.</h1>';
- h+='<p>'+ARTICLES.length+' posts explained in plain language — from your first candle to liquidity concepts — plus a full Academy course and a competitive ranked arena that tests your reads on real market charts.</p>';
- h+='<div class="bigsearch"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="bigSearch" placeholder="Search — liquidity, FVG, stop loss, hammer…"></div>';
- h+='<div class="stats"><div class="stat g"><b class="cv" data-v="'+ARTICLES.length+'">0</b><span>posts</span></div><div class="stat y"><b class="cv" data-v="'+PATTERNS.length+'">0</b><span>candle patterns</span></div><div class="stat b"><b class="cv" data-v="'+COURSE.length+'">0</b><span>academy lessons</span></div></div></div>';
- h+='<div class="side-cards">';
- var cp=courseDone(),cpct=Math.round(cp/COURSE.length*100);
- h+='<a class="hcard rv" href="#/academy"><div class="hk">ACADEMY · LEARN TO TRADE</div><h3>Zero → Trader: 12 lessons</h3><p>The complete path: candles, structure, liquidity, risk, psychology, plan, going live.</p><div class="progress"><i style="width:'+cpct+'%"></i></div><div class="go">'+cp+'/'+COURSE.length+' lessons done →</div></a>';
- h+='<a class="hcard rv" href="#/ranked"><div class="hk">RANKED ARENA</div><h3>⚔ Prove your reads</h3><p>20 real charts, hidden endings. Win XP, climb from LT5 to HT1. Lose XP, drop tiers.</p><div style="margin-top:6px">'+tierBadge()+' <span class="mono" style="font-size:11px;color:var(--mut)">&nbsp;'+prof.xp+' XP</span></div><div class="go">Enter the arena →</div></a>';
+ var day=Math.floor(Date.now()/86400000);
+ var fa=byId(FEAT_IDS[day%FEAT_IDS.length]);
+ var h='<div class="view">';
+ h+='<div class="masthead rv in"><div class="wordmark">Wick<span>pedia</span></div>';
+ h+='<div class="tag">The free encyclopedia of trading — every concept, explained simply.</div>';
+ h+='<div class="counts"><b>'+ARTICLES.length+'</b> articles · <b>'+PATTERNS.length+'</b> candlestick patterns · <b>'+COURSE.length+'</b> academy lessons</div>';
+ h+='<div class="home-search"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="bigSearch" placeholder="Search any term — liquidity, FVG, stop loss, hammer…"></div></div>';
+ h+='<div class="wiki-main">';
+ /* main column */
+ h+='<div>';
+ h+='<div class="wbox rv"><div class="wbox-h"><span class="k">★</span> Featured article</div><div class="wbox-b">';
+ h+='<h3 style="font-family:Space Grotesk;font-size:1.25rem;margin-bottom:6px"><a href="#/a/'+fa.id+'" style="color:var(--tx)">'+fa.title+'</a></h3>';
+ h+='<p style="color:var(--mut);font-size:.88rem;margin-bottom:4px">'+fa.def+'</p>';
+ var fc=null;for(var bi=0;bi<fa.b.length;bi++){if(fa.b[bi][0]==="chart"){fc=fa.b[bi][1];break;}}
+ if(fc)h+='<div id="featChart"></div>';
+ h+='<a href="#/a/'+fa.id+'" class="mono" style="font-size:11px;color:var(--grn)">Read the full article →</a>';
  h+='</div></div>';
- h+='<div class="sec-label">Browse the library</div><div class="cats">';
- CATS.forEach(function(c,i){
+ var pop=["liquidity","fvg","order-blocks","market-structure","risk-reward","one-percent","trading-psychology","sweeps"];
+ h+='<div class="sec-label">Popular this week</div><div class="grid">'+pop.map(function(id,i){var a=byId(id);return a?cardHTML(a,i):"";}).join("")+'</div>';
+ h+='</div>';
+ /* sidebar */
+ h+='<div>';
+ h+='<div class="wbox rv"><div class="wbox-h">Contents</div><div class="wbox-b" style="padding:10px">';
+ var marks={course:"🎓",basics:"📊",structure:"🧱",smc:"🏦",fund:"📚",risk:"🛡",psych:"🧠",tools:"🧰",mech:"⚙",gloss:"📖",patterns:"🕯"};
+ CATS.forEach(function(c){
   var n=ARTICLES.filter(function(a){return a.cat===c[0];}).length;
-  var marks={course:"🎓",basics:"📊",structure:"🧱",smc:"🏦",fund:"📚",risk:"🛡",psych:"🧠",tools:"🧰",mech:"⚙",gloss:"📖",patterns:"🕯"}[c[0]];
-  h+='<a class="cat-tile rv" style="transition-delay:'+(i*30)+'ms" href="#/cat/'+c[0]+'"><span class="ck">'+marks+'</span><span><span class="cn">'+c[1]+'</span><br><span class="cc">'+n+' posts</span></span></a>';
+  h+='<a class="catrow" href="#/cat/'+c[0]+'"><span class="ci">'+marks[c[0]]+'</span><span class="cn">'+c[1]+'</span><span class="cc">'+n+'</span></a>';
  });
- h+='</div>';
- var pop=["liquidity","fvg","order-blocks","market-structure","risk-reward","sweeps","one-percent","trading-psychology"];
- h+='<div class="sec-label">Most studied</div><div class="grid">'+pop.map(function(id,i){var a=byId(id);return a?cardHTML(a,i):"";}).join("")+'</div>';
- h+='</div>';
+ h+='</div></div>';
+ var cp=courseDone(),cpct=Math.round(cp/COURSE.length*100);
+ h+='<div class="wbox rv" style="margin-top:14px"><div class="wbox-h">Trading Academy</div><div class="wbox-b"><p style="font-size:.85rem;color:var(--mut)">The complete path from first candle to first live trade — 12 lessons.</p><div class="progress"><i style="width:'+cpct+'%"></i></div><div class="mono" style="font-size:10px;color:var(--dim);margin-top:5px">'+cp+' / '+COURSE.length+' lessons</div><a href="#/academy" class="mono" style="font-size:11px;color:var(--grn)">Start learning →</a></div></div>';
+ h+='<div class="wbox rv" style="margin-top:14px"><div class="wbox-h">Practice arena</div><div class="wbox-b"><p style="font-size:.85rem;color:var(--mut)">Test your chart reads on 20 hidden endings and climb the XP ladder.</p><div style="margin-top:8px">'+tierBadge()+'</div><a href="#/practice" class="mono" style="font-size:11px;color:var(--grn);display:inline-block;margin-top:8px">Enter practice →</a></div></div>';
+ h+='<div class="wbox rv" style="margin-top:14px"><div class="wbox-h"><span class="k">?</span> Did you know</div><div class="wbox-b"><ul class="dyk">';
+ DYK.forEach(function(d,i){var di=(day+i)%DYK.length;var item=DYK[di];
+  h+='<li><b>Did you know</b> '+item[0]+' <a href="#/a/'+item[1]+'">'+item[2]+'</a>?</li>';});
+ h+='</ul></div></div>';
+ h+='</div></div></div>';
  app.innerHTML=h;
  document.getElementById("bigSearch").addEventListener("keydown",function(e){if(e.key==="Enter"&&this.value.trim())location.hash="#/s/"+encodeURIComponent(this.value.trim());});
- animateCounters();observeRv();
+ if(fc){try{ProChart(document.getElementById("featChart"),fc.c,{h:240,count:fc.c.length,zones:fc.zones,lines:fc.lines,paths:fc.paths,arrows:fc.arrows,texts:fc.texts,src:"<i style=\"background:var(--blue)\"></i>EXAMPLE"});}catch(e){}}
+ observeRv();
 }
 function renderCategory(cat){
  var list=ARTICLES.filter(function(a){return a.cat===cat;});
- var h='<div class="view"><div class="crumb"><a href="#">← Home</a></div><h1 style="font-family:Space Grotesk;font-size:1.9rem;margin:6px 0 16px">'+catName(cat)+'</h1>';
+ var h='<div class="view"><div class="crumb"><a href="#">← Main page</a></div><h1 style="font-family:Space Grotesk;font-size:1.9rem;margin:6px 0 16px">'+catName(cat)+'</h1>';
  h+='<div class="grid">'+list.map(function(a,i){return cardHTML(a,i%9);}).join("")+'</div></div>';
  app.innerHTML=h;observeRv();window.scrollTo({top:0});
 }
@@ -1363,16 +1378,16 @@ function renderSearchPage(q){
  q=(q||"").toLowerCase().trim();
  var res=[];
  ARTICLES.forEach(function(a){
-  var hay=(a.title+" "+(a.al||[]).join(" ")+" "+a.def).toLowerCase();
+  var hay=(a.title+" "+alArr(a).join(" ")+" "+a.def).toLowerCase();
   var score=0;
   var ti=a.title.toLowerCase();
   if(ti.indexOf(q)===0)score=100;else if(ti.indexOf(q)>-1)score=80;
-  else if((a.al||[]).some(function(x){return x.toLowerCase().indexOf(q)>-1;}))score=60;
+  else if(alArr(a).some(function(x){return x.toLowerCase().indexOf(q)>-1;}))score=60;
   else if(hay.indexOf(q)>-1)score=25;
   if(score)res.push([score,a]);
  });
  res.sort(function(x,y){return y[0]-x[0];});
- var h='<div class="view"><div class="crumb"><a href="#">← Home</a></div><h1 style="font-family:Space Grotesk;font-size:1.6rem;margin:6px 0 16px">Results for “'+q.replace(/</g,"&lt;")+'” — '+res.length+'</h1>';
+ var h='<div class="view"><div class="crumb"><a href="#">← Main page</a></div><h1 style="font-family:Space Grotesk;font-size:1.6rem;margin:6px 0 16px">Results for “'+q.replace(/</g,"&lt;")+'” — '+res.length+'</h1>';
  if(!res.length)h+='<div class="empty">Nothing found. Try “liquidity”, “order block”, “risk”…</div>';
  else h+='<div class="grid">'+res.slice(0,60).map(function(r,i){return cardHTML(r[1],i%9);}).join("")+'</div>';
  h+='</div>';app.innerHTML=h;observeRv();window.scrollTo({top:0});
@@ -1383,7 +1398,7 @@ function renderArticle(id){
  var toc="";
  if(heads.length>=4){toc='<div class="chartbox" style="padding:15px 18px"><div class="mono" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:9px">CONTENTS</div>'+heads.map(function(x,i){return '<a href="javascript:void(0)" data-h="'+i+'" style="display:block;color:var(--mut);font-size:.87rem;padding:3px 0">'+x[1]+'</a>';}).join("")+'</div>';}
  var bm=prof.bookmarks.indexOf(id)>-1;
- var h='<div class="view post"><div class="crumb"><a href="#">← Home</a><span>/</span><a href="#/cat/'+a.cat+'">'+catName(a.cat)+'</a></div>';
+ var h='<div class="view post"><div class="crumb"><a href="#">← Main page</a><span>/</span><a href="#/cat/'+a.cat+'">'+catName(a.cat)+'</a></div>';
  h+='<div class="post-head"><h1>'+a.title+'</h1><div class="post-meta"><span class="lv lv-'+a.lvl+'">'+(a.lvl==="b"?"Basic":a.lvl==="i"?"Intermediate":"Advanced")+'</span><span>'+readMin(a)+' min read</span>'+(a.pat?'<span style="color:'+relColor(a.pat.rel)+'">Reliability '+a.pat.rel+'%</span>':"")+'</div></div>';
  h+='<div class="post-tools"><button class="ptool'+(bm?" on":"")+'" id="bmBtn">'+(bm?"★ Bookmarked":"☆ Bookmark")+'</button>'+(a.course!=null?'<a class="ptool" href="#/academy">🎓 Part of the Academy</a>':"")+'</div>';
  h+='<div class="defbox"><div class="dl">Definition</div><p>'+linkify(a.def)+'</p></div>';
@@ -1442,7 +1457,7 @@ function renderLesson(n){
  h+='<div style="display:flex;gap:10px;align-items:center;margin-top:30px;flex-wrap:wrap">';
  h+='<button class="bigbtn" id="doneBtn" style="'+(done?"background:var(--s3);color:var(--mut)":"")+'">'+(done?"✓ Completed — tap to undo":"Mark lesson complete")+'</button>';
  if(i+1<COURSE.length)h+='<a class="bigbtn gold" href="#/academy/'+(n+1)+'">Next lesson →</a>';
- else h+='<a class="bigbtn gold" href="#/ranked">Test yourself in Ranked ⚔</a>';
+ else h+='<a class="bigbtn gold" href="#/practice">Test yourself in Practice ⚔</a>';
  h+='</div>';
  var rels=ARTICLES.filter(function(x){return x.cat==="basics"||x.cat==="risk";}).slice(0,3);
  h+='<div class="related"><div class="sec-label">Related reading</div><div class="grid">'+rels.map(function(x,k){return cardHTML(x,k);}).join("")+'</div></div></div>';
@@ -1457,7 +1472,7 @@ function renderLesson(n){
 function renderDictionary(){
  var h='<div class="view"><div class="eyebrow">🕯 '+PATTERNS.length+' DOCUMENTED PATTERNS</div>';
  h+='<h1 style="font-family:Space Grotesk;font-size:clamp(1.7rem,3vw,2.3rem);margin:8px 0 6px">Candlestick Pattern Dictionary</h1>';
- h+='<p style="color:var(--mut);max-width:70ch">Every classical pattern, drawn and scored. Click any card for the full article. Use Ranked to train recognizing them at speed.</p>';
+ h+='<p style="color:var(--mut);max-width:70ch">Every classical pattern, drawn and scored. Click any card for the full article.</p>';
  h+='<div class="chips" id="dchips" style="margin-top:16px"><button class="chip on" data-s="bias" data-f="all">All</button><button class="chip" data-s="bias" data-f="bull">▲ Bullish</button><button class="chip" data-s="bias" data-f="bear">▼ Bearish</button><button class="chip" data-s="bias" data-f="neu">● Neutral</button><button class="chip" data-s="nc" data-f="1">1 candle</button><button class="chip" data-s="nc" data-f="2">2 candles</button><button class="chip" data-s="nc" data-f="3">3+</button><button class="chip" data-s="sort" data-f="rel">Reliability ↓</button></div>';
  h+='<div class="grid" id="dgrid"></div></div>';
  app.innerHTML=h;
@@ -1490,29 +1505,26 @@ function renderSaved(){
  var noted=Object.keys(prof.notes).filter(function(k){return prof.notes[k]&&prof.notes[k].trim();}).map(byId).filter(Boolean);
  var h='<div class="view"><div class="eyebrow">YOUR LIBRARY</div><h1 style="font-family:Space Grotesk;font-size:1.9rem;margin:8px 0 16px">Bookmarks & notes</h1>';
  h+='<div class="sec-label">Bookmarked ('+bms.length+')</div>';
- h+=bms.length?'<div class="grid">'+bms.map(function(a,i){return cardHTML(a,i%9);}).join("")+'</div>':'<div class="empty">Nothing bookmarked yet — tap ☆ on any post.</div>';
+ h+=bms.length?'<div class="grid">'+bms.map(function(a,i){return cardHTML(a,i%9);}).join("")+'</div>':'<div class="empty">Nothing bookmarked yet — tap ☆ on any article.</div>';
  h+='<div class="sec-label">With your notes ('+noted.length+')</div>';
- h+=noted.length?'<div class="grid">'+noted.map(function(a,i){return cardHTML(a,i%9);}).join("")+'</div>':'<div class="empty">No notes yet — every post has a notes box at the bottom.</div>';
+ h+=noted.length?'<div class="grid">'+noted.map(function(a,i){return cardHTML(a,i%9);}).join("")+'</div>':'<div class="empty">No notes yet — every article has a notes box at the bottom.</div>';
  h+='</div>';
  app.innerHTML=h;observeRv();window.scrollTo({top:0});
 }
 function renderSettings(){
  var h='<div class="view"><div class="eyebrow">SETTINGS</div><h1 style="font-family:Space Grotesk;font-size:1.9rem;margin:8px 0 18px">Settings</h1>';
- h+='<div class="setcard"><h3>Appearance & experience</h3>';
+ h+='<div class="setcard"><h3>Appearance</h3>';
  h+='<div class="setrow"><label>Theme</label><select class="sel" id="setTheme"><option value="dark">Dark</option><option value="light">Light</option></select></div>';
- h+='<div class="setrow"><label>Your experience level (personalizes the home page)</label><select class="sel" id="setLvl"><option value="new">Brand new</option><option value="some">Some experience</option><option value="exp">Experienced</option></select></div>';
  h+='<div class="setrow"><label>Reset all progress (XP, bookmarks, notes, course)</label><button class="ptool" id="resetBtn" style="color:var(--red);border-color:color-mix(in srgb,var(--red) 40%,transparent)">Reset everything</button></div></div>';
  h+='<div class="setcard"><h3>Account</h3>';
  if(user){h+='<div class="setrow"><label>Signed in as</label><span class="mono" style="font-size:12px">'+user.email+'</span></div><div class="setrow"><label>Cloud sync</label><span style="color:var(--grn);font-size:.85rem">'+(sb?"Active":"Supabase not configured")+'</span></div><div class="setrow"><label>Sign out</label><button class="ptool" onclick="signOut()">Sign out</button></div>';}
- else{h+='<div class="setrow"><label>Sync your rank, XP and progress across devices</label><button class="ptool" onclick="openAuth()">Sign in / Create account</button></div><div class="setrow"><label>Backend</label><span style="font-size:.82rem;color:var(--mut)">'+(sb?"Supabase connected":"Local only — paste your Supabase URL + anon key at the top of the file to enable accounts")+'</span></div>';}
+ else{h+='<div class="setrow"><label>Sync your progress across devices</label><button class="ptool" onclick="openAuth()">Sign in / Create account</button></div><div class="setrow"><label>Backend</label><span style="font-size:.82rem;color:var(--mut)">'+(sb?"Supabase connected":"Local only — paste your Supabase URL + anon key at the top of the file to enable accounts")+'</span></div>';}
  h+='</div>';
- h+='<div class="setcard"><h3>Ranked profile</h3><div class="setrow"><label>Current tier</label>'+tierBadge()+'</div><div class="setrow"><label>XP</label><span class="mono">'+prof.xp+'</span></div><div class="setrow"><label>Sessions / wins / best streak</label><span class="mono">'+prof.games+' / '+prof.wins+' / '+prof.bestStreak+'</span></div></div>';
+ h+='<div class="setcard"><h3>Practice profile</h3><div class="setrow"><label>Current tier</label>'+tierBadge()+'</div><div class="setrow"><label>XP</label><span class="mono">'+prof.xp+'</span></div><div class="setrow"><label>Sessions / wins / best streak</label><span class="mono">'+prof.games+' / '+prof.wins+' / '+prof.bestStreak+'</span></div></div>';
  h+='</div>';
  app.innerHTML=h;
  document.getElementById("setTheme").value=prof.theme;
- document.getElementById("setLvl").value=prof.lvl;
  document.getElementById("setTheme").addEventListener("change",function(){prof.theme=this.value;applyTheme();persist();route();});
- document.getElementById("setLvl").addEventListener("change",function(){prof.lvl=this.value;persist();toast("Experience level updated");});
  document.getElementById("resetBtn").addEventListener("click",function(){
   if(!confirm("Really reset ALL progress? This cannot be undone."))return;
   prof={xp:0,games:0,wins:0,bestStreak:0,theme:prof.theme,lvl:prof.lvl,bookmarks:[],notes:{},course:{}};
@@ -1521,34 +1533,44 @@ function renderSettings(){
  window.scrollTo({top:0});
 }
 
-/* ============================ RANKED ============================ */
-var R={active:false,qs:[],i:0,chart:null,iv:null,wins:0,earned:0,streak:0,usedStarts:{}};
+/* ============================ PRACTICE ============================ */
+var R={qs:[],i:0,chart:null,iv:null,wins:0,earned:0,streak:0,res:[],tierStart:0,usedStarts:{}};
 var DIFF_ORDER=["e","m","e","m","h","e","m","m","h","e","m","h","m","e","h","m","h","m","h","h"];
 function xpFor(d){return d==="e"?25:d==="m"?40:60;}
 function hidFor(d){return d==="e"?5:d==="m"?8:11;}
-function renderRanked(){
- var h='<div class="view arena"><div class="arena-head"><h2>⚔ Ranked Arena</h2>'+tierBadge()+'</div>';
+function ticksHTML(){
+ var s='';
+ for(var i=0;i<20;i++){
+  var r=R.res[i];
+  var col=r==="w"?"var(--grn)":r==="l"?"var(--red)":r==="s"?"var(--dim)":"var(--s3)";
+  s+='<span style="background:'+col+'"></span>';
+ }
+ return s;
+}
+function renderPractice(){
+ var h='<div class="view arena"><div class="arena-head"><h2>Practice Arena</h2>'+tierBadge()+'</div>';
  h+='<div class="rankinfo"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><span class="mono" style="font-size:11px;color:var(--mut)">'+prof.xp+' XP · sessions '+prof.games+' · wins '+prof.wins+' · best streak '+prof.bestStreak+'</span></div>';
  var ti=tierIdx(prof.xp);
  var cur=prof.xp-TIER_XP[ti],need=ti<14?TIER_XP[ti+1]-TIER_XP[ti]:1;
  h+='<div class="xpbar"><i style="width:'+(ti<14?Math.min(100,cur/need*100):100)+'%"></i></div>';
  h+='<div class="mono" style="font-size:10.5px;color:var(--dim)">'+(ti<14?cur+' / '+need+' XP to '+TIERS[ti+1]:"Maximum tier reached — defend it.")+'</div>';
  h+='<div class="ladder">'+TIERS.map(function(x,i){return '<span'+(i===ti?' class="cur"':"")+'>'+x+'</span>';}).join("")+'</div></div>';
- h+='<div class="rankinfo"><p style="color:var(--mut);font-size:.9rem;margin-bottom:12px"><b style="color:var(--tx)">How it works:</b> 20 charts, each with a hidden ending. Read the candles, apply your concepts — structure, liquidity, patterns — then call <b style="color:var(--grn)">UP</b> or <b style="color:var(--red)">DOWN</b>. Correct calls earn XP by difficulty (Easy +25, Medium +40, Hard +60, streak bonuses). Wrong calls cost −18 XP. Tiers update live: climb to HT1, or fall if you slump.</p>';
- h+='<div style="text-align:center"><button class="bigbtn" id="startRanked">Start ranked session</button></div></div>';
+ h+='<div class="rankinfo"><p style="color:var(--mut);font-size:.9rem;margin-bottom:12px"><b style="color:var(--tx)">How it works:</b> 20 charts, each with a hidden ending. Read the candles — structure, liquidity, patterns — then call <b style="color:var(--grn)">UP</b> or <b style="color:var(--red)">DOWN</b>. Correct calls earn XP by difficulty (+25 / +40 / +60, streak bonuses up to +30). Wrong calls cost −18 XP. Tiers update live — climb to HT1, or fall if you slump.</p>';
+ h+='<div style="text-align:center"><button class="bigbtn" id="startPr">Start a session</button></div></div>';
  h+='<div id="sessionArea"></div></div>';
  app.innerHTML=h;
- document.getElementById("startRanked").addEventListener("click",startSession);
+ document.getElementById("startPr").addEventListener("click",startSession);
  window.scrollTo({top:0});
 }
 function startSession(){
  var area=document.getElementById("sessionArea");
- area.innerHTML='<div class="rankinfo"><div class="mono" style="text-align:center;color:var(--dim)">Loading real market data…</div></div>';
+ if(!area)return;
+ area.innerHTML='<div class="rankinfo"><div class="mono" style="text-align:center;color:var(--dim)">Loading market data…</div></div>';
  area.scrollIntoView({behavior:"smooth"});
  loadFeed(function(){
   var avail=INSTR.filter(function(x){return FEED[x.sym]&&FEED[x.sym].c.length>120;});
-  if(!avail.length){area.innerHTML='<div class="empty">Could not load market data.</div>';return;}
-  R.active=true;R.i=0;R.wins=0;R.earned=0;R.streak=0;R.usedStarts={};R.qs=[];
+  if(!avail.length){area.innerHTML='<div class="empty">Could not load market data. Check your connection and try again.</div>';return;}
+  R.i=0;R.wins=0;R.earned=0;R.streak=0;R.res=[];R.usedStarts={};R.qs=[];R.tierStart=tierIdx(prof.xp);
   for(var i=0;i<20;i++){
    var d=DIFF_ORDER[i];
    var ins=avail[Math.floor(Math.random()*avail.length)];
@@ -1561,13 +1583,15 @@ function startSession(){
  });
 }
 function showQuestion(){
+ var area=document.getElementById("sessionArea");
+ if(!area)return;
  var q=R.qs[R.i],F=FEED[q.ins.sym];
  var vis=26,hid=hidFor(q.d);
  var data=F.c.slice(q.start,q.start+vis+hid);
  var srcHtml='<i style="background:'+(F.live?"var(--grn)":"var(--gold)")+'"></i>'+(F.live?"LIVE":"SIMULATED")+' · '+q.ins.name+(F.tf?" · "+F.tf:"");
  var dLabel=q.d==="e"?'<span class="diff diff-e">EASY · '+hid+' hidden</span>':q.d==="m"?'<span class="diff diff-m">MEDIUM · '+hid+' hidden</span>':'<span class="diff diff-h">HARD · '+hid+' hidden</span>';
- var area=document.getElementById("sessionArea");
- area.innerHTML='<div class="rankinfo" style="margin-top:16px"><div class="qbar"><span class="qnum">Q'+(R.i+1)+'/20</span>'+dLabel+'<span class="mono" style="font-size:11px;color:var(--dim);margin-left:auto">Streak: '+R.streak+' · Session XP: '+(R.earned>=0?"+":"")+R.earned+'</span></div>'
+ area.innerHTML='<div class="rankinfo" style="margin-top:16px"><div class="qbar"><span class="qnum">Q'+(R.i+1)+'/20</span>'+dLabel+(R.streak>=3?'<span class="mono" style="font-size:11px;color:var(--gold)">🔥 streak '+R.streak+'</span>':"")+'<span class="mono" style="font-size:11px;color:var(--dim);margin-left:auto">Session XP: '+(R.earned>=0?"+":"")+R.earned+'</span></div>'
+ +'<div class="ticks">'+ticksHTML()+'</div>'
  +'<div id="qchart"></div>'
  +'<div id="qpanel"><div class="gbtns"><button class="gbtn up" id="bUp">▲ UP</button><button class="gbtn dn" id="bDn">▼ DOWN</button><button class="gbtn sk" id="bSk">Skip</button></div></div></div>';
  var holder=document.getElementById("qchart");
@@ -1582,8 +1606,10 @@ function answer(pick){
  var vis=26,hid=hidFor(q.d);
  var data=F.c.slice(q.start,q.start+vis+hid);
  var panel=document.getElementById("qpanel");
+ if(!panel)return;
  document.getElementById("bUp").disabled=true;document.getElementById("bDn").disabled=true;document.getElementById("bSk").disabled=true;
  if(pick==="skip"){
+  R.res[R.i]="s";
   panel.innerHTML='<div class="gresult skip">Skipped — no XP change.<button class="gnext" id="nx">Next →</button></div>';
   document.getElementById("nx").addEventListener("click",nextQ);
   return;
@@ -1591,7 +1617,8 @@ function answer(pick){
  var k=vis;
  clearInterval(R.iv);
  R.iv=setInterval(function(){
-  k++;R.chart.setRevealed(k);
+  k++;
+  if(R.chart)R.chart.setRevealed(k);
   if(k>=vis+hid){clearInterval(R.iv);finish(pick,data,vis,hid);}
  },130);
 }
@@ -1600,14 +1627,14 @@ function finish(pick,data,vis,hid){
  var pct=(fin-base)/base*100,dir=fin>base?"up":"dn";
  var win=dir===pick,q=R.qs[R.i];
  var delta=0;
- if(win){R.wins++;R.streak++;var bonus=Math.min(30,R.streak*3);delta=xpFor(q.d)+bonus;}
- else{R.streak=0;delta=-18;}
+ if(win){R.wins++;R.streak++;var bonus=Math.min(30,R.streak*3);delta=xpFor(q.d)+bonus;R.res[R.i]="w";}
+ else{R.streak=0;delta=-18;R.res[R.i]="l";}
  R.earned+=delta;
  prof.xp=Math.max(0,prof.xp+delta);
  prof.bestStreak=Math.max(prof.bestStreak,R.streak);
  persist();
- var tierI=tierIdx(prof.xp);
  var panel=document.getElementById("qpanel");
+ if(!panel)return;
  panel.innerHTML='<div class="gresult '+(win?"win":"lose")+'"><b>'+(win?"✓ Correct":"✗ Wrong")+'</b> — price moved <b>'+(pct>=0?"+":"")+pct.toFixed(2)+'%</b> after the last visible candle.'
  +'<div style="margin-top:8px"><span class="xpfloat '+(delta>=0?"p":"n")+'">'+(delta>=0?"+":"")+delta+' XP</span></div>'
  +'<div style="margin-top:6px">'+tierBadge()+'</div>'
@@ -1618,22 +1645,32 @@ function nextQ(){
  R.i++;
  if(R.i>=20){endSession();return;}
  showQuestion();
- document.getElementById("sessionArea").scrollIntoView({behavior:"smooth"});
+ var area=document.getElementById("sessionArea");
+ if(area)area.scrollIntoView({behavior:"smooth"});
 }
 function endSession(){
  clearInterval(R.iv);
  prof.games++;if(R.wins>=12)prof.wins++;
  persist();
- var tierI=tierIdx(prof.xp);
+ var tierEnd=tierIdx(prof.xp);
+ var changed=tierEnd!==R.tierStart;
+ var dirUp=tierEnd>R.tierStart;
  var area=document.getElementById("sessionArea");
+ if(!area)return;
  area.innerHTML='<div class="rankinfo" style="margin-top:16px;text-align:center"><div class="eyebrow">SESSION COMPLETE</div>'
- +'<div class="tierbadge '+tierClass(tierI)+' tierpromote" style="font-size:1.5rem;margin:16px auto;display:inline-flex">'+(tierI>=12?"🔥":tierI>=6?"◆":"●")+' '+TIERS[tierI]+'</div>'
- +'<div style="display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin:14px 0">'
+ +'<div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:18px 0;flex-wrap:wrap">'
+ +'<span class="tierbadge '+tierClass(R.tierStart)+'" style="opacity:'+(changed?".55":"1")+'">'+TIERS[R.tierStart]+'</span>'
+ +(changed?'<span style="font-size:1.3rem;color:var(--dim)">'+(dirUp?"→ ↑":"→ ↓")+'</span><span class="tierbadge '+tierClass(tierEnd)+' tierpromote">'+TIERS[tierEnd]+'</span>':'<span style="font-size:.9rem;color:var(--dim)">— no tier change</span>')
+ +'</div>'
+ +'<div class="ticks" style="max-width:420px;margin:0 auto 14px">'+ticksHTML()+'</div>'
+ +'<div style="display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin:6px 0">'
  +'<div><div style="font-family:Space Grotesk;font-size:1.6rem;font-weight:700">'+R.wins+'/20</div><div class="mono" style="font-size:10px;color:var(--dim)">CORRECT</div></div>'
  +'<div><div style="font-family:Space Grotesk;font-size:1.6rem;font-weight:700;color:'+(R.earned>=0?"var(--grn)":"var(--red)")+'">'+(R.earned>=0?"+":"")+R.earned+'</div><div class="mono" style="font-size:10px;color:var(--dim)">SESSION XP</div></div>'
  +'<div><div style="font-family:Space Grotesk;font-size:1.6rem;font-weight:700">'+prof.xp+'</div><div class="mono" style="font-size:10px;color:var(--dim)">TOTAL XP</div></div></div>'
- +'<p style="color:var(--mut);font-size:.88rem;max-width:52ch;margin:0 auto 16px">'+(R.wins>=16?"Elite session. The HT ladder is within reach.":R.wins>=12?"Solid. Consistency like this climbs tiers.":R.wins>=8?"Respectable — review which difficulty cost you, and grind it back.":"Tough one. XP lost — drop into the Academy or the Pattern Dictionary, then queue again.")+'</p>'
- +'<button class="bigbtn" onclick="renderRanked()">Queue again ⚔</button></div>';
+ +'<p style="color:var(--mut);font-size:.88rem;max-width:52ch;margin:0 auto 16px">'+(R.wins>=16?"Elite session. The HT ladder is within reach.":R.wins>=12?"Solid. Consistency like this climbs tiers.":R.wins>=8?"Respectable — review which difficulty cost you, and grind it back.":"Tough one. XP lost — revisit the Academy or the Pattern Dictionary, then queue again.")+'</p>'
+ +'<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="bigbtn" id="againBtn">Queue again ⚔</button><button class="bigbtn ghost" id="backBtn">Back to overview</button></div></div>';
+ document.getElementById("againBtn").addEventListener("click",startSession);
+ document.getElementById("backBtn").addEventListener("click",renderPractice);
  area.scrollIntoView({behavior:"smooth"});
 }
 
@@ -1645,7 +1682,7 @@ function searchTop(q){
  ARTICLES.forEach(function(a){
   var ti=a.title.toLowerCase(),score=0;
   if(ti.indexOf(q)===0)score=100;else if(ti.indexOf(q)>-1)score=80;
-  else if((a.al||[]).some(function(x){return x.toLowerCase().indexOf(q)>-1;}))score=60;
+  else if(alArr(a).some(function(x){return x.toLowerCase().indexOf(q)>-1;}))score=60;
   else if(a.def.toLowerCase().indexOf(q)>-1)score=30;
   if(score)res.push([score,a]);
  });
@@ -1677,7 +1714,7 @@ function setActiveNav(){
   var on=(r===""&&(!h||h==="#"||h.indexOf("#/a/")===0||h.indexOf("#/cat/")===0||h.indexOf("#/s/")===0||h==="#/saved"||h==="#/settings"))
    ||(r==="academy"&&h.indexOf("#/academy")===0)
    ||(r==="dictionary"&&h.indexOf("#/dictionary")===0)
-   ||(r==="ranked"&&h.indexOf("#/ranked")===0);
+   ||(r==="practice"&&h.indexOf("#/practice")===0);
   a.classList.toggle("on",on);
  });
 }
@@ -1691,7 +1728,7 @@ function route(){
  else if(h==="#/academy")renderAcademy();
  else if(h.indexOf("#/academy/")===0)renderLesson(parseInt(h.slice(10),10)||1);
  else if(h==="#/dictionary")renderDictionary();
- else if(h==="#/ranked")renderRanked();
+ else if(h==="#/practice")renderPractice();
  else if(h==="#/saved")renderSaved();
  else if(h==="#/settings")renderSettings();
  else renderHome();
