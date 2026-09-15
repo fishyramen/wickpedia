@@ -1002,13 +1002,10 @@ L("l2","Reading Candles Fluently","Body, wicks, size, and the four questions.",[
 ["tip","Body = conviction. Wicks = rejection. Location = meaning."]]);
 
 L("l3","Market Structure","Higher highs, lower lows, and trend breaks.",[
-["h","The Staircase"],
-["p","Every chart is a staircase. Higher highs + higher lows = uptrend. Lower highs + lower lows = downtrend. Overlapping = range."],
+["h","The Staircase"],["p","Every chart is a staircase. Higher highs + higher lows = uptrend. Lower highs + lower lows = downtrend. Overlapping = range."],
 ["chart",{c:[[20,34,18,32],[30,40,28,38],[34,48,32,46],[42,52,40,44],[46,60,44,58],[54,64,52,56]],texts:[[1.5,43,"HL","grn"],[3.5,55,"HL","grn"],[2,51,"HH","grn"]],cap:"Uptrend staircase"}],
-["h","How Trends Break"],
-["p","An uptrend breaks when price closes below the last higher low. This is a <b>Break of Structure (BOS)</b> or <b>Change of Character (CHoCH)</b>."],
-["tip","Trade with the staircase, not against it."]
-]);
+["h","How Trends Break"],["p","An uptrend breaks when price closes below the last higher low. This is a <b>Break of Structure (BOS)</b> or <b>Change of Character (CHoCH)</b>."],
+["tip","Trade with the staircase, not against it."]]);
 
 L("l4","Support & Resistance","Floors, ceilings, and trapped traders.",[
 ["h","Levels are Memory"],["p","Support is where buying appears (floor). Resistance is where selling appears (ceiling). They are memory, not magic lines."],
@@ -1098,7 +1095,7 @@ C("markup-masterclass","markup","The Ultimate Chart Markup Masterclass",["how to
 ["chart",{c:[[62,66,54,58],[58,62,50,54],[54,58,46,50],[48,70,46,68],[64,78,62,76],[70,80,66,76],[68,74,58,62],[60,66,54,58]],zones:[[1,2.6,46,58,"grn","BULLISH OB"],[0,2,44,50,"blue","FVG"]],cap:"Overlapping OB and FVG create a high-probability POI"}],
 ["h","Step 4: The Execution Timeframe (15m/5m)"],["p","Drop to your execution timeframe only when price approaches your marked HTF POI or liquidity pool. Do not mark up the lower timeframe until price is in the kill zone."],
 ["steps",["Wait for price to tap the HTF POI.","Look for a <b>Change of Character (CHoCH)</b> on the lower timeframe — a break of the most recent minor swing in the opposite direction.","Mark the FVG or OB created by the CHoCH displacement. This is your entry zone.","Set stop beyond the sweep wick. Target the next B$ or S$ pool."]],
-["warn","The most common mistake is marking up the 5m chart with 50 lines and trying to trade every bounce. The 5m chart is only for pulling the trigger on a setup defined by the 1H or 4H chart."]],
+["warn","The most common mistake is marking up the 5m chart with 50 lines and trying to trade every bounce. The 5m chart is only for pulling the trigger on a setup defined by the 1H or 4H chart."],
 ["h","The Daily Markup Checklist"],["dtable",[["Task","Action","Time"],["1. HTF Narrative","Mark Daily/4H dealing range, EQ, major BOS","5 mins"],["2. Liquidity","Mark PDH/PDL, EQH/EQL, trendline stops","5 mins"],["3. POIs","Box unmitigated OBs and FVGs in discount/premium","5 mins"],["4. Wait","Set alerts at POIs. Do nothing until alerted.","--"],["5. LTF Trigger","Drop to 15m/5m only when alert fires.","2 mins"]]],
 ["tip","Professional markup takes 15 minutes per asset. If you are spending an hour drawing lines, you are procrastinating, not analyzing. Keep it clean, keep it objective."]]);
 
@@ -1108,7 +1105,7 @@ C("tv-mastery","platforms","TradingView Mastery: Shortcuts, Tools & Replay",["tr
 ["dtable",[["Action","Shortcut (Windows/Mac)","Notes"],["Crosshair","Alt+C / Opt+C","Default tool for reading OHLC"],["Trend Line","Alt+T / Opt+T","Connect two swing points"],["Horizontal Line","Alt+H / Opt+H","Mark support/resistance"],["Rectangle","Alt+R / Opt+R","Draw supply/demand zones"],["Fib Retracement","Alt+F / Opt+F","Draw premium/discount"],["Remove Drawing","Ctrl+D / Cmd+D","Deletes selected drawing"],["Zoom In/Out","Ctrl+Scroll / Cmd+Scroll","Faster than the bottom bar"],["Reset View","Alt+0 / Opt+0","Fits all data to screen"]]],
 ["h","Mastering Bar Replay for Backtesting"],["p","Bar Replay is the most powerful tool for deliberate practice. It allows you to rewind the market and trade historical data as if it were live."],
 ["steps",["Open the Replay tool (clock icon on top bar). Note: Intraday replay requires a paid plan, but Daily replay is free.","Cut the tape at a random point in history, at least 2 years ago.","Mark up the chart to the left of the cut line exactly as you would in real time (HTF narrative, liquidity, POIs).","Press Play (or Spacebar) to advance one candle at a time.","When price taps your POI, drop to a lower timeframe (if available) and execute a paper trade.","Log the result in your journal. Repeat 100 times."]],
-["warn","Do not cheat by looking ahead. If you scroll forward to see if your trade hit target, you have ruined the data. Use the 'Forward' button strictly one candle at a time."]],
+["warn","Do not cheat by looking ahead. If you scroll forward to see if your trade hit target, you have ruined the data. Use the 'Forward' button strictly one candle at a time."],
 ["h","Building a Professional Indicator Stack"],["p","If you use indicators, use them to confirm price action, not to generate signals. Here is the optimal institutional stack:"],
 ["ul",["<b>Session Breaks</b>: Turn on 'Session Breaks' in settings to see daily/weekly boundaries.","<b>Volume</b>: Always visible. Look for volume spikes at key levels.","<b>EMA 20 & 50</b>: Use only to gauge trend direction and dynamic support. Hide them in ranging markets.","<b>Fixed Range Volume Profile (FRVP)</b>: Draw this over a specific dealing range to see where the most volume was transacted (Point of Control)."]],
 ["tip","Save your clean layout as a 'Template' and apply it to every new chart you open. Consistency in layout breeds consistency in execution."]]);
@@ -1865,9 +1862,6 @@ if(sb){
   else{loadLocal();applyTheme();route();}
  });
 }else{loadLocal();applyTheme();route();}
-</script>
-</body>
-</html>
 </script>
 </body>
 </html>
