@@ -33,7 +33,7 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 .logo b{font-family:"Space Grotesk";font-size:1.1rem;font-weight:700}
 .logo b span{color:var(--grn)}
 nav.nl{display:flex;gap:2px;margin-left:8px}
-nav.nl a{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);padding:7px 11px;border-radius:8px;transition:.2s}
+nav.nl a{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);padding:7px 11px;border-radius:8px;transition:.2s;display:flex;align-items:center;gap:6px}
 nav.nl a:hover{color:var(--tx);background:var(--s2)}
 nav.nl a.on{color:var(--grn);background:var(--grnbg)}
 .searchbox{flex:1;max-width:400px;position:relative;margin-left:auto}
@@ -61,7 +61,6 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .sec-label::after{content:"";flex:1;height:1px;background:var(--bd)}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
 .rv.in{opacity:1;transform:none}
-/* home */
 .home-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
 .feature{background:var(--s1);border:1px solid var(--bd);border-radius:14px;overflow:hidden;position:relative;transition:opacity .4s var(--ease),transform .4s var(--ease)}
 .feature.swap{opacity:0;transform:translateY(8px)}
@@ -82,17 +81,6 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .catrow .ci{font-family:"IBM Plex Mono";font-size:10px;color:var(--dim);width:22px}
 .catrow .cn{font-weight:600;font-size:.86rem;flex:1}
 .catrow .cc{font-family:"IBM Plex Mono";font-size:10px;color:var(--dim)}
-/* progress dashboard */
-.dash{padding:18px 16px}
-.dash-top{display:flex;gap:16px;align-items:center;margin-bottom:14px}
-.ring{position:relative;width:86px;height:86px;flex:none}
-.ring svg{transform:rotate(-90deg)}
-.ring .rl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.ring .rl b{font-family:"Space Grotesk";font-size:1.05rem}
-.ring .rl span{font-family:"IBM Plex Mono";font-size:8.5px;color:var(--dim);letter-spacing:.1em}
-.dash-rows{display:grid;gap:10px;flex:1}
-.drow{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--mut)}
-.drow b{font-family:"IBM Plex Mono";font-size:.8rem;color:var(--tx);font-weight:500}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
 .card{display:flex;flex-direction:column;background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:16px;color:var(--tx);transition:transform .22s var(--ease),border-color .22s,background .22s;content-visibility:auto;contain-intrinsic-size:160px}
 .card:hover{transform:translateY(-3px);border-color:var(--bd2);background:var(--s2)}
@@ -105,7 +93,7 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .lv-i{color:var(--gold);background:var(--goldbg)}
 .lv-a{color:var(--blue);background:var(--bluebg)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 18px}
-.chip{font-family:"IBM Plex Mono";font-size:11px;color:var(--mut);background:var(--s1);border:1px solid var(--bd);padding:6px 13px;border-radius:999px;transition:.18s}
+.chip{font-family:"IBM Plex Mono";font-size:11px;color:var(--mut);background:var(--s1);border:1px solid var(--bd);padding:6px 13px;border-radius:999px;transition:.18s;display:inline-flex;align-items:center;gap:6px}
 .chip:hover{color:var(--tx);border-color:var(--bd2);transform:translateY(-1px)}
 .chip.on{color:var(--grn);background:var(--grnbg);border-color:var(--grn);font-weight:600}
 .crumb{display:flex;gap:10px;align-items:center;font-family:"IBM Plex Mono";font-size:11px;color:var(--dim);margin-bottom:18px;flex-wrap:wrap}
@@ -142,6 +130,18 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .notearea textarea{width:100%;min-height:90px;background:var(--s2);border:1px solid var(--bd);border-radius:9px;color:var(--tx);font-family:Inter;font-size:.9rem;padding:11px;resize:vertical}
 .notearea textarea:focus{outline:none;border-color:var(--grn)}
 .related{margin-top:44px;border-top:1px solid var(--bd);padding-top:8px}
+/* compact dashboard */
+.dash{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:16px}
+.ring{position:relative;width:70px;height:70px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .rl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .rl b{font-family:"Space Grotesk";font-size:.95rem}
+.ring .rl span{font-family:"IBM Plex Mono";font-size:8px;color:var(--dim);letter-spacing:.05em}
+.dash-stats{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.dstat{display:flex;flex-direction:column;gap:2px}
+.dstat .dl2{font-family:"IBM Plex Mono";font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:5px}
+.dstat .dv{font-family:"Space Grotesk";font-weight:700;font-size:1.05rem}
+.dash-actions{display:flex;gap:8px;margin-left:auto}
 /* chart engine */
 .pc{background:var(--s1);border-radius:10px;overflow:hidden;border:1px solid var(--bd)}
 .pc-bar{display:flex;align-items:center;gap:5px;padding:7px 10px;border-bottom:1px solid var(--bd);flex-wrap:wrap}
@@ -156,22 +156,21 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .pc-wrap svg{display:block;width:100%}
 .pc-legend{position:absolute;top:8px;left:10px;font-family:"IBM Plex Mono";font-size:10.5px;color:var(--mut);background:color-mix(in srgb,var(--bg) 78%,transparent);padding:4px 9px;border-radius:6px;pointer-events:none;backdrop-filter:blur(4px)}
 .pc-legend b{color:var(--tx);font-weight:500}
-.pc-livebtn{position:absolute;right:74px;bottom:12px;background:var(--grn);color:#04120b;border:none;font-family:"IBM Plex Mono";font-size:10px;font-weight:600;letter-spacing:.08em;padding:6px 12px;border-radius:7px;display:none;box-shadow:var(--shadow)}
-.pc-livebtn.show{display:block}
+.pc-livebtn{position:absolute;right:74px;bottom:12px;background:var(--grn);color:#04120b;border:none;font-family:"IBM Plex Mono";font-size:10px;font-weight:600;letter-spacing:.08em;padding:6px 12px;border-radius:7px;display:none;box-shadow:var(--shadow);align-items:center;gap:5px}
+.pc-livebtn.show{display:flex}
 /* practice */
 .arena{max-width:960px;margin:0 auto}
 .phead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.phead h2{font-family:"Space Grotesk";font-size:1.5rem;font-weight:700;margin-right:auto}
+.phead h2{font-family:"Space Grotesk";font-size:1.5rem;font-weight:700;margin-right:auto;display:flex;align-items:center;gap:10px}
 .pstats{display:flex;gap:8px;flex-wrap:wrap}
 .pstat{background:var(--s1);border:1px solid var(--bd);border-radius:9px;padding:7px 12px;font-family:"IBM Plex Mono";font-size:11px;color:var(--mut);display:flex;align-items:center;gap:7px}
 .pstat b{color:var(--tx);font-weight:500}
-.pstat svg{display:block}
 .rankbox{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:16px}
 .xpbar{height:8px;background:var(--s3);border-radius:99px;overflow:hidden;margin:9px 0 5px}
 .xpbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--grn));transition:width .5s var(--ease)}
 .ticks{display:flex;gap:4px;margin:12px 0}
 .ticks span{flex:1;height:7px;border-radius:3px;background:var(--s3);transition:background .3s}
-.diff{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.14em;padding:4px 11px;border-radius:99px;font-weight:600}
+.diff{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.14em;padding:4px 11px;border-radius:99px;font-weight:600;display:inline-flex;align-items:center;gap:5px}
 .diff-e{color:var(--grn);background:var(--grnbg);border:1px solid color-mix(in srgb,var(--grn) 35%,transparent)}
 .diff-m{color:var(--gold);background:var(--goldbg);border:1px solid color-mix(in srgb,var(--gold) 35%,transparent)}
 .diff-h{color:var(--red);background:var(--redbg);border:1px solid color-mix(in srgb,var(--red) 35%,transparent)}
@@ -189,9 +188,9 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .gresult .hint{margin-top:10px;font-size:.83rem;color:var(--mut);border-top:1px dashed var(--bd);padding-top:10px;text-align:left}
 .xpfloat{font-family:"Space Grotesk";font-weight:700;font-size:1.15rem}
 .xpfloat.p{color:var(--grn)}.xpfloat.n{color:var(--red)}
-.gnext{display:block;margin:14px auto 0;background:var(--grn);color:#04120b;border:none;font-family:"Space Grotesk";font-weight:700;padding:12px 34px;border-radius:10px;font-size:.98rem;transition:.2s}
+.gnext{display:block;margin:14px auto 0;background:var(--grn);color:#04120b;border:none;font-family:"Space Grotesk";font-weight:700;padding:12px 34px;border-radius:10px;font-size:.98rem;transition:.2s;display:inline-flex;align-items:center;gap:8px}
 .gnext:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.bigbtn{background:var(--grn);color:#04120b;border:none;font-family:"Space Grotesk";font-weight:700;padding:13px 34px;border-radius:10px;font-size:1rem;transition:.2s;text-decoration:none;display:inline-block}
+.bigbtn{background:var(--grn);color:#04120b;border:none;font-family:"Space Grotesk";font-weight:700;padding:13px 34px;border-radius:10px;font-size:1rem;transition:.2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .bigbtn:hover{filter:brightness(1.08);transform:translateY(-2px)}
 .bigbtn.gold{background:var(--gold);color:#241a02}
 .tierbadge{display:inline-flex;align-items:center;gap:7px;font-family:"Space Grotesk";font-weight:700;font-size:1rem;padding:5px 14px;border-radius:9px;letter-spacing:.05em}
@@ -239,7 +238,7 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .achip .av{font-family:"Space Grotesk";font-weight:700;font-size:1.05rem;margin-top:2px}
 .desk-panels{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .tpanel{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:16px}
-.tpanel h4{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.tpanel h4{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;display:flex;align-items:center;gap:7px}
 .trow{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bd);font-size:.86rem}
 .trow:last-child{border-bottom:none}
 .trow .tl{color:var(--mut)}
@@ -258,7 +257,7 @@ footer{border-top:1px solid var(--bd);padding:18px 20px;text-align:center;color:
 .tagb{font-family:"IBM Plex Mono";font-size:9px;padding:2px 7px;border-radius:5px;font-weight:600}
 .tagb.b{color:var(--grn);background:var(--grnbg)}
 .tagb.s{color:var(--red);background:var(--redbg)}
-.xbtn{background:var(--s2);border:1px solid var(--bd);color:var(--mut);font-family:"IBM Plex Mono";font-size:10px;padding:5px 10px;border-radius:7px;transition:.15s}
+.xbtn{background:var(--s2);border:1px solid var(--bd);color:var(--mut);font-family:"IBM Plex Mono";font-size:10px;padding:5px 10px;border-radius:7px;transition:.15s;display:inline-flex;align-items:center;gap:5px}
 .xbtn:hover{color:var(--red);border-color:var(--red)}
 .setup-card{max-width:560px;margin:30px auto;background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:28px}
 .balchips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
@@ -290,7 +289,7 @@ select.sel{background:var(--s2);border:1px solid var(--bd);color:var(--tx);font-
 .ob-note{font-size:.75rem;color:var(--dim);margin-top:14px;text-align:center}
 #toTop{position:fixed;bottom:26px;right:26px;width:46px;height:46px;border-radius:11px;background:var(--s1);border:1px solid var(--bd2);color:var(--grn);z-index:60;opacity:0;pointer-events:none;transform:translateY(12px);transition:.3s var(--ease);display:flex;align-items:center;justify-content:center}
 #toTop.show{opacity:1;pointer-events:auto;transform:none}
-@media(max-width:1020px){.home-grid{grid-template-columns:1fr}.desk-panels{grid-template-columns:1fr}.feature-in{grid-template-columns:1fr}.feature-chart{border-left:none;border-top:1px solid var(--bd)}}
+@media(max-width:1020px){.home-grid{grid-template-columns:1fr}.desk-panels{grid-template-columns:1fr}.feature-in{grid-template-columns:1fr}.feature-chart{border-left:none;border-top:1px solid var(--bd)}.dash{grid-template-columns:1fr}}
 @media(max-width:820px){nav.nl{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}}
 </style>
@@ -300,7 +299,11 @@ select.sel{background:var(--s2);border:1px solid var(--bd);color:var(--tx);font-
  <div class="hwrap">
   <a class="logo" href="#"><svg width="24" height="24" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="var(--s3)"/><line x1="10" y1="6" x2="10" y2="26" stroke="var(--grn)" stroke-width="2"/><rect x="7" y="11" width="6" height="10" rx="1" fill="var(--grn)"/><line x1="22" y1="5" x2="22" y2="24" stroke="var(--red)" stroke-width="2"/><rect x="19" y="8" width="6" height="9" rx="1" fill="var(--red)"/></svg><b>Wick<span>pedia</span></b></a>
   <nav class="nl">
-   <a href="#/" data-r="">Home</a><a href="#/academy" data-r="academy">Academy</a><a href="#/dictionary" data-r="dictionary">Patterns</a><a href="#/practice" data-r="practice">Practice</a><a href="#/trade" data-r="trade">Trading</a>
+   <a href="#/" data-r=""><span id="navHomeIco"></span>Home</a>
+   <a href="#/academy" data-r="academy"><span id="navAcaIco"></span>Academy</a>
+   <a href="#/dictionary" data-r="dictionary"><span id="navDicIco"></span>Patterns</a>
+   <a href="#/practice" data-r="practice"><span id="navPraIco"></span>Practice</a>
+   <a href="#/trade" data-r="trade"><span id="navTraIco"></span>Trading</a>
   </nav>
   <div class="searchbox">
    <span style="position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--dim);display:flex" id="searchIco"></span>
@@ -330,38 +333,56 @@ select.sel{background:var(--s2);border:1px solid var(--bd);color:var(--tx);font-
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-/* ================= CONFIG ================= */
 var SUPABASE_URL="";
 var SUPABASE_ANON_KEY="";
-
-/* ================= ICONS ================= */
-function icon(n,s){s=s||16;var p={
- search:'<circle cx="7" cy="7" r="4.6"/><path d="M10.6 10.6L14 14"/>',
- sun:'<circle cx="8" cy="8" r="3.4"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"/>',
- moon:'<path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/>',
- up:'<path d="M8 13V3M3.8 7.2L8 3l4.2 4.2"/>',
- down:'<path d="M8 3v10M3.8 8.8L8 13l4.2-4.2"/>',
- cursor:'<circle cx="8" cy="8" r="3"/><path d="M8 1.5V4M8 12v2.5M1.5 8H4M12 8h2.5"/>',
- trend:'<path d="M2 12.5L6.5 8l2.6 2.6L14 5.5"/><path d="M14 9V5.5h-3.5"/>',
- hline:'<path d="M2 8h12"/><circle cx="2.6" cy="8" r="1.2" fill="currentColor" stroke="none"/><circle cx="13.4" cy="8" r="1.2" fill="currentColor" stroke="none"/>',
- rect:'<rect x="2.5" y="4" width="11" height="8" rx="1"/>',
- pen:'<path d="M11.3 2.3l2.4 2.4L5 13.4l-3 .6.6-3z"/>',
- trash:'<path d="M2.5 4h11M6.5 2h3M5.5 4l.5 9.5h4L10.5 4"/>',
- target:'<circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2.2"/><path d="M8 .8v2M8 13.2v2M.8 8h2M13.2 8h2"/>',
- book:'<path d="M2 2.5h5a1.5 1.5 0 0 1 1.5 1.5v10A1.5 1.5 0 0 0 7 12.5H2zM14 2.5H9a1.5 1.5 0 0 0-1.5 1.5v10a1.5 1.5 0 0 1 .5-1H14z"/>',
- flame:'<path d="M8 1.5c1 2.4 4 3.6 4 7a4 4 0 0 1-8 0c0-1.6.9-2.7 1.8-3.9C5 8 6.5 8.6 6.5 7c0-1.8.7-3.6 1.5-5.5z"/>',
- trophy:'<path d="M4 2h8v4a4 4 0 0 1-8 0zM4 3H1.8a2.4 2.4 0 0 0 2.5 2.6M12 3h2.2a2.4 2.4 0 0 1-2.5 2.6M8 10v2.5M5 14h6M6 12.5h4"/>',
- layers:'<path d="M8 1.8l6 3.2-6 3.2-6-3.2zM2 8.2l6 3.2 6-3.2M2 11.4l6 3.2 6-3.2"/>',
- clock:'<circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.4 1.6"/>',
- chart:'<path d="M2 14V8.5M5.3 14V5.5M8.6 14V9.8M11.9 14V3.5M14.5 14V7"/>',
- live:'<circle cx="8" cy="8" r="2.2" fill="currentColor" stroke="none"/><path d="M3.5 3.5a6.4 6.4 0 0 0 0 9M12.5 3.5a6.4 6.4 0 0 1 0 9"/>',
- check:'<path d="M2.5 8.5L6 12l7.5-8"/>'
-};
-return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+(p[n]||"")+'</svg>';}
+</script>
+<script>
+/* ===== custom icons (hand-drawn 16x16 stroke set) ===== */
+function icon(n,s){
+ s=s||16;
+ var p={
+  search:'<circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/>',
+  sun:'<circle cx="8" cy="8" r="3.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.5 3.5l1.4 1.4M11.1 11.1l1.4 1.4M12.5 3.5l-1.4 1.4M4.9 11.1l-1.4 1.4"/>',
+  moon:'<path d="M13.4 9.4A5.4 5.4 0 0 1 6.6 2.6a5.4 5.4 0 1 0 6.8 6.8z"/>',
+  up:'<path d="M8 13V3M4 7l4-4 4 4"/>',
+  down:'<path d="M8 3v10M4 9l4 4 4-4"/>',
+  cursor:'<circle cx="8" cy="8" r="3"/><path d="M8 1.5V4M8 12v2.5M1.5 8H4M12 8h2.5"/>',
+  trend:'<path d="M2 12.5 6.5 8l2.6 2.6L14 5.5"/><path d="M14 9V5.5h-3.5"/>',
+  hline:'<path d="M2 8h12"/><circle cx="2.6" cy="8" r="1.1" fill="currentColor" stroke="none"/><circle cx="13.4" cy="8" r="1.1" fill="currentColor" stroke="none"/>',
+  rect:'<rect x="2.5" y="4" width="11" height="8" rx="1"/>',
+  pen:'<path d="M11.3 2.3l2.4 2.4L5 13.4l-3 .6.6-3z"/>',
+  trash:'<path d="M2.5 4h11M6.5 2h3M5.5 4l.5 9.5h4L10.5 4M6.8 6.5v4.5M9.2 6.5v4.5"/>',
+  target:'<circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/>',
+  book:'<path d="M2.5 2.5h4.5a1.5 1.5 0 0 1 1.5 1.5v9.5a1.5 1.5 0 0 0-1.5-1.5H2.5zM13.5 2.5H9a1.5 1.5 0 0 0-1.5 1.5v9.5a1.5 1.5 0 0 1 1.5-1.5h4.5z"/>',
+  flame:'<path d="M8 1.5c1 2.4 4 3.6 4 7a4 4 0 0 1-8 0c0-1.6.9-2.7 1.8-3.9.6 1.2 1.5 1.8 1.5.2 0-1.8.7-3.6 2.5-5.5z"/>',
+  trophy:'<path d="M4.5 2h7v3.5a3.5 3.5 0 0 1-7 0zM4.5 3H2.2a2.3 2.3 0 0 0 2.4 2.5M11.5 3h2.3a2.3 2.3 0 0 1-2.4 2.5M8 9v2.5M5.5 14h5M6 11.5h4"/>',
+  layers:'<path d="M8 1.8l6 3.2-6 3.2-6-3.2zM2 8.2l6 3.2 6-3.2M2 11.4l6 3.2 6-3.2"/>',
+  clock:'<circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.4 1.6"/>',
+  chart:'<path d="M3 14V9M6.3 14V6M9.6 14v-4M12.9 14V4"/>',
+  live:'<circle cx="8" cy="8" r="2" fill="currentColor" stroke="none"/><path d="M4 4a5.6 5.6 0 0 0 0 8M12 4a5.6 5.6 0 0 1 0 8"/>',
+  check:'<path d="M2.5 8.5 6 12l7.5-8"/>',
+  plus:'<path d="M8 3v10M3 8h10"/>',
+  minus:'<path d="M3 8h10"/>',
+  fit:'<path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/>',
+  home:'<path d="M2.5 7.5 8 2.5l5.5 5v6a1 1 0 0 1-1 1h-3v-4h-3v4h-3a1 1 0 0 1-1-1z"/>',
+  grad:'<path d="M1.5 6 8 2.5 14.5 6 8 9.5z"/><path d="M4 7.8v3.7c0 1 1.8 2 4 2s4-1 4-2V7.8M14.5 6v4"/>',
+  bolt:'<path d="M9 1.5 3.5 9h3.5l-1 6.5L12.5 7H9z"/>',
+  wallet:'<rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M2 8h12"/><circle cx="11.5" cy="10.5" r="1" fill="currentColor" stroke="none"/>',
+  arrowr:'<path d="M3 8h10M9 4l4 4-4 4"/>',
+  refresh:'<path d="M2.5 8a5.5 5.5 0 0 1 9.4-3.9M13.5 8a5.5 5.5 0 0 1-9.4 3.9"/><path d="M12 1.5V4h-2.5M4 14v-2.5h2.5"/>'
+ };
+ return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+(p[n]||"")+'</svg>';
+}
 document.getElementById("searchIco").innerHTML=icon("search",14);
 document.getElementById("toTop").innerHTML=icon("up",17);
-
-/* ================= STATE ================= */
+document.getElementById("navHomeIco").innerHTML=icon("home",13);
+document.getElementById("navAcaIco").innerHTML=icon("grad",13);
+document.getElementById("navDicIco").innerHTML=icon("book",13);
+document.getElementById("navPraIco").innerHTML=icon("target",13);
+document.getElementById("navTraIco").innerHTML=icon("chart",13);
+</script>
+<script>
+/* ===== state ===== */
 var TIERS=["LT5","MT5","HT5","LT4","MT4","HT4","LT3","MT3","HT3","LT2","MT2","HT2","LT1","MT1","HT1"];
 var TIER_XP=TIERS.map(function(_,i){return i*200;});
 function defaultProf(theme){return{xp:0,games:0,wins:0,bestStreak:0,theme:theme||"dark",bookmarks:[],notes:{},course:{},practice:{answered:0,correct:0,best:0},paper:null};}
@@ -380,8 +401,9 @@ function persist(){clearTimeout(_saveT);_saveT=setTimeout(function(){
 },500);}
 function applyTheme(){document.documentElement.dataset.theme=prof.theme||"dark";document.getElementById("themeBtn").innerHTML=icon(prof.theme==="light"?"sun":"moon",15);}
 document.getElementById("themeBtn").addEventListener("click",function(){prof.theme=(prof.theme==="dark")?"light":"dark";applyTheme();persist();route();});
-
-/* ================= AUTH ================= */
+</script>
+<script>
+/* ===== auth ===== */
 var authMode=1;
 function openAuth(){document.getElementById("authM").classList.add("show");authTab(1);}
 function closeAuth(){document.getElementById("authM").classList.remove("show");}
@@ -414,9 +436,11 @@ document.getElementById("authClose").addEventListener("click",closeAuth);
 document.getElementById("tabIn").addEventListener("click",function(){authTab(1);});
 document.getElementById("tabUp").addEventListener("click",function(){authTab(2);});
 document.getElementById("aGo").addEventListener("click",authSubmit);
-
-/* ================= SHARED MARKET ENGINE ================= */
+</script>
+<script>
+/* ===== shared market engine ===== */
 var MIN_MS=60000;
+function nowIdx(){return Math.floor(Date.now()/MIN_MS);}
 var SYMS=[
  {s:"WCK",n:"Wick Motors",p0:182},
  {s:"NEB",n:"Nebula AI",p0:341},
@@ -431,7 +455,8 @@ var REAL={};
 var REAL_LOADED=false;
 function loadReal(cb){
  if(REAL_LOADED){cb();return;}
- var pending=0,done=function(){pending--;if(pending<=0){REAL_LOADED=true;cb();}};
+ var pending=0;
+ function done(){pending--;if(pending<=0){REAL_LOADED=true;cb();}}
  SYMS.forEach(function(sym){
   if(!sym.real)return;
   pending++;
@@ -440,7 +465,7 @@ function loadReal(cb){
   .then(function(r){if(!r.ok)throw 0;return r.json();})
   .then(function(d){
    clearTimeout(to);
-   var arr=d.map(function(k){return[+k[1],+k[2],+k[3],+k[4],+k[0]];});
+   var arr=d.map(function(k){return[+k[1],+k[2],+k[3],+k[4],+k[0],0];});
    REAL[sym.s]={startMin:Math.floor(arr[0][4]/MIN_MS),arr:arr};
    done();
   })
@@ -460,9 +485,7 @@ function getMinutes(sym,m0,m1){
  if(sym.real&&REAL[sym.s]){
   var R0=REAL[sym.s];
   var need0=R0.startMin,need1=R0.startMin+R0.arr.length-1;
-  if(m0>=need0&&m1<=need1){
-   return R0.arr.slice(m0-need0,m1-need0+1);
-  }
+  if(m0>=need0&&m1<=need1){return R0.arr.slice(m0-need0,m1-need0+1);}
  }
  var out=[],b0=Math.floor(m0/240),b1=Math.floor(m1/240);
  var price=baseMin(sym,b0);
@@ -479,7 +502,7 @@ function getMinutes(sym,m0,m1){
    if(gm>=m0&&gm<=m1){
     var hi=Math.max(o,c)+r()*vol*0.9;
     var lo=Math.min(o,c)-r()*vol*0.9;
-    out.push([o,hi,lo,c,gm*MIN_MS]);
+    out.push([o,hi,lo,c,gm*MIN_MS,0]);
    }
    price=c;
    if(gm>=m1)break;
@@ -491,14 +514,16 @@ function getMinutes(sym,m0,m1){
 function aggregate(mins,tfMs){
  var map={},order=[];
  for(var i=0;i<mins.length;i++){
-  var m=mins[i],k=Math.floor(m[4]/tfMs)*tfMs;
-  if(!map[k]){map[k]=[m[0],m[1],m[2],m[3],k];order.push(k);}
+  var m=mins[i];if(!m)continue;
+  var k=Math.floor(m[4]/tfMs)*tfMs;
+  if(!map[k]){map[k]=[m[0],m[1],m[2],m[3],k,0];order.push(k);}
   else{var b=map[k];if(m[1]>b[1])b[1]=m[1];if(m[2]<b[2])b[2]=m[2];b[3]=m[3];}
  }
  order.sort(function(a,b){return a-b;});
  return order.map(function(k){return map[k];});
 }
 function subdivide(minute,tfMs){
+ if(!minute)return[];
  var n=Math.max(1,Math.floor(60000/tfMs)),t0=minute[4];
  var r=rng(h32("sub:"+minute[4]+":"+tfMs));
  var o=minute[0],c=minute[3],hi=minute[1],lo=minute[2];
@@ -510,7 +535,7 @@ function subdivide(minute,tfMs){
   var sc=(i===n-1)?c:target+(r()-0.5)*span*0.35;
   var sh=Math.min(hi,Math.max(so,sc)+r()*span*0.25);
   var sl=Math.max(lo,Math.min(so,sc)-r()*span*0.25);
-  out.push([so,sh,sl,sc,t0+i*tfMs]);
+  out.push([so,sh,sl,sc,t0+i*tfMs,0]);
   p=sc;
  }
  return out;
@@ -532,17 +557,19 @@ function dailySeries(sym,tfMs,count,endTime){
   var c=Math.max(0.5,o+(target-o)*0.85+(r()-0.5)*vol*2);
   var hi=Math.max(o,c)+r()*vol;
   var lo=Math.min(o,c)-r()*vol;
-  out.push([o,hi,lo,c,d*tfMs]);
+  out.push([o,hi,lo,c,d*tfMs,0]);
   price=c;
  }
  return out;
 }
 function seriesTF(sym,tfMs,count,endTime){
+ if(!sym)return[];
  if(tfMs>=86400000)return dailySeries(sym,tfMs,count,endTime);
  var spanMs=count*tfMs;
  var endMin=Math.floor(endTime/MIN_MS);
  var startMin=Math.floor((endTime-spanMs)/MIN_MS)-2;
  var mins=getMinutes(sym,startMin,endMin);
+ if(!mins.length)return[];
  var arr;
  if(tfMs===MIN_MS)arr=mins;
  else if(tfMs>MIN_MS)arr=aggregate(mins,tfMs);
@@ -553,10 +580,10 @@ function seriesTF(sym,tfMs,count,endTime){
   for(var i=0;i<last.length;i++)arr=arr.concat(subdivide(last[i],tfMs));
  }
  var cutoff=Math.floor(endTime/tfMs)*tfMs;
- arr=arr.filter(function(c){return c[4]<=cutoff;});
+ arr=arr.filter(function(c){return c&&c[4]<=cutoff;});
  arr=arr.slice(-count);
  for(var j=0;j<arr.length;j++){
-  var cnd=arr[j];
+  var cnd=arr[j];if(!cnd)continue;
   var vr=rng(h32("v:"+cnd[4]))();
   var bodyRatio=Math.abs(cnd[3]-cnd[0])/Math.max(1e-9,cnd[1]-cnd[2]);
   cnd[5]=(0.35+vr)*(0.6+bodyRatio*2.2);
@@ -569,16 +596,17 @@ function fmtPrice(v){
  if(v>=10)return v.toFixed(2);
  return v.toFixed(3);
 }
-
-/* ================= CHART ENGINE (TradingView-style) ================= */
+</script>
+<script>
+/* ===== chart engine ===== */
 function pal(){var l=document.documentElement.dataset.theme==="light";
  return l?{grn:"#059669",red:"#dc2626",gold:"#b45309",blue:"#2563eb",grid:"rgba(30,45,70,.09)",ax:"#7c8aa0",cross:"#42566f",hid:"rgba(120,140,170,.15)",ma1:"#d97706",ma2:"#2563eb",vwap:"#8b5cf6"}
         :{grn:"#34d399",red:"#f87171",gold:"#e8b64c",blue:"#74a8ff",grid:"rgba(150,170,200,.09)",ax:"#8a97ab",cross:"#a7b4c8",hid:"rgba(150,170,200,.1)",ma1:"#e8b64c",ma2:"#74a8ff",vwap:"#c084fc"};}
 function ProChart(el,o){
  o=o||{};
  var H=o.h||380,MR=64,MT=12,MB=20;
- var data=[],vols=[];
- var st={vs:0,vc:o.count||160,yz:1,follow:true,tool:"cursor",drawings:[],ind:{ma20:o.tools?false:false,ma50:false,vwap:false},reveal:o.reveal!=null?o.reveal:null};
+ var data=[];
+ var st={vs:0,vc:o.count||160,yz:1,follow:true,tool:"cursor",drawings:[],ind:{ma20:false,ma50:false,vwap:false},reveal:null};
  var barHTML='<div class="pc"><div class="pc-bar"><span class="pc-src" data-r="src"></span>';
  if(o.tools){
   barHTML+='<button class="pc-btn on" data-t="cursor" title="Crosshair / pan">'+icon("cursor",14)+'</button>'
@@ -595,36 +623,37 @@ function ProChart(el,o){
  }
  barHTML+='<button class="pc-btn" data-z="in" title="Zoom in">'+icon("plus",13)+'</button>'
  +'<button class="pc-btn" data-z="out" title="Zoom out">'+icon("minus",13)+'</button>'
- +'<button class="pc-btn" data-z="fit" title="Fit view" style="padding:0 10px">FIT</button></div>'
- +'<div class="pc-wrap" data-r="w"><svg data-r="m" preserveAspectRatio="none"></svg><svg data-r="ov" preserveAspectRatio="none" style="position:absolute;inset:0;pointer-events:none"></svg><div class="pc-legend" data-r="lg"></div><button class="pc-livebtn" data-r="livebtn">'+icon("live",12)+'&nbsp;JUMP TO LIVE</button></div></div>';
+ +'<button class="pc-btn" data-z="fit" title="Fit view">'+icon("fit",13)+'</button></div>'
+ +'<div class="pc-wrap" data-r="w"><svg data-r="m" preserveAspectRatio="none"></svg><svg data-r="ov" preserveAspectRatio="none" style="position:absolute;inset:0;pointer-events:none"></svg><div class="pc-legend" data-r="lg"></div><button class="pc-livebtn" data-r="livebtn">'+icon("live",12)+' JUMP TO LIVE</button></div></div>';
  el.innerHTML=barHTML;
  var wrap=el.querySelector('[data-r="w"]'),svgM=el.querySelector('[data-r="m"]'),svgO=el.querySelector('[data-r="ov"]'),leg=el.querySelector('[data-r="lg"]'),srcEl=el.querySelector('[data-r="src"]'),liveBtn=el.querySelector('[data-r="livebtn"]');
  srcEl.innerHTML=o.src||"";
- var W=800,_yr=null,_m=null,_dur=60000;
+ var W=800,_yr=null,_dur=60000;
  var drag=null,preview=null;
  function metrics(){W=wrap.clientWidth||800;return{plotW:W-MR-8,plotH:H-MT-MB};}
- function visEnd(){return st.reveal!=null?Math.min(st.vs+st.vc,st.reveal):Math.min(st.vs+st.vc,data.length);}
+ function dataLen(){return data.length;}
+ function visEnd(){var e=(st.reveal!=null?Math.min(st.vs+st.vc,st.reveal):Math.min(st.vs+st.vc,dataLen()));return Math.min(e,dataLen());}
  function yRange(){
   var lo=1e18,hi=-1e18,i,k;
   var e=visEnd();
   for(i=st.vs;i<e;i++){k=data[i];if(!k)continue;if(k[2]<lo)lo=k[2];if(k[1]>hi)hi=k[1];}
-  if(lo>hi&&data.length){lo=data[0][2];hi=data[0][1];}
+  if(lo>hi&&dataLen()){lo=data[0][2];hi=data[0][1];}
   if(lo>hi){lo=0;hi=1;}
   var pad=(hi-lo)*0.08||1;lo-=pad;hi+=pad;
   var mid=(lo+hi)/2,half=(hi-lo)/2/st.yz;
   return{lo:mid-half,hi:mid+half};
  }
- function dur(){if(data.length>1)return data[1][4]-data[0][4];return _dur;}
- function timeAt(px){var m=metrics();var idx=st.vs+(px-8)/m.plotW*st.vc;return data.length?data[Math.max(0,Math.min(data.length-1,Math.floor(idx)))][4]+(idx-Math.floor(idx))*dur():0;}
+ function dur(){if(dataLen()>1)return data[1][4]-data[0][4];return _dur;}
+ function timeAt(px){var m=metrics();var idx=st.vs+(px-8)/m.plotW*st.vc;var ii=Math.max(0,Math.min(dataLen()-1,Math.floor(idx)));return dataLen()?data[ii][4]+(idx-Math.floor(idx))*dur():0;}
  function idxOfT(t){
-  if(!data.length)return 0;
-  var lo=0,hi=data.length-1;
+  if(!dataLen())return 0;
+  var lo=0,hi=dataLen()-1;
   while(lo<hi){var mid=(lo+hi)>>1;if(data[mid][4]<t)lo=mid+1;else hi=mid;}
   return lo;
  }
  function ma(n){
   var out=[],sum=0;
-  for(var i=0;i<data.length;i++){
+  for(var i=0;i<dataLen();i++){
    sum+=data[i][3];
    if(i>=n)sum-=data[i-n][3];
    out.push(i>=n-1?sum/n:null);
@@ -633,7 +662,7 @@ function ProChart(el,o){
  }
  function vwapLine(){
   var out=[],cum=0,q=0;
-  for(var i=0;i<data.length;i++){
+  for(var i=0;i<dataLen();i++){
    var tp=(data[i][1]+data[i][2]+data[i][3])/3;
    var w=data[i][5]||1;
    cum+=tp*w;q+=w;
@@ -642,9 +671,9 @@ function ProChart(el,o){
   return out;
  }
  function render(){
-  if(!data.length)return;
+  if(!dataLen())return;
   _dur=dur();
-  var m=metrics(),P=pal(),yr=yRange();_yr=yr;_m=m;
+  var m=metrics(),P=pal(),yr=yRange();_yr=yr;
   function Y(v){return MT+(yr.hi-v)/(yr.hi-yr.lo)*m.plotH;}
   function X(i){return 8+(i-st.vs+0.5)/st.vc*m.plotW;}
   function Xt(t){var i=idxOfT(t);var base=data[i][4];var f=(t-base)/_dur;return X(i+f);}
@@ -659,17 +688,18 @@ function ProChart(el,o){
   }
   var e=visEnd();
   var maxV=0;
-  for(i=st.vs;i<e;i++){if(data[i][5]>maxV)maxV=data[i][5];}
+  for(i=st.vs;i<e;i++){if(data[i]&&data[i][5]>maxV)maxV=data[i][5];}
   var volH=m.plotH*0.16;
   if(maxV>0){
    for(i=st.vs;i<e;i++){
-    var k=data[i],x=X(i),vh=(k[5]/maxV)*volH;
-    var vc2=k[3]>=k[0]?P.grn:P.red;
+    var vk=data[i];if(!vk)continue;
+    var x=X(i),vh=(vk[5]/maxV)*volH;
+    var vc2=vk[3]>=vk[0]?P.grn:P.red;
     s+='<rect x="'+(x-cw/2)+'" y="'+(MT+m.plotH-vh)+'" width="'+cw+'" height="'+vh+'" fill="'+vc2+'" opacity=".22"/>';
    }
   }
   if(st.reveal!=null){
-   var hidden=Math.min(st.vs+st.vc,data.length)-e;
+   var hidden=Math.min(st.vs+st.vc,dataLen())-e;
    if(hidden>0){
     var hx=X(e-1)+cw/2+3,hw=Math.min(W-MR-hx,hidden/st.vc*m.plotW);
     if(hw>4){
@@ -682,17 +712,17 @@ function ProChart(el,o){
   lines.forEach(function(ln){
    if(!st.ind[ln[0]])return;
    var vals=ma(ln[2]),pts="";
-   for(var j=st.vs;j<e;j++){if(vals[j]==null)continue;pts+=X(j)+","+Y(vals[j])+" ";}
+   for(var j=st.vs;j<e;j++){if(!data[j]||vals[j]==null)continue;pts+=X(j)+","+Y(vals[j])+" ";}
    if(pts)s+='<polyline points="'+pts+'" fill="none" stroke="'+ln[1]+'" stroke-width="1.4" opacity=".95"/>';
   });
   if(st.ind.vwap){
    var vv=vwapLine(),pts2="";
-   for(var j2=st.vs;j2<e;j2++){if(vv[j2]==null)continue;pts2+=X(j2)+","+Y(vv[j2])+" ";}
+   for(var j2=st.vs;j2<e;j2++){if(!data[j2]||vv[j2]==null)continue;pts2+=X(j2)+","+Y(vv[j2])+" ";}
    if(pts2)s+='<polyline points="'+pts2+'" fill="none" stroke="'+P.vwap+'" stroke-width="1.4" stroke-dasharray="5 3" opacity=".95"/>';
   }
-  var k3,x,yT,yB,col;
+  var k4,x,yT,yB,col;
   for(i=st.vs;i<e;i++){
-   var k4=data[i];x=X(i);
+   k4=data[i];if(!k4)continue;x=X(i);
    col=k4[3]>=k4[0]?P.grn:P.red;
    s+='<line x1="'+x+'" x2="'+x+'" y1="'+Y(k4[1])+'" y2="'+Y(k4[2])+'" stroke="'+col+'" stroke-width="1.3"/>';
    yT=Y(Math.max(k4[0],k4[3]));yB=Y(Math.min(k4[0],k4[3]));
@@ -711,8 +741,8 @@ function ProChart(el,o){
    }else if(d.type==="rect"){
     var rx1=Math.min(Xt(d.t1),Xt(d.t2)),rx2=Math.max(Xt(d.t1),Xt(d.t2));
     var ry1=Math.min(Y(d.p1),Y(d.p2)),ry2=Math.max(Y(d.p1),Y(d.p2));
-    s+='<rect x="'+rx1+'" y="'+ry1+'" width="'+(rx2-rx1)+'" height="'+(ry2-ry1)+'" fill="'+P.blue+'" opacity=".1"/>';
-    s+='<rect x="'+rx1+'" y="'+ry1+'" width="'+(rx2-rx1)+'" height="'+(ry2-ry1)+'" fill="none" stroke="'+P.blue+'" stroke-width="1.3" stroke-dasharray="4 3"/>';
+    s+='<rect x="'+rx1+'" y="'+ry1+'" width="'+Math.max(1,rx2-rx1)+'" height="'+Math.max(1,ry2-ry1)+'" fill="'+P.blue+'" opacity=".1"/>';
+    s+='<rect x="'+rx1+'" y="'+ry1+'" width="'+Math.max(1,rx2-rx1)+'" height="'+Math.max(1,ry2-ry1)+'" fill="none" stroke="'+P.blue+'" stroke-width="1.3" stroke-dasharray="4 3"/>';
    }else if(d.type==="pen"&&d.pts.length>1){
     var pts3="";for(var j3=0;j3<d.pts.length;j3++)pts3+=Xt(d.pts[j3][0])+","+Y(d.pts[j3][1])+" ";
     s+='<polyline points="'+pts3+'" fill="none" stroke="'+P.gold+'" stroke-width="1.5" opacity=".9"/>';
@@ -724,7 +754,7 @@ function ProChart(el,o){
    }else if(preview.type==="rect"){
     var prx1=Math.min(Xt(preview.t1),Xt(preview.t2)),prx2=Math.max(Xt(preview.t1),Xt(preview.t2));
     var pry1=Math.min(Y(preview.p1),Y(preview.p2)),pry2=Math.max(Y(preview.p1),Y(preview.p2));
-    s+='<rect x="'+prx1+'" y="'+pry1+'" width="'+(prx2-prx1)+'" height="'+(pry2-pry1)+'" fill="'+P.blue+'" opacity=".12" stroke="'+P.blue+'" stroke-dasharray="4 3"/>';
+    s+='<rect x="'+prx1+'" y="'+pry1+'" width="'+Math.max(1,prx2-prx1)+'" height="'+Math.max(1,pry2-pry1)+'" fill="'+P.blue+'" opacity=".12" stroke="'+P.blue+'" stroke-dasharray="4 3"/>';
    }else if(preview.type==="pen"&&preview.pts.length>1){
     var pts4="";for(var j4=0;j4<preview.pts.length;j4++)pts4+=Xt(preview.pts[j4][0])+","+Y(preview.pts[j4][1])+" ";
     s+='<polyline points="'+pts4+'" fill="none" stroke="'+P.gold+'" stroke-width="1.5" opacity=".9"/>';
@@ -747,7 +777,7 @@ function ProChart(el,o){
   if(liveBtn)liveBtn.classList.toggle("show",!st.follow&&o.live);
  }
  function setLegend(idx){
-  if(idx<0||idx>=data.length){leg.innerHTML="";return;}
+  if(idx<0||idx>=dataLen()||!data[idx]){leg.innerHTML="";return;}
   var k=data[idx],ch=(k[3]-k[0])/k[0]*100;
   leg.innerHTML='O <b>'+fmtPrice(k[0])+'</b> &nbsp;H <b>'+fmtPrice(k[1])+'</b> &nbsp;L <b>'+fmtPrice(k[2])+'</b> &nbsp;C <b style="color:'+(k[3]>=k[0]?"var(--grn)":"var(--red)")+'">'+fmtPrice(k[3])+'</b> &nbsp;<b style="color:'+(ch>=0?"var(--grn)":"var(--red)")+'">'+(ch>=0?"+":"")+ch.toFixed(2)+'%</b>';
  }
@@ -781,7 +811,7 @@ function ProChart(el,o){
    if(drag.t==="yz"){st.yz=Math.min(8,Math.max(.3,drag.z0*Math.pow(1.012,drag.sy-py)));render();}
    else if(drag.t==="pan"){
     var m=metrics(),dv=Math.round((drag.sx-px)/m.plotW*st.vc);
-    var maxVs=Math.max(0,(st.reveal!=null?st.reveal:data.length)-4);
+    var maxVs=Math.max(0,(st.reveal!=null?st.reveal:dataLen())-4);
     st.vs=Math.min(maxVs,Math.max(0,drag.vs0+dv));
     st.follow=false;
     render();
@@ -807,9 +837,9 @@ function ProChart(el,o){
   var anchor=st.vs+(px-8)/m.plotW*st.vc;
   st.vc=Math.round(Math.min(300,Math.max(10,st.vc*(ev.deltaY>0?1.15:0.87))));
   st.vs=Math.max(0,anchor-(px-8)/m.plotW*st.vc);
-  var maxVs=Math.max(0,(st.reveal!=null?st.reveal:data.length)-4);
-  if(st.vs>maxVs){st.vs=maxVs;}
-  if(st.vs+st.vc>=(st.reveal!=null?st.reveal:data.length)-2&&o.live)st.follow=true;else st.follow=false;
+  var maxVs=Math.max(0,(st.reveal!=null?st.reveal:dataLen())-4);
+  if(st.vs>maxVs)st.vs=maxVs;
+  if(st.vs+st.vc>=(st.reveal!=null?st.reveal:dataLen())-2&&o.live)st.follow=true;else st.follow=false;
   render();
  },{passive:false});
  el.addEventListener("click",function(ev){
@@ -817,7 +847,7 @@ function ProChart(el,o){
   if(b){
    if(b.dataset.z==="in")st.vc=Math.max(10,Math.round(st.vc*0.8));
    if(b.dataset.z==="out")st.vc=Math.min(300,Math.round(st.vc*1.25));
-   if(b.dataset.z==="fit"){st.vc=o.count||160;st.vs=Math.max(0,(st.reveal!=null?st.reveal:data.length)-st.vc);st.yz=1;st.follow=true;}
+   if(b.dataset.z==="fit"){st.vc=o.count||160;st.vs=Math.max(0,(st.reveal!=null?st.reveal:dataLen())-st.vc);st.yz=1;st.follow=true;}
    render();return;
   }
   var t=ev.target.closest("[data-t]");
@@ -831,21 +861,21 @@ function ProChart(el,o){
   var indB=ev.target.closest("[data-ind]");
   if(indB){var key=indB.dataset.ind;st.ind[key]=!st.ind[key];indB.classList.toggle("on",st.ind[key]);render();}
  });
- if(liveBtn)liveBtn.addEventListener("click",function(){st.follow=true;st.vs=Math.max(0,(st.reveal!=null?st.reveal:data.length)-st.vc);render();});
+ if(liveBtn)liveBtn.addEventListener("click",function(){st.follow=true;st.vs=Math.max(0,(st.reveal!=null?st.reveal:dataLen())-st.vc);render();});
  var _rsz=null;
  window.addEventListener("resize",function(){clearTimeout(_rsz);_rsz=setTimeout(render,150);});
  var api={
   setSeries:function(arr,opts){
    opts=opts||{};
-   data=arr;
+   data=arr||[];
    if(opts.reveal!=null)st.reveal=opts.reveal;else st.reveal=null;
-   if(opts.resetView){st.vc=o.count||160;st.vs=Math.max(0,data.length-st.vc);st.follow=true;}
-   else if(st.follow){st.vs=Math.max(0,(st.reveal!=null?st.reveal:data.length)-st.vc);}
-   else{var maxVs=Math.max(0,(st.reveal!=null?st.reveal:data.length)-4);if(st.vs>maxVs)st.vs=maxVs;}
+   if(opts.resetView){st.vc=o.count||160;st.vs=Math.max(0,dataLen()-st.vc);st.follow=true;}
+   else if(st.follow){st.vs=Math.max(0,(st.reveal!=null?st.reveal:dataLen())-st.vc);}
+   else{var maxVs=Math.max(0,(st.reveal!=null?st.reveal:dataLen())-4);if(st.vs>maxVs)st.vs=maxVs;}
    render();
   },
   setRevealed:function(n){
-   st.reveal=Math.min(n,data.length);
+   st.reveal=Math.min(n,dataLen());
    if(st.follow)st.vs=Math.max(0,st.reveal-st.vc);
    render();
   },
@@ -877,7 +907,7 @@ function miniSVG(candles,focus){
 }
 </script>
 <script>
-/* ================= CONTENT LIBRARY ================= */
+/* ===== content library ===== */
 var ARTICLES=[];
 function A(o){ARTICLES.push(o);}
 var COURSE_N=1;
@@ -899,7 +929,7 @@ L("l2","Reading candles fluently","Body, wicks, size, and the four questions eve
 ["h","The four questions"],
 ["ul",["<b>Who won?</b> Color and body direction.","<b>By how much?</b> Body size versus the recent candles.","<b>What got rejected?</b> Long wick below = dips were bought. Long wick above = rallies were sold.","<b>Where did it happen?</b> A candle at the top of a rally means something completely different from the same candle at the bottom of a drop."]],
 ["chart",{c:[[58,62,46,60],[56,60,44,58],[54,58,20,56],[52,86,50,54]],texts:[[2.5,14,"lower wick = dips bought","grn"],[3.5,92,"upper wick = rallies sold","red"]],cap:"The same two wicks, opposite stories"}],
-["p","Location is the secret. Candlestick patterns are not magic shapes — they are <b>shapes plus location</b>. A hammer after a downtrend is a buying hint. The same shape after a huge rally is a warning called a hanging man. Browse the [[dictionary|Pattern Dictionary]] for the full vocabulary."],
+["p","Location is the secret. Candlestick patterns are not magic shapes — they are <b>shapes plus location</b>. A hammer after a downtrend is a buying hint. The same shape after a huge rally is a warning called a hanging man. Browse the <a href=\"#/dictionary\">Pattern Dictionary</a> for the full vocabulary."],
 ["tip","Body = conviction. Wicks = rejection. Location = meaning."]]);
 L("l3","Market structure: the map of every chart","Higher highs, lower lows, and how trends actually break.",[
 ["h","The staircase"],
@@ -1017,15 +1047,13 @@ L("l16","The top-down routine: multi-timeframe analysis","Higher timeframe for d
 ["h","The routine"],
 ["steps",["Higher (daily): name the trend and mark the nearest two zones.","Middle (1H): where are we — pulling back into a zone, or extending away? Only pullbacks are tradable.","Lower (15M/5M): wait for your trigger inside the zone — reclaim, CHoCH, engulfing. No zone, no trade.","Execute with higher-timeframe stop logic: your stop belongs beyond the middle-timeframe structure."]],
 ["tip","Same routine, every day, every market. Boring repetition is the actual edge."]]);
-
 function C(id,cat,title,al,def,blocks,lvl){A({id:id,cat:cat,title:title,al:al,lvl:lvl||"b",def:def,b:blocks});}
-/* ---- SMC deep ---- */
 C("liquidity","smc","Liquidity: where the stops live",["liquidity","stops","smart money"],"Pools of resting orders — especially stop losses — sitting at obvious prices. Big players need those orders to fill big positions, so price is drawn to them.",[
 ["p","Wherever the crowd puts stops, orders cluster. Whoever needs to buy huge amounts needs sellers — triggering stops creates sellers. That is the mechanical reason price visits obvious places before the real move."],
 ["chart",{c:[[40,52,36,48],[46,58,42,54],[50,64,46,60],[56,66,52,58],[54,66,50,56],[58,66,54,57],[60,66,52,56],[62,67,40,44],[46,50,30,32],[34,40,26,28]],zones:[[1,6.7,66.5,71,"red","LIQUIDITY"]],arrows:[[7,44,7.4,36,"red"]],cap:"The obvious highs get swept before the drop"}],
 ["p","Practical use: mark the obvious highs and lows, wait for the sweep, then trade the reversal with your stop beyond the sweep wick."],
 ["tip","If you keep getting stopped out right before the move goes your way, you are standing where everyone stands."]],"i");
-C("sweep-playbook","smc","Liquidity sweeps: the complete playbook",["stop hunt","sweep","liquidity grab","turtle soup","how to trade sweeps"],"The full method for trading stop hunts: mark the pool, wait for the wick, confirm the shift, enter the pullback, target the other side.",[
+C("sweep-playbook","smc","Liquidity sweeps: the complete playbook",["stop hunt","sweep","liquidity grab","turtle soup"],"The full method for trading stop hunts: mark the pool, wait for the wick, confirm the shift, enter the pullback, target the other side.",[
 ["h","Step 1 — Mark the pool"],
 ["p","Sweeps only happen at levels everyone can see: equal highs/lows, old extremes, obvious trendlines. Mark them in advance and label whose stops live there — buy-side above highs, sell-side below lows."],
 ["chart",{c:[[40,52,36,48],[46,58,42,54],[52,64,48,60],[58,66,52,58],[56,66,50,56],[60,66,54,57],[62,70,56,60]],zones:[[0.5,6.7,66.5,70,"red","BUY-SIDE POOL"]],cap:"Marked BEFORE the sweep: the clean highs are the tell"}],
@@ -1037,7 +1065,7 @@ C("sweep-playbook","smc","Liquidity sweeps: the complete playbook",["stop hunt",
 ["h","Step 4 — Entry, stop, target"],
 ["steps",["Entry: first pullback into the sweep move's origin (FVG or order block).","Stop: beyond the sweep wick — the exact point where the idea dies.","Target: nearest opposite liquidity pool. Minimum 1:2 or skip."]],
 ["warn","Two classic failure modes: entering mid-wick (you become the exit), and trading sweeps at random mid-range levels."]],"i");
-C("ob-playbook","smc","Order blocks: find, grade, trade",["order block","ob","how to find order blocks"],"An order block is the last opposite-colored candle before a strong impulsive move. This guide shows how to find them, grade them, and trade them.",[
+C("ob-playbook","smc","Order blocks: find, grade, trade",["order block","ob"],"An order block is the last opposite-colored candle before a strong impulsive move. Find them, grade them, trade them.",[
 ["h","Finding them"],
 ["p","Look for a sudden strong move ([[displacement|displacement]]) that breaks structure. Now look at the LAST opposite candle right before it launched. That candle is the order block — the footprint of positions being built before the push."],
 ["chart",{c:[[62,66,54,58],[58,62,50,54],[54,58,46,50],[48,70,46,68],[64,78,62,76],[72,80,68,74]],zones:[[1,2.6,46,58,"grn","ORDER BLOCK"]],cap:"Last red candle before the displacement rally — price returned and bounced"}],
@@ -1058,16 +1086,16 @@ C("bos","smc","Break of Structure (BOS)",["bos","break of structure"],"Price bre
 C("choch","smc","Change of Character (CHoCH)",["choch","change of character"],"The first break of structure against the trend — the earliest objective sign the trend may flip.",[
 ["p","A CHoCH alone is a warning. The tradeable recipe: sweep at an extreme, CHoCH on the lower timeframe, then the pullback entry. Full method: [[sweep-playbook|the sweep playbook]]."],
 ["warn","One CHoCH on the 1-minute chart does not kill a daily uptrend. Always ask which timeframe changed character."]],"i");
-C("inducement-deep","smc","Inducement: the trap before the move",["inducement","idm","early buyers","trap"],"A fake early level that lures premature entries before the real move. Understanding inducement explains why your obvious entry keeps getting hunted.",[
+C("inducement-deep","smc","Inducement: the trap before the move",["inducement","idm","early buyers"],"A fake early level that lures premature entries before the real move. Understanding inducement explains why your obvious entry keeps getting hunted.",[
 ["p","Before price reaches the real zone, it often manufactures a tempting mini-level: a small support, a tiny trendline, a shallow pullback that looks like the entry. Early traders pile in, their stops become fuel, and price sweeps them into the deeper zone — where the actual move starts."],
 ["chart",{c:[[40,50,36,46],[44,54,40,50],[48,58,44,54],[52,58,46,50],[50,56,42,46],[46,50,36,40],[42,46,30,34],[36,56,34,54],[52,68,50,66]],zones:[[2.5,4.5,44,49,"gold","INDUCEMENT (fake floor)"],[5,6.6,31,36,"grn","REAL ZONE"]],cap:"The shallow floor trapped early buyers; the sweep into the real zone launched the move"}],
 ["steps",["When a level looks obvious and early, ask: who is being induced?","Wait for the first structure to break AGAINST the early entries.","The real zone is usually one layer deeper — the sweep of the inducement is your trigger."]],
 ["tip","If everyone can see the entry, the entry is the trap."]],"i");
-C("breaker-mitigation","smc","Breaker & mitigation blocks",["breaker","mitigation block","failed order block"],"When an order block fails, it flips. A breaker is a failed block that broke structure; a mitigation block is the softer version.",[
+C("breaker-mitigation","smc","Breaker & mitigation blocks",["breaker","mitigation block"],"When an order block fails, it flips. A breaker is a failed block that broke structure; a mitigation block is the softer version.",[
 ["p","Price smashes through a bullish order block, breaking structure downward. Everyone who bought that block is now trapped. When price returns to it, they exit at breakeven — and that exit flow is what makes the old support act as resistance."],
 ["chart",{c:[[40,52,36,48],[44,56,40,52],[48,60,44,56],[52,64,48,58],[50,58,38,42],[46,50,34,38],[40,48,30,34],[36,46,32,40]],zones:[[1.5,3.6,44,53,"red","BREAKER (old support, now resistance)"]],cap:"The demand zone failed; on the retest it supplied sellers"}],
 ["p","<b>Breaker</b>: the failure broke structure — trade it aggressively. <b>Mitigation</b>: the failure did not make a new extreme — trade it lighter."]],"i");
-C("premium-discount","smc","Premium & discount: where to do business",["premium","discount","equilibrium","50%","where to buy"],"Split any swing in half. Above 50% is premium — expensive, look to sell. Below 50% is discount — cheap, look to buy.",[
+C("premium-discount","smc","Premium & discount: where to do business",["premium","discount","equilibrium","50%"],"Split any swing in half. Above 50% is premium — expensive, look to sell. Below 50% is discount — cheap, look to buy.",[
 ["chart",{c:[[46,54,42,50],[50,58,46,52],[48,56,40,42],[44,50,34,36],[38,46,30,32],[34,44,32,42],[40,52,38,50],[48,60,46,58],[56,68,54,66]],zones:[[0,8,55,70,"red","PREMIUM"],[0,8,28,43,"grn","DISCOUNT"]],lines:[[49,"gold","50%"]],cap:"Buy in the lower half, sell in the upper half"}],
 ["p","The single question that filters out most bad trades: <b>am I buying in discount or in premium right now?</b> Combine with a fib: the golden pocket (61.8%) sitting inside discount is the classic buy area. See [[fibonacci|fibonacci]]."]],"b");
 C("pd-playbook","smc","The premium/discount playbook",["premium discount playbook","where to enter"],"The step-by-step version: measure the dealing range, split it, and only take setups on the right side.",[
@@ -1083,34 +1111,33 @@ C("fvg-models","smc","FVG entries: touch, midpoint, inversion",["fvg entries","f
 ["tip","An FVG that gets respected three times is a level. An FVG that gets violated is a message."]],"i");
 C("displacement","smc","Displacement",["impulse","momentum candle"],"A sudden, energetic move — big candles, small wicks, speed — that reveals real intent.",[
 ["p","Only trust order blocks and breakouts launched by displacement. A slow grind through a level is suspicious; three full-bodied candles through it is a statement. Displacement usually leaves [[fvg|FVGs]] behind and breaks structure."]],"i");
-C("killzone-playbook","smc","Killzones: timing the session open",["killzone","london open","ny open","session timing","when to trade"],"The high-volume windows where the day's real moves happen — and how to trade them.",[
+C("killzone-playbook","smc","Killzones: timing the session open",["killzone","london open","ny open"],"The high-volume windows where the day's real moves happen — and how to trade them.",[
 ["p","Roughly 07:00–10:00 UTC (London) and 12:30–15:00 UTC (New York), volume floods in and the market decides the day. The classic script: the open <b>sweeps</b> the liquidity resting around the earlier session's highs/lows, then the true directional move begins."],
 ["chart",{c:[[44,52,40,48],[46,54,42,50],[48,56,44,52],[50,58,46,54],[52,60,48,56],[54,62,40,44],[46,50,38,42],[44,58,42,56],[54,68,52,66]],zones:[[4.5,6.4,59,63,"red","ASIAN HIGH (liquidity)"]],cap:"The open raided the earlier high, then the day's real move started"}],
 ["steps",["Before the open, mark the previous session's high and low.","During the first hour, do nothing but watch which side gets swept.","Trade the post-sweep structure shift, targeting the opposite side of the range.","After two hours, stop — the killzone edge decays fast."]],
 ["warn","The same setup at dead hours fails, because volume is missing. Timing is part of the setup."]],"i");
-C("wyckoff-deep","smc","Wyckoff: the full method in plain English",["wyckoff","accumulation","distribution","markup","markdown","spring","upthrust"],"Markets rotate through four phases — accumulation, markup, distribution, markdown. Knowing which phase you are in tells you which playbook to use.",[
+C("wyckoff-deep","smc","Wyckoff: the full method in plain English",["wyckoff","accumulation","distribution","spring","upthrust"],"Markets rotate through four phases — accumulation, markup, distribution, markdown. Knowing which phase you are in tells you which playbook to use.",[
 ["chart",{c:[[30,38,26,34],[32,40,28,36],[28,36,24,30],[30,40,26,36],[34,42,30,38],[36,46,32,42],[40,52,36,48],[46,60,42,56],[54,70,50,66],[64,80,60,76],[74,88,70,84],[82,92,76,82],[80,88,72,76],[78,86,70,74],[80,86,72,78],[76,84,60,64],[66,70,52,56],[58,62,46,50]],zones:[[0,4.6,24,42,"grn","ACCUMULATION"],[10,14.6,70,92,"red","DISTRIBUTION"]],cap:"Flat accumulation, trending markup, flat distribution, trending markdown"}],
 ["h","The four phases"],
 ["ul",["<b>Accumulation</b>: a flat range after a decline — big buyers absorbing quietly. Expect <b>springs</b> (sweeps below the range) before the markup.","<b>Markup</b>: the uptrend. Buy pullbacks, hold, do not overthink.","<b>Distribution</b>: a flat range after the rally — big sellers unloading. Expect <b>upthrusts</b> (sweeps above) before the markdown.","<b>Markdown</b>: the downtrend. Sell bounces or stand aside."]],
 ["h","How to trade it"],
 ["steps",["Identify the range after an extended move.","Wait for the test: a sweep beyond one edge that fails (spring/upthrust).","Enter on the reclaim back inside, stop beyond the sweep.","Target the opposite side of the range, then the open space beyond."]],
 ["tip","Identify the phase first, pick the playbook second. Trend tools in a range and range tools in a trend are how accounts die quietly."]],"i");
-C("mm-model","smc","The market maker model: accumulate, manipulate, distribute",["market maker model","amd","power of three","manipulation"],"The day in three acts: positions are accumulated, price is manipulated to trap the crowd, then it distributes in the real direction.",[
+C("mm-model","smc","The market maker model: accumulate, manipulate, distribute",["market maker model","amd","power of three"],"The day in three acts: positions are accumulated, price is manipulated to trap the crowd, then it distributes in the real direction.",[
 ["p","Watch any active session and you will often see the same skeleton: quiet consolidation (orders being built), a sharp false move against the coming direction (the manipulation — it fills the final orders and traps the crowd), then the real move."],
 ["chart",{c:[[46,52,42,48],[48,54,44,50],[46,52,42,48],[48,54,44,50],[46,58,40,44],[42,46,32,36],[38,52,36,50],[48,62,46,60],[58,72,56,70],[68,82,66,80]],zones:[[0,3.6,42,54,"blue","ACCUMULATE"],[4,5.6,33,37,"gold","MANIPULATE (the trap)"],[6,9,50,70,"grn","DISTRIBUTE UP"]],cap:"Consolidate, trap below, then the real move up"}],
 ["steps",["Mark the overnight or pre-session range.","Expect the first sharp break of that range to be suspect.","If the break fails and reclaims, trade the reclaim in the opposite direction.","The manipulation leg's extreme is your stop reference."]],
 ["tip","The fake move is not noise — it is information."]],"i");
-C("smc-overview","smc","SMC / ICT: the whole map in one article",["smc","ict","smart money concepts","smart money"],"Smart Money Concepts is a vocabulary for the same old truth: price moves from liquidity to liquidity. Here is the entire map and how the pieces connect.",[
+C("smc-overview","smc","SMC / ICT: the whole map in one article",["smc","ict","smart money concepts"],"Smart Money Concepts is a vocabulary for the same old truth: price moves from liquidity to liquidity. Here is the entire map and how the pieces connect.",[
 ["h","The pieces"],
 ["ul",["<b>[[liquidity|Liquidity]]</b> — the fuel: pools of stops at obvious levels.","<b>[[displacement|Displacement]]</b> — the fingerprint of real intent.","<b>[[fvg|FVG]]</b> — the footprint of a fast move; a magnet.","<b>[[ob-playbook|Order block]]</b> — the origin zone of a displacement.","<b>[[bos|BOS]] / [[choch|CHoCH]]</b> — the scoreboard of structure.","<b>[[premium-discount|Premium/discount]]</b> — where business gets done.","<b>[[inducement-deep|Inducement]]</b> — the trap before the real zone."]],
 ["h","The standard play"],
 ["steps",["Mark liquidity and premium/discount on the higher timeframe.","Wait for a sweep of liquidity in the direction you want to fade.","Wait for displacement + CHoCH on the lower timeframe.","Enter on the pullback into the FVG/order block in the discounted half.","Stop beyond the sweep; target the opposite liquidity."]],
 ["warn","SMC is a lens, not a cult. The patterns only work because they describe liquidity mechanics — if you cannot explain a setup in terms of orders, you do not have a setup."]],"i");
-C("confirmation-catalog","smc","The confirmation catalog: what to wait for",["confirmation","what to wait for","entry triggers"],"A sweep or a level alone is not a trade. This is the catalog of confirmations that turn observations into entries.",[
+C("confirmation-catalog","smc","The confirmation catalog: what to wait for",["confirmation","entry triggers"],"A sweep or a level alone is not a trade. This is the catalog of confirmations that turn observations into entries.",[
 ["ul",["<b>Body close beyond the level</b> — wicks probe, bodies decide.","<b>[[choch|CHoCH]]</b> — structure shifting after a sweep.","<b>[[bullish-engulfing|Engulfing]]</b> candle at the zone — momentum arriving.","<b>[[displacement|Displacement]]</b> — the confirming candle should be big and fast.","<b>[[volume|Volume]]</b> — confirmation on rising volume beats confirmation on nothing.","<b>Higher-timeframe agreement</b> — the best confirmations echo the HTF trend."]],
 ["chart",{c:[[48,56,44,52],[46,54,40,44],[42,48,34,38],[38,44,30,34],[36,52,34,50],[48,64,46,62]],zones:[[4,5.6,34,38,"grn","ENGULFING AT THE ZONE"]],cap:"The engulfing candle IS the confirmation"}],
 ["tip","Pick ONE primary confirmation and use it for 100 trades before adding another."]],"i");
-/* ---- structure / basics / core (expanded) ---- */
 C("market-structure","structure","Market structure: the complete guide",["structure","hh hl lh ll","trend"],"The skeleton of the chart: higher highs + higher lows = uptrend, lower highs + lower lows = downtrend, neither = range.",[
 ["chart",{c:[[20,34,18,32],[30,40,28,38],[34,48,32,46],[42,52,40,44],[46,60,44,58],[54,64,52,56],[58,74,56,72],[66,76,62,68]],cap:"An uptrend staircase"}],
 ["p","Use it like a filter: in uptrends buy pullbacks at higher lows; in downtrends sell bounces at lower highs; only flip bias after structure actually breaks. Full treatment in [[course-l3|Academy lesson 3]]."]],"b");
@@ -1136,16 +1163,15 @@ C("candle-anatomy","basics","Candle anatomy: body & wicks",["body","wick","shado
 C("doji","basics","Doji candles, explained",["doji","dragonfly","gravestone"],"A candle whose open and close are almost identical — the body becomes a line.",[
 ["chart",{c:[[46,72,22,46.5],[48,90,10,48.4],[68,70,22,68.4],[30,78,28,30.4]],cap:"Standard · long-legged · dragonfly · gravestone"}],
 ["p","Dojis alone predict nothing — their power is location. After a long trend, a doji warns the trend is tired."]],"b");
-/* ---- markets (asset classes) ---- */
 C("asset-classes","markets","Asset classes, explained",["asset classes","what can i trade"],"Stocks, forex, crypto, indices, commodities, ETFs, options — what each one actually is, how it behaves, and who it suits.",[
 ["h","The menu"],
 ["ul",["<b>[[stock-types|Stocks]]</b> — ownership slices of companies. Market hours, earnings, gaps.","<b>[[forex-guide|Forex]]</b> — currencies traded in pairs, 24/5, huge liquidity, session-driven.","<b>[[crypto-guide|Crypto]]</b> — 24/7, most volatile, narrative-driven, liquidity in pools.","<b>[[indices-guide|Indices]]</b> — baskets of stocks (S&P 500, NASDAQ) traded as one instrument.","<b>[[commodities-guide|Commodities]]</b> — gold, oil, wheat: macro-driven, often inverse to fear.","<b>[[etf-guide|ETFs]]</b> — baskets you can buy like a single stock.","<b>[[options-basics|Options]]</b> — contracts on future prices. Powerful, complex, wait on these."]],
 ["h","How to choose"],
 ["p","Pick by schedule and temperament: day trader with mornings free → forex London session; patient swing trader → stocks or ETFs; nights-and-weekends chaos tolerance → crypto; macro nerd → indices and commodities. One market, learned deeply, beats five markets skimmed."],
 ["tip","Every asset class rewards the same skills ([[market-structure|structure]], [[risk-management|risk]], [[trading-psychology|psychology]]). The class changes the hours and the volatility, not the craft."]],"b");
-C("stock-types","markets","Types of stocks: blue chip, growth, value, penny, meme",["blue chip","growth stocks","value stocks","penny stocks","meme stocks","types of stocks"],"Not all stocks behave the same. Blue chips grind, growth stocks sprint, penny stocks explode — and each needs different handling.",[
+C("stock-types","markets","Types of stocks: blue chip, growth, value, penny, meme",["blue chip","growth stocks","value stocks","penny stocks","meme stocks"],"Not all stocks behave the same. Blue chips grind, growth stocks sprint, penny stocks explode — and each needs different handling.",[
 ["h","The zoo"],
-["ul",["<b>Blue chip</b> — massive, profitable, boring in the best way (think the biggest names). Slow trends, respectful levels, good for learning.","<b>Growth</b> — priced for the future; volatile around earnings and narratives; trends hard when the story works.","<b>Value</b> — priced cheap vs fundamentals; moves slowly, catalyst-driven.","<b>Penny stocks</b> — tiny, thin, manipulated; spreads and pump-and-dumps eat beginners alive.","<b>[[memecoins|Meme stocks/coins]]</b> — pure sentiment instruments; a different sport with different rules."]],
+["ul",["<b>Blue chip</b> — massive, profitable, boring in the best way. Slow trends, respectful levels, good for learning.","<b>Growth</b> — priced for the future; volatile around earnings and narratives; trends hard when the story works.","<b>Value</b> — priced cheap vs fundamentals; moves slowly, catalyst-driven.","<b>Penny stocks</b> — tiny, thin, manipulated; spreads and pump-and-dumps eat beginners alive.","<b>[[memecoins|Meme stocks/coins]]</b> — pure sentiment instruments; a different sport with different rules."]],
 ["h","What changes for you"],
 ["p","Thicker stocks (blue chips, index ETFs) give cleaner technicals and tighter spreads — better for learning. Thin stocks gap violently and slip your orders. As a beginner, liquidity is a feature, not a detail."],
 ["warn","If a stock needs a hype campaign for you to notice it, you are the exit plan."]],"b");
@@ -1155,7 +1181,7 @@ C("memecoins","markets","Memecoins: how they actually work",["memecoin","dogecoi
 ["h","If you insist on trading them"],
 ["steps",["Only money you can set on fire without blinking.","Check liquidity depth and holder distribution first.","Trade momentum with hard stops; never marry a bag.","Take profits on the way up — someone else's euphoria is your exit window."]],
 ["warn","For every memecoin story you hear about, thousands of wallets went to zero silently. Survivorship bias is the whole marketing department."]],"b");
-C("indices-guide","markets","Indices: S&P 500, NASDAQ, Dow — what they are",["s&p 500","nasdaq","dow jones","indices","index trading"],"An index is a basket of stocks representing a market. You trade the whole economy's mood in one instrument — and it's one of the cleanest charts in existence.",[
+C("indices-guide","markets","Indices: S&P 500, NASDAQ, Dow — what they are",["s&p 500","nasdaq","dow jones","index trading"],"An index is a basket of stocks representing a market. You trade the whole economy's mood in one instrument — and it's one of the cleanest charts in existence.",[
 ["h","The big three"],
 ["ul",["<b>S&P 500</b> — the 500 largest US companies; the global benchmark.","<b>NASDAQ 100</b> — tech-heavy, faster, more volatile.","<b>Dow Jones</b> — 30 giants, price-weighted, more of a museum piece."]],
 ["h","Why traders love indices"],
@@ -1184,7 +1210,7 @@ C("options-basics","options","Options basics: calls, puts, and why beginners sho
 ["h","The honest advice"],
 ["p","Options are tools for defined risk and income once you are consistently profitable in the underlying. Most beginners lose money buying short-dated options because time decay and volatility crush are working against them by default. Learn stocks first; options second."],
 ["warn","Buying options because they are cheap is like buying lottery tickets because they are cheap."]],"b");
-C("sectors","markets","Market sectors and rotation",["sectors","sector rotation","tech","energy","financials"],"Markets are made of sectors — tech, energy, financials, healthcare — and money rotates between them. Watching rotation tells you where the next move lives.",[
+C("sectors","markets","Market sectors and rotation",["sectors","sector rotation"],"Markets are made of sectors — tech, energy, financials, healthcare — and money rotates between them. Watching rotation tells you where the next move lives.",[
 ["p","When the economy heats up, money flows to cyclicals (energy, industrials). When fear rises, it hides in staples and utilities. When liquidity flows, tech leads. Practical use: compare sector charts to the index — a stock rising while its sector falls is borrowing strength it may not keep."]],"b");
 C("dividends","markets","Dividends, splits, and yield",["dividend","stock split","yield"],"A dividend is a company paying shareholders a slice of profit; a split divides shares into more, cheaper pieces. Neither creates value by itself — but both move charts.",[
 ["p","Charts adjust for splits and dividends, which can create fake-looking gaps on historical data. When analyzing long-term charts, use adjusted prices, and know that ex-dividend days make stocks 'drop' by the dividend amount without any real selling. Not every red candle is fear."]],"b");
@@ -1197,7 +1223,7 @@ C("short-selling","markets","Short selling, explained properly",["shorting","sho
 C("how-exchanges-work","markets","How exchanges actually work",["exchange","order matching","binance","nyse"],"An exchange is an auction: it matches buy orders with sell orders by price and time. Understanding the matching engine explains spreads, fills, and why your order moved.",[
 ["ul",["<b>The book</b>: buy orders (bids) below, sell orders (asks) above; the gap is the [[g-spread|spread]].","<b>Matching</b>: highest bid meets lowest ask; trades print where they touch.","<b>Market orders</b> walk the book; <b>limit orders</b> wait in line (first come, first served).","<b>Thin books</b> = violent prices; <b>deep books</b> = stable prices."]],
 ["p","This single model explains [[slippage|slippage]], [[g-spoofing|spoofing]], [[liquidity|liquidity sweeps]] and why liquidity is power. Read [[order-book|the order book]] next."]],"b");
-C("market-makers-deep","markets","Market makers & the spread economy",["market makers","mm","spread economy"],"Market makers continuously quote both buy and sell prices, earning the spread while providing the liquidity everyone else uses. Without them, markets don't function.",[
+C("market-makers-deep","markets","Market makers & the spread economy",["market makers","mm"],"Market makers continuously quote both buy and sell prices, earning the spread while providing the liquidity everyone else uses. Without them, markets don't function.",[
 ["p","Their business: buy a little below fair value, sell a little above, thousands of times a day. Their risk: getting run over by real information. That's why they pull quotes before news and why spreads widen when it matters. The [[mm-model|market maker model]] article shows how their footprint appears on your charts."]],"b");
 C("dark-pools","markets","Dark pools and hidden liquidity",["dark pools","hidden orders"],"Dark pools are private venues where large orders trade without showing on public books — institutions hiding their size from the market.",[
 ["p","Why they exist: a mutual fund buying a million shares would move the price against itself on a public exchange. The practical lesson for you: visible [[order-book|order book]] levels are not the whole story, which is one more reason to trade structure and [[liquidity|liquidity]] rather than walls."]],"b");
@@ -1209,8 +1235,7 @@ C("scams","markets","How to spot trading scams",["scams","signals scam","ponzi",
 ["h","The filter"],
 ["p","Ask one question: <b>how does this person make money if this actually works?</b> If the honest answer is selling it to you, walk. Real edges are boring, risk-managed, and demonstrated over hundreds of trades — see [[backtesting-guide|backtesting]]."],
 ["warn","The scam is never the chart. The scam is the promise that you can skip learning it."]],"b");
-/* ---- apps ---- */
-C("tradingview-guide","apps","TradingView: the complete tool-by-tool guide",["tradingview","tv guide","charting tools","how to use tradingview"],"TradingView is the standard charting platform. This guide walks through every tool you actually need — cursor, trendlines, fibs, alerts, replay, indicators — and what each is for.",[
+C("tradingview-guide","apps","TradingView: the complete tool-by-tool guide",["tradingview","tv guide","charting tools"],"TradingView is the standard charting platform. This guide walks through every tool you actually need — cursor, trendlines, fibs, alerts, replay, indicators — and what each is for.",[
 ["h","The core drawing tools"],
 ["steps",["<b>Cursor / crosshair</b> — hover to read OHLC of any candle; click-drag to measure distance and % move.","<b>Trendline</b> — connect two swings; extend right; third touch = strong. Same logic in Wickpedia's Trading area.","<b>Horizontal line</b> — exact levels: session highs/lows, previous day high/low, round numbers.","<b>Rectangle (zone)</b> — for [[support-resistance|support/resistance zones]] and [[ob-playbook|order blocks]]; zones beat lines.","<b>Fib retracement</b> — drag from swing low to swing high; watch 50% and 61.8% ([[fibonacci|fibonacci]]).","<b>Long/short position tool</b> — drag to set entry, stop, target; it shows R:R automatically. Use it before EVERY trade."]],
 ["h","The workflow tools"],
@@ -1218,77 +1243,76 @@ C("tradingview-guide","apps","TradingView: the complete tool-by-tool guide",["tr
 ["h","A clean chart checklist"],
 ["steps",["Higher timeframe zones first (rectangles).","Structure marks: last HH/HL or LH/LL.","Liquidity lines on equal highs/lows.","Alerts on everything that matters.","Delete anything you cannot explain in one sentence."]],
 ["tip","Your chart should look like a map, not a slot machine. If a stranger can't read your levels in ten seconds, redraw them."]],"b");
-C("binance-guide","apps","Binance: a beginner's walkthrough",["binance","crypto exchange","how to use binance"],"Binance is the largest crypto exchange. This is the beginner path: account, security, deposit, first trade, and the settings that matter.",[
+C("binance-guide","apps","Binance: a beginner's walkthrough",["binance","crypto exchange"],"Binance is the largest crypto exchange. This is the beginner path: account, security, deposit, first trade, and the settings that matter.",[
 ["steps",["<b>Security first</b>: 2FA on, withdrawal whitelist on, anti-phishing code set. Before anything else.","<b>Deposit</b>: use the correct network for every transfer; wrong network = gone.","<b>Spot before futures</b>: learn buying/selling on spot; futures add leverage and liquidation.","<b>Order types</b>: limit for entries, market only when speed matters ([[order-types|order types]]).","<b>Fees</b>: BNB discount on; check maker/taker rates."]],
 ["warn","Enable every safety feature the day you sign up. Exchange hacks target the lazy settings first."]],"b");
 C("metatrader-guide","apps","MetaTrader 4/5, explained",["metatrader","mt4","mt5"],"MetaTrader is the classic forex platform — older than most traders, still everywhere. Ugly interface, rock-solid execution, and the home of 'Expert Advisors' (trading bots).",[
 ["p","What you need to know: one-click trading settings, lot sizing ([[g-lot|lots]]), the order window (market/pending), and templates for your chart setup. Most brokers offer MT4/MT5 for forex and CFDs. The learning curve is the interface, not the trading — same candles, same skills, different buttons."]],"b");
-C("broker-guide","apps","Choosing and using a broker app",["broker","broker app","robinhood","how to pick a broker"],"Your broker is the plumbing of your trading. Regulation, fees, execution quality, and withdrawal reliability are the four pillars — everything else is decoration.",[
+C("broker-guide","apps","Choosing and using a broker app",["broker","broker app","how to pick a broker"],"Your broker is the plumbing of your trading. Regulation, fees, execution quality, and withdrawal reliability are the four pillars — everything else is decoration.",[
 ["h","The checklist"],
 ["ul",["<b>Regulation</b> — licensed by a real authority (FCA, SEC/FINRA, ASIC, CySEC). Non-negotiable.","<b>Fees</b> — commissions, spreads, and hidden inactivity/withdrawal fees.","<b>Execution</b> — fills near the price you see; [[slippage|slippage]] reports matter.","<b>Withdrawals</b> — test with a small withdrawal before trusting size."]],
 ["warn","If a broker pressures you to deposit more, that is the review. Stop."]],"b");
 C("coingecko-guide","apps","CoinGecko & CoinMarketCap: research tools",["coingecko","coinmarketcap","crypto research"],"CoinGecko and CoinMarketCap are the phone books of crypto: prices, market caps, volumes, contract addresses, and links for every token.",[
 ["p","How to use them like a pro: check <b>market cap</b> (not price) for size, <b>volume vs cap</b> for real interest, <b>exchange listings</b> for liquidity depth, and the <b>contract address</b> to make sure you're looking at the real token (fake tickers are a whole scam category). For [[memecoins|memecoins]], holder distribution pages are mandatory reading before anything."]],"b");
-C("journal-apps","apps","Journaling apps & templates",["journal apps","trading journal apps","edgewonk","notion journal"],"Your journal is your edge factory. Any tool works — spreadsheet, Notion, dedicated apps — as long as you actually fill it in every trade.",[
+C("journal-apps","apps","Journaling apps & templates",["journal apps","trading journal apps"],"Your journal is your edge factory. Any tool works — spreadsheet, Notion, dedicated apps — as long as you actually fill it in every trade.",[
 ["h","The minimum template"],
 ["ul",["Date, instrument, direction, timeframe.","Setup name — if you can't name it, it's not a setup.","Entry / stop / target + R:R.","Result in R, screenshots of entry and exit.","One line of emotional state (honest — future you is reading)."]],
-["p","Weekly: filter by setup, find the leak, fix one thing. The full method lives in [[course-l11|Academy lesson 11]]. Dedicated apps (Edgewonk, TraderSync, Notion templates) automate the stats; a spreadsheet teaches you more because you type every number yourself."]],"b");
-C("calendar-tools","apps","Economic calendar tools",["economic calendar","forex factory","investing calendar"],"An economic calendar lists every scheduled data release — CPI, rate decisions, jobs reports — with times and expected impact. It is the weather forecast for markets.",[
+["p","Weekly: filter by setup, find the leak, fix one thing. The full method lives in [[course-l11|Academy lesson 11]]. Dedicated apps automate the stats; a spreadsheet teaches you more because you type every number yourself."]],"b");
+C("calendar-tools","apps","Economic calendar tools",["economic calendar","forex factory"],"An economic calendar lists every scheduled data release — CPI, rate decisions, jobs reports — with times and expected impact. It is the weather forecast for markets.",[
 ["p","The routine: every morning, mark the high-impact events for your instruments ([[g-economic-calendar|economic calendar]]). Decide BEFORE each one: flat through it, or positioned with a plan. The biggest beginner account-killer is holding tight stops through a red-folder release — the [[slippage|slippage]] alone can double your loss. Forex Factory and Investing.com are the free standards."]],"b");
-C("charting-alternatives","apps","Charting alternatives: Bookmap, GoCharting, Sierra & more",["bookmap","gocharting","sierra chart","charting apps"],"TradingView isn't the only option. Different tools specialize in different depths of the order flow rabbit hole.",[
+C("charting-alternatives","apps","Charting alternatives: Bookmap, GoCharting, Sierra & more",["bookmap","gocharting","sierra chart"],"TradingView isn't the only option. Different tools specialize in different depths of the order flow rabbit hole.",[
 ["ul",["<b>TradingView</b> — the all-rounder; best charts, alerts, community ([[tradingview-guide|full guide]]).","<b>Bookmap</b> — visualizes the live [[order-book|order book]] as heatmaps; order flow on steroids.","<b>GoCharting</b> — TradingView-like with orderflow tools built in.","<b>Sierra Chart</b> — futures-grade, maximal performance, maximal learning curve.","<b>Exchange-native charts</b> (Binance etc.) — fine for execution, weak for analysis."]],
 ["p","Beginner advice: master ONE charting tool. The tool is not the edge; consistent markup is. All the skills in this encyclopedia transfer unchanged between them."]],"b");
-/* ---- strategy ---- */
-C("vwap-strategy","strategy","The VWAP playbook",["vwap strategy","vwap trading","how to trade vwap"],"VWAP is the volume-weighted average price — the institutional fair-value line of the day. Institutions measure their fills against it, which is exactly why price respects it.",[
+C("vwap-strategy","strategy","The VWAP playbook",["vwap strategy","vwap trading"],"VWAP is the volume-weighted average price — the institutional fair-value line of the day. Institutions measure their fills against it, which is exactly why price respects it.",[
 ["h","The three plays"],
 ["steps",["<b>VWAP reclaim</b>: price below VWAP crosses back above with strength → longs look for continuation above VWAP.","<b>VWAP rejection</b>: price rallies into VWAP from below and fails → shorts look for the fade.","<b>VWAP pullback</b>: in a strong trend, price returns to VWAP and holds → trend continuation entry."]],
 ["chart",{c:[[40,52,36,48],[46,58,42,54],[50,62,46,58],[54,66,50,62],[58,70,54,66],[62,74,58,70],[66,78,62,74],[70,82,66,78]],paths:[[[0,44],[1,50],[2,55],[3,59],[4,63],[5,67],[6,71],[7,75]],"gold"],cap:"Trend riding VWAP: every pullback to the gold line was a continuation entry"}],
 ["p","VWAP resets daily — it is an intraday tool. Combine with session timing ([[killzone-playbook|killzones]]) and structure; a VWAP signal against the daily trend is a coin flip with fees."]],"i");
-C("ma-strategies","strategy","Moving-average strategies that survive reality",["moving average strategy","ma crossover","golden cross strategy"],"Moving averages smooth price into trend lines. The strategies that actually survive contact with reality are boring: trend filters and pullback zones, not magic crossovers.",[
+C("ma-strategies","strategy","Moving-average strategies that survive reality",["moving average strategy","ma crossover"],"Moving averages smooth price into trend lines. The strategies that actually survive contact with reality are boring: trend filters and pullback zones, not magic crossovers.",[
 ["h","What works"],
 ["steps",["<b>Trend filter</b>: only long above the 50MA / short below it on your anchor timeframe.","<b>Pullback zone</b>: in an uptrend, the first pullback into the 20MA is the continuation entry.","<b>Crosses as regime change</b>: 50/200 crosses (golden/death) mark slow regime shifts — position sizing signals, not day-trade triggers."]],
 ["h","What doesn't"],
 ["p","Crossover systems in ranges get chopped to death — every cross is a fake. MAs lag by construction; they tell you what happened, smoothed. The edge is combining them with [[market-structure|structure]] and [[ranges|range detection]], not worshipping the cross. Full indicator honesty: [[moving-averages|moving averages]]."]],"b");
-C("rsi-divergence","strategy","RSI divergence, properly",["rsi divergence","divergence trading","rsi strategy"],"Divergence is when price makes a new extreme but momentum (RSI) doesn't confirm it — the earliest warning that a trend is running on fumes.",[
+C("rsi-divergence","strategy","RSI divergence, properly",["rsi divergence","divergence trading"],"Divergence is when price makes a new extreme but momentum (RSI) doesn't confirm it — the earliest warning that a trend is running on fumes.",[
 ["h","The two types"],
 ["ul",["<b>Bearish divergence</b>: price prints a higher high, RSI prints a lower high → upside momentum is dying.","<b>Bullish divergence</b>: price prints a lower low, RSI prints a higher low → downside pressure is fading."]],
 ["chart",{c:[[40,52,36,48],[46,58,42,54],[50,62,46,58],[54,66,50,60],[58,70,54,64],[62,74,58,68],[66,78,62,72],[70,82,66,74]],paths:[[[0,46],[2,54],[4,60],[6,64],[7,66]],"gold"],cap:"Price kept making higher highs; the momentum line kept making lower highs — divergence"}],
 ["h","The rule that saves you"],
 ["p","Divergence alone is not an entry — divergences can persist for weeks in strong trends. Trade divergence only WITH a trigger: a [[choch|CHoCH]], a [[sweep-playbook|sweep]], or a structure break. Divergence says get ready; structure says go."]],"i");
-C("gap-strategies","strategy","Gap trading: go, fade, fill",["gap trading","gap and go","gap fill","gap fade"],"Gaps are information: something repriced the market while it slept. Three standard plays cover almost every gap.",[
+C("gap-strategies","strategy","Gap trading: go, fade, fill",["gap trading","gap and go","gap fill"],"Gaps are information: something repriced the market while it slept. Three standard plays cover almost every gap.",[
 ["h","The three plays"],
 ["ul",["<b>Gap & go</b>: gap in the trend direction, small pullback, continuation — trade with the gap.","<b>Gap fade</b>: gap into resistance/support against the higher-timeframe trend — fade back toward the pre-gap price.","<b>Gap fill</b>: weak gaps tend to get filled; the empty zone is a magnet ([[g-gap-fill|gap fill]])."]],
 ["h","The filters"],
 ["p","Size of the gap vs the average range, volume on the open, and the higher-timeframe trend decide which play applies. News gaps behave differently from no-news gaps — check the [[g-economic-calendar|calendar]]. Stocks only, mostly: crypto trades 24/7 so true gaps are rare there."]],"i");
-C("earnings-strategy","strategy","Trading earnings without gambling",["earnings trading","earnings plays","post earnings"],"Earnings are scheduled volatility explosions. The professional approach is almost never to hold through them — it's to trade the aftermath.",[
+C("earnings-strategy","strategy","Trading earnings without gambling",["earnings trading","earnings plays"],"Earnings are scheduled volatility explosions. The professional approach is almost never to hold through them — it's to trade the aftermath.",[
 ["h","Why holding is gambling"],
 ["p","The move is decided by the gap — a coin flip you cannot chart, with [[slippage|slippage]] that can jump your stop entirely. Expected value of holding through earnings without an edge on the numbers themselves: negative after costs."],
 ["h","The play that survives"],
 ["steps",["Let the print happen. Watch the gap and the first 15–30 minutes.","Mark the pre-earnings level and the gap edges.","Trade the structure that forms AFTER: gap-and-go continuation, or failed-gap reversal.","Stop beyond the opening range; target measured from the range height."]],
 ["tip","The amateurs bet on the number. The professionals trade the reaction."]],"i");
-C("supply-demand-deep","strategy","Supply & demand, deep dive",["supply and demand","s&d zones","demand zones"],"Supply and demand zones are where institutional orders were built — the origins of strong moves. Price returns to these zones because unfilled business may still be waiting there.",[
+C("supply-demand-deep","strategy","Supply & demand, deep dive",["supply and demand","s&d zones"],"Supply and demand zones are where institutional orders were built — the origins of strong moves. Price returns to these zones because unfilled business may still be waiting there.",[
 ["h","Drawing them"],
 ["steps",["Find a strong move that broke structure ([[displacement|displacement]]).","Go to its origin: the last opposite candle(s) before the explosion.","Box that candle's full range — that's your zone.","Extend forward until price returns."]],
 ["chart",{c:[[62,66,54,58],[58,62,50,54],[54,58,46,50],[48,70,46,68],[64,78,62,76],[70,80,66,76]],zones:[[1,2.6,46,58,"grn","DEMAND"]],cap:"The origin of the rally is the demand zone"}],
 ["h","Grading zones"],
 ["ul",["<b>Strength of departure</b> — the faster it left, the better.","<b>Freshness</b> — first touch beats third touch.","<b>Timeframe</b> — higher-timeframe zones dominate.","<b>Liquidity above/below</b> — zones with swept liquidity in front of them are strongest."]],
 ["p","This is the parent framework of [[ob-playbook|order blocks]] — an order block is just a supply/demand zone drawn at candle precision."]],"i");
-C("breakout-strategy","strategy","Breakout trading: filters that matter",["breakout strategy","how to trade breakouts"],"Breakouts work — but most breakouts fail. The difference is filters: which breaks deserve your money and which are traps.",[
+C("breakout-strategy","strategy","Breakout trading: filters that matter",["breakout strategy"],"Breakouts work — but most breakouts fail. The difference is filters: which breaks deserve your money and which are traps.",[
 ["h","The filters"],
 ["steps",["<b>Range age</b>: the longer the consolidation, the stronger the break.","<b>Volume</b>: the breakout candle needs real volume ([[volume|volume]]).","<b>Close</b>: bodies break, wicks probe — require a close beyond.","<b>Follow-through</b>: the next candle must agree.","<b>Context</b>: breaks WITH the higher-timeframe trend fail far less."]],
 ["h","The entry menu"],
 ["ul",["<b>Entry on the break</b> — aggressive, more fakeouts.","<b>Entry on the [[retest|retest]]</b> — patient, better stops, misses some runners.","<b>Entry on the first pullback hold</b> — the balanced default."]],
 ["p","And remember: the failed breakout is itself a trade — [[sweep-playbook|the sweep playbook]] is breakout trading from the other side."]],"i");
-C("meanrev-strategy","strategy","Mean reversion for beginners",["mean reversion","fading","reversion trading"],"Mean reversion = betting that stretched price snaps back toward its average. It works beautifully in ranges and destroys you in trends — so the entire skill is regime detection.",[
+C("meanrev-strategy","strategy","Mean reversion for beginners",["mean reversion","fading"],"Mean reversion = betting that stretched price snaps back toward its average. It works beautifully in ranges and destroys you in trends — so the entire skill is regime detection.",[
 ["steps",["Confirm the regime: is this a [[ranges|range]] or a trend? Only ranges qualify.","Fade the EDGES of the range, never the middle.","Require a rejection candle (wick, engulfing) at the boundary.","Stop beyond the boundary; target the range middle or opposite edge.","The moment structure breaks, stop fading — the regime changed."]],
 ["warn","The graveyard of mean reversion is fading a trend because it looked overextended. Markets can stay irrational longer than your stop can stay funded."]],"i");
-C("backtesting-guide","strategy","How to backtest properly",["backtesting","backtest guide","how to backtest"],"Backtesting = replaying your rules against history to measure them before risking money. Done honestly, it converts hope into statistics. Done lazily, it converts laziness into confidence.",[
+C("backtesting-guide","strategy","How to backtest properly",["backtesting","backtest guide"],"Backtesting = replaying your rules against history to measure them before risking money. Done honestly, it converts hope into statistics. Done lazily, it converts laziness into confidence.",[
 ["h","The honest protocol"],
 ["steps",["Write the rules FIRST — entry, stop, target, regime filter. No adjusting mid-test.","Use [[tradingview-guide|Bar Replay]] or historical data; go candle by candle.","Log EVERY occurrence for at least 100 trades: result in R, screenshot, setup quality.","Include costs: spread, fees, realistic [[slippage|slippage]].","Compute [[expectancy|expectancy]], win rate, max losing streak — and check you can emotionally survive that streak."]],
 ["h","The three cheating modes"],
 ["ul",["<b>Curve fitting</b> — tuning parameters until the past looks perfect.","<b>Cherry picking</b> — skipping trades you 'wouldn't have taken'.","<b>Hindsight entries</b> — entries you only see because you know the future."]],
 ["tip","A mediocre strategy you execute 200 times beats a perfect strategy you invented last night. The backtest's real output is trust in your own rules."]],"i");
-C("routine","strategy","The professional daily routine",["daily routine","trading routine","pre market routine"],"Talent is overrated; routine is the actual edge. This is the complete daily loop — before, during, and after the session.",[
+C("routine","strategy","The professional daily routine",["daily routine","trading routine"],"Talent is overrated; routine is the actual edge. This is the complete daily loop — before, during, and after the session.",[
 ["h","Before the session"],
 ["steps",["Check the [[g-economic-calendar|economic calendar]] — mark red-folder events.","Mark higher-timeframe levels and liquidity ([[course-l13|markup routine]]).","Write the day's scenarios: if X, I do Y. Maximum three.","Set alerts on everything that matters. Close every other tab."]],
 ["h","During"],
@@ -1296,13 +1320,12 @@ C("routine","strategy","The professional daily routine",["daily routine","tradin
 ["h","After"],
 ["steps",["Journal every trade — 2 minutes each ([[journal-apps|template]]).","Screenshot the best and worst decision of the day.","Write one sentence: what do I improve tomorrow?","Walk away. Recovery is part of the routine."]],
 ["tip","The goal of the routine is to make the right action the default action. Discipline is just routine that survived a bad day."]],"b");
-C("prop-firms","strategy","Prop firms: the honest guide",["prop firms","prop firm challenge","ftmo","funded trader"],"Prop firms fund traders who pass an evaluation — you trade their capital and split the profits. Legitimate ones exist; so do businesses designed to collect evaluation fees. Here's the honest map.",[
+C("prop-firms","strategy","Prop firms: the honest guide",["prop firms","prop firm challenge","ftmo"],"Prop firms fund traders who pass an evaluation — you trade their capital and split the profits. Legitimate ones exist; so do businesses designed to collect evaluation fees. Here's the honest map.",[
 ["h","How it actually works"],
 ["steps",["Pay an evaluation fee; trade a demo account under rules (profit target, max drawdown, daily loss limit).","Pass → funded account; profits split (typically 70–90% to you).","Break a rule → account lost; repeat fee to try again."]],
 ["h","The honest math"],
 ["p","Most challenge-takers fail — usually on the drawdown rules, which are the real product for many firms. If you cannot pass a prop challenge on a demo, you are not ready for size; the challenge is a paid mirror. Pass consistently first, then compare firms on payout reliability and rule fairness, not marketing."],
 ["warn","The skills needed are exactly this encyclopedia: [[risk-management|risk]], [[trading-psychology|psychology]], [[course-l10|a written plan]]. No firm funds gamblers for long."]],"b");
-/* ---- core extras ---- */
 C("moving-averages","tools","Moving averages (SMA & EMA)",["moving average","sma","ema","ma"],"A moving average smooths price into a line showing the average of the last N candles.",[
 ["chart",{c:[[30,42,28,40],[38,50,36,48],[44,56,42,46],[48,60,46,58],[54,66,52,64],[60,72,58,62],[58,70,54,58],[54,64,50,54],[50,62,46,52],[52,66,50,64]],paths:[[[0,36],[2,46],[4,52],[6,60],[9,57]],"gold"],cap:"A moving average (gold) smoothing the swings"}],
 ["p","Uses: trend direction, dynamic support, crosses. They lag by construction and whipsaw in ranges. Price and structure first. Strategies: [[ma-strategies|the MA playbook]]."]],"b");
@@ -1350,7 +1373,9 @@ C("slippage","mech","Slippage",["slippage"],"The difference between the price yo
 ["p","Mitigations: trade liquid instruments in liquid hours, use limits for entries, assume slippage in your risk math."]],"b");
 C("what-moves-price","mech","What actually moves price",["price discovery","order flow"],"Strip away every indicator: price moves because aggressive orders consume resting orders.",[
 ["p","This is why liquidity matters, why volume confirms moves, and why news causes spikes."]],"b");
-/* ---- GLOSSARY ---- */
+</script>
+<script>
+/* ===== glossary + patterns ===== */
 function G(term,def,al){var aliases=[];if(al){aliases=Array.isArray(al)?al:[al];}
 A({id:"g-"+term.toLowerCase().replace(/[^a-z0-9]+/g,"-"),cat:"gloss",title:term,al:aliases,lvl:"b",def:def,b:[["p","Quick definition — search the library or start with the <a href=\"#/academy\">Academy</a> to go deeper."]]});}
 G("Accumulation","Quietly buying an asset over time without pushing the price up — what big players do before a markup.","accumulating");
@@ -1714,7 +1739,6 @@ G("Skill stack","Candles + structure + risk + psychology, layered.");
 G("Edge discovery","Finding what statistically works for YOU.");
 G("One setup rule","Mastering a single setup before adding another.");
 G("Mastery","Boring execution of proven things. The final boss.");
-/* ---- PATTERNS ---- */
 var PATTERNS=[
 {n:"Doji",type:"neu",nc:1,cat:"Indecision",trend:"Any trend",rel:45,chart:[[46,72,22,46.5]],d:"Open and close virtually identical — a standoff between buyers and sellers.",p:"The market pushed both directions and finished nowhere; conviction has evaporated.",t:"A caution flag after any extended run. Wait for the next candle to pick a side."},
 {n:"Long-Legged Doji",type:"neu",nc:1,cat:"Indecision",trend:"Any trend",rel:46,chart:[[48,90,10,48.4]],d:"Huge upper and lower shadows around a doji body — a tug-of-war ending in a draw.",p:"Violent two-way swings both rejected.",t:"Louder than a plain doji; extra weight at support or resistance."},
@@ -1826,7 +1850,7 @@ PATTERNS.forEach(function(p){
 var CATS=[["course","Academy"],["basics","Chart Basics"],["structure","Market Structure"],["smc","Smart Money"],["markup","Chart Markup"],["markets","Asset Classes"],["apps","Platforms & Tools"],["strategy","Strategies"],["fund","Fundamentals"],["risk","Risk Management"],["psych","Psychology"],["tools","Indicators"],["mech","Mechanics"],["gloss","Glossary"],["patterns","Patterns"]];
 </script>
 <script>
-/* ================= HELPERS ================= */
+/* ===== helpers ===== */
 function byId(id){for(var i=0;i<ARTICLES.length;i++)if(ARTICLES[i].id===id)return ARTICLES[i];return null;}
 function catName(c){for(var i=0;i<CATS.length;i++)if(CATS[i][0]===c)return CATS[i][1];return c;}
 function alArr(a){if(Array.isArray(a.al))return a.al;if(typeof a.al==="string"&&a.al)return[a.al];return[];}
@@ -1847,7 +1871,7 @@ function blockHTML(bl){
  if(bl[0]==="ul")return "<ul>"+bl[1].map(function(x){return "<li>"+linkify(x)+"</li>";}).join("")+"</ul>";
  if(bl[0]==="steps")return '<div class="steps">'+bl[1].map(function(x,i){return '<div class="step"><div class="sn">'+(i+1)+'</div><p>'+linkify(x)+'</p></div>';}).join("")+'</div>';
  if(bl[0]==="tip")return '<div class="notebox nb-tip"><span class="ni">'+icon("target",14)+'</span><div><b class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grn)">KEY IDEA</b><div style="margin-top:3px">'+linkify(bl[1])+'</div></div></div>';
- if(bl[0]==="warn")return '<div class="notebox nb-warn"><span class="ni">'+icon("down",14)+'</span><div><b class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)">CAUTION</b><div style="margin-top:3px">'+linkify(bl[1])+'</div></div></div>';
+ if(bl[0]==="warn")return '<div class="notebox nb-warn"><span class="ni">'+icon("bolt",14)+'</span><div><b class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)">CAUTION</b><div style="margin-top:3px">'+linkify(bl[1])+'</div></div></div>';
  if(bl[0]==="chart"){
   var cfg=bl[1];
   return '<div class="chartbox" data-chart="'+encodeURIComponent(JSON.stringify(cfg))+'"></div>'+(cfg.cap?'<div class="chartcap">'+linkify(cfg.cap)+'</div>':"");
@@ -1862,65 +1886,62 @@ function mountCharts(root){
   if(box._done)return;box._done=true;
   try{
    var cfg=JSON.parse(decodeURIComponent(box.dataset.chart));
-   ProChart(box,{h:cfg.h||300,count:cfg.c.length}).setSeries(cfg.c,{reveal:cfg.c.length,resetView:true});
-   if(cfg.focus){/* focus highlight handled via reveal only */}
-   box._api=null;
+   var inst=ProChart(box,{h:cfg.h||300,count:cfg.c.length});
+   inst.setSeries(cfg.c,{resetView:true});
   }catch(e){box.textContent="(chart failed to load)";}
  });
 }
 </script>
 <script>
-/* ================= VIEWS ================= */
+/* ===== views ===== */
 var FEAT_IDS=["liquidity","sweep-playbook","tradingview-guide","wyckoff-deep","market-structure","risk-management","fvg","course-l5"];
 var FEAT_IDX=0,FEAT_T=null,FEAT_HOVER=false;
-function featChartHTML(a){
- var blk=null;
- for(var i=0;i<a.b.length;i++){if(a.b[i][0]==="chart"){blk=a.b[i][1];break;}}
- if(!blk)return '<div style="height:220px;display:flex;align-items:center;justify-content:center;color:var(--dim)" class="mono">'+icon("chart",40)+'</div>';
- var wrap=document.createElement("div");
- ProChart(wrap,{h:240,count:blk.c.length});
- wrap.firstChild.style.border="none";
- wrap.firstChild.querySelector(".pc-bar").style.display="none";
- var api=wrap.firstChild.__api;
- requestAnimationFrame(function(){
-  var inst=wrap.firstChild._inst;
- });
- var holder=wrap.firstChild;
- holder.__set=function(){
-  var inst=holder.__pc;
- };
- var inst=null;
- return {el:wrap,cfg:blk};
-}
 function renderFeature(){
  var a=byId(FEAT_IDS[FEAT_IDX%FEAT_IDS.length]);
- if(!a)return;
  var f=document.getElementById("featureCard");
- if(!f)return;
+ if(!f||!a)return;
  f.classList.add("swap");
  setTimeout(function(){
   var blk=null;
   for(var i=0;i<a.b.length;i++){if(a.b[i][0]==="chart"){blk=a.b[i][1];break;}}
-  var chartHtml="";
-  if(blk){
-   var tmp=document.createElement("div");
-   var inst=ProChart(tmp,{h:240,count:blk.c.length});
-   inst.setSeries(blk.c,{resetView:true});
-   tmp.firstChild.style.border="none";
-   var barEl=tmp.firstChild.querySelector(".pc-bar");
-   if(barEl)barEl.style.display="none";
-   chartHtml=tmp.innerHTML;
-  }
   f.innerHTML='<div class="feature-in"><div class="feature-txt"><div class="eyebrow">FEATURED GUIDE · '+(FEAT_IDX%FEAT_IDS.length+1)+'/'+FEAT_IDS.length+'</div>'
   +'<h2><a href="#/a/'+a.id+'">'+a.title+'</a></h2><p>'+a.def+'</p>'
   +'<a href="#/a/'+a.id+'" class="mono" style="font-size:11px;color:var(--grn);margin-top:14px">Read the full article →</a></div>'
-  +'<div class="feature-chart">'+chartHtml+'</div></div>'
+  +'<div class="feature-chart" id="featChartBox"></div></div>'
   +'<div class="fdots">'+FEAT_IDS.map(function(_,i){return '<span class="fdot'+(i===FEAT_IDX%FEAT_IDS.length?" on":"")+'" data-fi="'+i+'"></span>';}).join("")+'</div>';
   f.classList.remove("swap");
+  if(blk){
+   try{
+    var box=document.getElementById("featChartBox");
+    var inst=ProChart(box,{h:240,count:blk.c.length});
+    inst.setSeries(blk.c,{resetView:true});
+    var bar=box.querySelector(".pc-bar");if(bar)bar.style.display="none";
+   }catch(e){}
+  }
   f.querySelectorAll(".fdot").forEach(function(d){
    d.addEventListener("click",function(ev){ev.preventDefault();ev.stopPropagation();FEAT_IDX=+d.dataset.fi;renderFeature();});
   });
  },220);
+}
+function dashHTML(){
+ var cp=courseDone(),ct=courseTotal(),cpct=ct?Math.round(cp/ct*100):0;
+ var ti=tierIdx(prof.xp),cur=prof.xp-TIER_XP[ti],need=ti<14?TIER_XP[ti+1]-TIER_XP[ti]:1;
+ var pct=ti<14?Math.min(100,cur/need*100):100;
+ var acc=prof.practice.answered?Math.round(prof.practice.correct/prof.practice.answered*100):0;
+ var eq=prof.paper?Math.round(paperEquity()):null;
+ var R2=28,CIRC=2*Math.PI*R2;
+ var h='<div class="wbox rv"><div class="dash">';
+ h+='<div class="ring"><svg width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="'+R2+'" fill="none" stroke="var(--s3)" stroke-width="6"/><circle cx="35" cy="35" r="'+R2+'" fill="none" stroke="var(--grn)" stroke-width="6" stroke-linecap="round" stroke-dasharray="'+(CIRC*pct/100)+' '+CIRC+'"/></svg>'
+ +'<div class="rl"><b>'+TIERS[ti]+'</b><span>'+prof.xp+' XP</span></div></div>';
+ h+='<div class="dash-stats">';
+ h+='<div class="dstat"><span class="dl2">'+icon("grad",12)+' Academy</span><span class="dv">'+cp+'/'+ct+'</span></div>';
+ h+='<div class="dstat"><span class="dl2">'+icon("target",12)+' Accuracy</span><span class="dv">'+acc+'%</span></div>';
+ h+='<div class="dstat"><span class="dl2">'+icon("flame",12)+' Best streak</span><span class="dv">'+prof.practice.best+'</span></div>';
+ h+='<div class="dstat"><span class="dl2">'+icon("wallet",12)+' Paper equity</span><span class="dv">'+(eq!=null?"$"+eq.toLocaleString():"—")+'</span></div>';
+ h+='</div>';
+ h+='<div class="dash-actions"><a class="bigbtn" style="padding:9px 18px;font-size:.85rem" href="#/practice">'+icon("target",14)+' Practice</a><a class="bigbtn gold" style="padding:9px 18px;font-size:.85rem" href="#/trade">'+icon("chart",14)+' Trade</a></div>';
+ h+='</div></div>';
+ return h;
 }
 function renderHome(){
  clearInterval(FEAT_T);
@@ -1953,28 +1974,6 @@ function renderHome(){
  var fc=document.getElementById("featureCard");
  if(fc){fc.addEventListener("mouseenter",function(){FEAT_HOVER=true;});fc.addEventListener("mouseleave",function(){FEAT_HOVER=false;});}
  observeRv();
-}
-function dashHTML(){
- var cp=courseDone(),ct=courseTotal(),cpct=ct?Math.round(cp/ct*100):0;
- var ti=tierIdx(prof.xp),cur=prof.xp-TIER_XP[ti],need=ti<14?TIER_XP[ti+1]-TIER_XP[ti]:1;
- var pct=ti<14?Math.min(100,cur/need*100):100;
- var acc=prof.practice.answered?Math.round(prof.practice.correct/prof.practice.answered*100):0;
- var eq=prof.paper?Math.round(paperEquity()):null;
- var R2=34,CIRC=2*Math.PI*R2;
- var h='<div class="wbox rv"><div class="dash">';
- h+='<div class="dash-top">';
- h+='<div class="ring"><svg width="86" height="86" viewBox="0 0 86 86"><circle cx="43" cy="43" r="'+R2+'" fill="none" stroke="var(--s3)" stroke-width="7"/><circle cx="43" cy="43" r="'+R2+'" fill="none" stroke="var(--grn)" stroke-width="7" stroke-linecap="round" stroke-dasharray="'+(CIRC*pct/100)+' '+CIRC+'"/></svg>'
- +'<div class="rl"><b>'+TIERS[ti]+'</b><span>'+prof.xp+' XP</span></div></div>';
- h+='<div class="dash-rows">';
- h+='<div class="drow"><span>'+icon("book",13)+'&nbsp; Academy</span><b>'+cp+' / '+ct+' lessons</b></div>';
- h+='<div class="drow"><span>'+icon("target",13)+'&nbsp; Practice accuracy</span><b>'+acc+'%</b></div>';
- h+='<div class="drow"><span>'+icon("flame",13)+'&nbsp; Best streak</span><b>'+prof.practice.best+'</b></div>';
- h+='<div class="drow"><span>'+icon("chart",13)+'&nbsp; Paper equity</span><b>'+(eq!=null?"$"+eq.toLocaleString():"—")+'</b></div>';
- h+='</div></div>';
- h+='<div class="progress"><i style="width:'+cpct+'%"></i></div>';
- h+='<div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap"><a class="bigbtn" style="padding:10px 22px;font-size:.9rem" href="#/practice">'+icon("target",14)+'&nbsp; Practice</a><a class="bigbtn gold" style="padding:10px 22px;font-size:.9rem" href="#/trade">'+icon("chart",14)+'&nbsp; Trading desk</a><a class="bigbtn" style="padding:10px 22px;font-size:.9rem;background:var(--s2);color:var(--tx);border:1px solid var(--bd)" href="#/academy">Academy</a></div>';
- h+='</div></div>';
- return h;
 }
 function renderCategory(cat){
  var list=ARTICLES.filter(function(a){return a.cat===cat;});
@@ -2149,7 +2148,7 @@ function renderSettings(){
 }
 </script>
 <script>
-/* ================= PRACTICE (fixed) ================= */
+/* ===== practice ===== */
 var R={q:null,res:[],iv:null,streakNow:0,checkpointTier:0,chart:null};
 function diffForStreak(s){return s<3?"e":s<6?"m":"h";}
 function xpFor(d){return d==="e"?20:d==="m"?35:55;}
@@ -2171,7 +2170,7 @@ function genPracticeQuestion(diff){
  var offset=2+Math.floor(Math.random()*400);
  var endTime=Date.now()-offset*tf;
  var data=seriesTF(sym,tf,vis+hid,endTime);
- if(data.length<vis+hid)return genPracticeQuestion(diff);
+ if(!data.length||data.length<vis+hid)return genPracticeQuestion(diff);
  var base=data[vis-1][3],fin=data[data.length-1][3];
  var pct=(fin-base)/base;
  var hint;
@@ -2195,7 +2194,7 @@ function renderPractice(){
  var cur=prof.xp-TIER_XP[ti],need=ti<14?TIER_XP[ti+1]-TIER_XP[ti]:1;
  var acc=prof.practice.answered?Math.round(prof.practice.correct/prof.practice.answered*100):0;
  var h='<div class="view arena">';
- h+='<div class="phead"><h2>Practice</h2><div class="pstats">';
+ h+='<div class="phead"><h2>'+icon("target",20)+' Practice</h2><div class="pstats">';
  h+='<span class="pstat">'+icon("target",13)+' Accuracy <b>'+acc+'%</b></span>';
  h+='<span class="pstat">'+icon("flame",13)+' Best streak <b>'+prof.practice.best+'</b></span>';
  h+='<span class="pstat">'+icon("chart",13)+' Lifetime <b>'+prof.practice.answered+'</b></span>';
@@ -2218,7 +2217,7 @@ function drawPracticeQuestion(){
  var area=document.getElementById("qArea");
  if(!area||!R.q)return;
  var q=R.q;
- var dLabel=q.diff==="e"?'<span class="diff diff-e">EASY · '+q.hid+' hidden</span>':q.diff==="m"?'<span class="diff diff-m">MEDIUM · '+q.hid+' hidden</span>':'<span class="diff diff-h">HARD · '+q.hid+' hidden</span>';
+ var dLabel=q.diff==="e"?'<span class="diff diff-e">'+icon("check",11)+' EASY · '+q.hid+' hidden</span>':q.diff==="m"?'<span class="diff diff-m">'+icon("clock",11)+' MEDIUM · '+q.hid+' hidden</span>':'<span class="diff diff-h">'+icon("bolt",11)+' HARD · '+q.hid+' hidden</span>';
  var srcLabel='<i style="background:'+(q.real==="LIVE"?"var(--grn)":"var(--gold)")+'"></i>'+q.real+' · '+q.sym.s+"/"+(q.sym.real?"USDT":"USD")+' · '+tfLabel(q.tf);
  area.innerHTML='<div class="rankbox" style="margin-bottom:16px"><div class="qbar" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span class="mono" style="font-size:12px;color:var(--mut)">CHART '+(prof.practice.answered+1)+'</span>'+dLabel+'<span class="mono" style="font-size:11px;color:var(--dim);margin-left:auto">Block: '+R.res.filter(function(x){return x;}).length+'/20</span></div>'
  +'<div class="ticks">'+ticksHTML()+'</div>'
@@ -2253,8 +2252,7 @@ function practiceAnswer(pick){
 function practiceFinish(pick){
  var q=R.q;
  if(!q)return;
- var win=q.pct>0?pick==="up":"down"==="down"&&q.pct<0?pick==="down":false;
- win=q.pct>0?(pick==="up"):(pick==="down");
+ var win=q.pct>0?(pick==="up"):(pick==="down");
  var delta=0;
  if(win){
   R.streakNow++;
@@ -2310,17 +2308,17 @@ function showCheckpoint(){
 }
 </script>
 <script>
-/* ================= TRADING DESK ================= */
+/* ===== trading desk ===== */
 var TFS=[[1000,"1s"],[5000,"5s"],[15000,"15s"],[30000,"30s"],[60000,"1m"],[180000,"3m"],[300000,"5m"],[900000,"15m"],[1800000,"30m"],[2700000,"45m"],[3600000,"1h"],[7200000,"2h"],[10800000,"3h"],[14400000,"4h"],[86400000,"1D"],[604800000,"1W"],[2592000000,"1M"]];
 var T={sym:null,tf:3600000,chart:null,timer:null,side:"buy",count:180};
 function paperEquity(){
  if(!prof.paper)return 0;
  var eq=prof.paper.balance;
- var idx=nowIdx(),now=Date.now();
- var sym=T.sym||SYMS[0];
+ var now=Date.now();
+ var tf2=T.tf>=60000?T.tf:60000;
  prof.paper.positions.forEach(function(p){
-  var mark=seriesTF(p.sym,T.tf>=60000?T.tf:60000,2,now);
-  var mp=mark.length?mark[mark.length-1][3]:p.entry;
+  var d2=seriesTF(p.sym,tf2,2,now);
+  var mp=d2.length?d2[d2.length-1][3]:p.entry;
   eq+=p.qty*(mp-p.entry)*(p.side==="buy"?1:-1);
  });
  return eq;
@@ -2346,19 +2344,18 @@ function renderTrade(){
   h+='<div class="desk-acct" id="acctStrip"></div>';
   h+='<div id="deskChart"></div>';
   h+='<div class="desk-panels">';
-  h+='<div class="tpanel"><h4>New order · <span id="ordSym"></span></h4>'
+  h+='<div class="tpanel"><h4>'+icon("wallet",12)+' New order · <span id="ordSym"></span></h4>'
   +'<div class="sidebtns"><button class="sidebtn buy on" id="sideBuy">'+icon("up",14)+' BUY / LONG</button><button class="sidebtn sell" id="sideSell">'+icon("down",14)+' SELL / SHORT</button></div>'
   +'<input class="inp" id="amtInp" type="number" min="1" placeholder="Amount in $" value="1000">'
   +'<div class="pctbtns"><button class="pctbtn" data-p="10">10%</button><button class="pctbtn" data-p="25">25%</button><button class="pctbtn" data-p="50">50%</button><button class="pctbtn" data-p="100">MAX</button></div>'
   +'<div class="mono" style="font-size:10.5px;color:var(--dim);margin-bottom:10px" id="qtyRow"></div>'
-  +'<button class="bigbtn" id="placeBtn" style="width:100%">Place market order</button></div>';
-  h+='<div class="tpanel"><h4>Open positions</h4><div id="posRows"></div></div>';
-  h+='<div class="tpanel"><h4>History</h4><div id="histRows"></div><div style="margin-top:12px"><button class="ptool" id="resetPaper" style="color:var(--red);border-color:color-mix(in srgb,var(--red) 40%,transparent)">Reset paper account</button></div></div>';
+  +'<button class="bigbtn" id="placeBtn" style="width:100%;justify-content:center">Place market order</button></div>';
+  h+='<div class="tpanel"><h4>'+icon("chart",12)+' Open positions</h4><div id="posRows"></div></div>';
+  h+='<div class="tpanel"><h4>'+icon("clock",12)+' History</h4><div id="histRows"></div><div style="margin-top:12px"><button class="ptool" id="resetPaper" style="color:var(--red);border-color:color-mix(in srgb,var(--red) 40%,transparent)">'+icon("trash",12)+' Reset paper account</button></div></div>';
   h+='</div></div>';
   app.innerHTML=h;
   var holder=document.getElementById("deskChart");
-  T.chart=ProChart(holder,{h:460,count:T.count,tools:true});
-  holder.firstChild.style.borderRadius="12px";
+  T.chart=ProChart(holder,{h:460,count:T.count,tools:true,live:true});
   deskUpdateChart(true);
   document.getElementById("symtabs").addEventListener("click",function(e){
    var b=e.target.closest("[data-sym]");if(!b)return;
@@ -2394,7 +2391,6 @@ function deskUpdateChart(reset){
  var data=seriesTF(T.sym,T.tf,T.count,Date.now());
  var live=T.sym.real&&REAL[T.sym.s];
  T.chart.setSeries(data,{resetView:reset});
- var src=T.chart.render&&null;
  var holder=document.getElementById("deskChart");
  if(holder){
   var srcEl=holder.querySelector(".pc-src");
@@ -2425,14 +2421,15 @@ function updateDeskPanels(){
   if(!prof.paper.positions.length){posEl.innerHTML='<div class="mono" style="font-size:11px;color:var(--dim);padding:6px 0">No open positions.</div>';}
   else{
    var now=Date.now();
+   var tf2=T.tf>=60000?T.tf:60000;
    posEl.innerHTML=prof.paper.positions.map(function(p,i){
-    var d2=seriesTF(p.sym,T.tf>=60000?T.tf:60000,2,now);
+    var d2=seriesTF(p.sym,tf2,2,now);
     var mark=d2.length?d2[d2.length-1][3]:p.entry;
     var upnl=p.qty*(mark-p.entry)*(p.side==="buy"?1:-1);
     return '<div class="posrow"><span class="tagb '+(p.side==="buy"?"b":"s")+'">'+(p.side==="buy"?"LONG":"SHORT")+'</span>'
     +'<span class="mono" style="font-size:11px">'+p.sym.s+' · '+p.qty.toFixed(3)+' @ $'+fmtPrice(p.entry)+'</span>'
     +'<span class="mono" style="font-size:11px;color:'+(upnl>=0?"var(--grn)":"var(--red)")+'">'+(upnl>=0?"+":"−")+'$'+Math.abs(upnl).toFixed(0)+'</span>'
-    +'<button class="xbtn" data-close="'+i+'">CLOSE</button></div>';
+    +'<button class="xbtn" data-close="'+i+'">'+icon("trash",11)+' CLOSE</button></div>';
    }).join("");
    posEl.querySelectorAll("[data-close]").forEach(function(b){
     b.addEventListener("click",function(){closePosition(+b.dataset.close);});
@@ -2462,14 +2459,13 @@ function placeOrder(){
  prof.paper.positions.push({sym:T.sym,side:T.side,qty:qty,entry:price,t:Date.now()});
  persist();
  toast((T.side==="buy"?"Long":"Short")+" opened: "+qty+" "+T.sym.s+" @ $"+fmtPrice(price));
- T.chart.setSeries(seriesTF(T.sym,T.tf,T.count,Date.now()),{});
- T.chart.render();
  updateDeskPanels();updateQtyRow();
 }
 function closePosition(i){
  var p=prof.paper.positions[i];if(!p)return;
  var now=Date.now();
- var d2=seriesTF(p.sym,T.tf>=60000?T.tf:60000,2,now);
+ var tf2=T.tf>=60000?T.tf:60000;
+ var d2=seriesTF(p.sym,tf2,2,now);
  var mark=d2.length?d2[d2.length-1][3]:p.entry;
  var pnl=p.qty*(mark-p.entry)*(p.side==="buy"?1:-1);
  prof.paper.balance+=pnl;
@@ -2487,7 +2483,7 @@ function renderTradeSetup(){
  h+='<label class="mono" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:8px">STARTING BALANCE (MAX $100,000,000)</label>';
  h+='<input class="inp" id="balInp" type="number" min="100" max="100000000" value="100000">';
  h+='<div class="balchips"><button class="balchip" data-b="10000">$10K</button><button class="balchip" data-b="100000">$100K</button><button class="balchip" data-b="1000000">$1M</button><button class="balchip" data-b="10000000">$10M</button><button class="balchip" data-b="100000000">$100M</button></div>';
- h+='<div style="margin-top:10px"><button class="bigbtn" id="startPaper" style="width:100%">Start trading</button></div>';
+ h+='<div style="margin-top:10px"><button class="bigbtn" id="startPaper" style="width:100%;justify-content:center">'+icon("chart",15)+' Start trading</button></div>';
  h+='<p class="mono" style="font-size:10px;color:var(--dim);margin-top:14px">Markets: '+SYMS.map(function(s){return s.s;}).join(" · ")+' — all 17 timeframes from 1s to 1M.</p></div></div>';
  app.innerHTML=h;
  document.querySelectorAll(".balchip").forEach(function(b){
@@ -2505,7 +2501,7 @@ function renderTradeSetup(){
 }
 </script>
 <script>
-/* ================= SEARCH / ROUTER / BOOT ================= */
+/* ===== search / router / boot ===== */
 var sInput=document.getElementById("searchInput"),sDrop=document.getElementById("sdrop");
 function searchTop(q){
  q=q.toLowerCase().trim();if(!q)return[];
